@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCVLR: Data Curation for Vision Language Reasoning - NeurIPS 2025 Competition</title>
+    <style>
+        :root {
+            --primary-color: #4a6baf;
+            --secondary-color: #6abf69;
+            --accent-color: #e67e22;
+            --light-bg: #f9f9f9;
+            --dark-bg: #2c3e50;
+            --text-color: #333;
+            --light-text: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), #7f8fa6);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #d35400;
+            text-decoration: none;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .section-title p {
+            max-width: 800px;
+            margin: 1rem auto 0;
+        }
+        
+        .competition-overview {
+            background-color: white;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .detail-card {
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .detail-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .timeline {
+            background-color: var(--light-bg);
+        }
+        
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-date {
+            width: 150px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .timeline-content {
+            flex: 1;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: -4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        
+        .resources {
+            background-color: white;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .resource-card {
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .resource-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .teams {
+            background-color: var(--light-bg);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        
+        .team-member h3 {
+            color: var(--primary-color);
+        }
+        
+        .team-member p {
+            font-size: 0.9rem;
+        }
+        
+        .faq {
+            background-color: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+        
+        .faq-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .contact {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            text-align: center;
+        }
+        
+        .contact h2 {
+            color: white;
+        }
+        
+        .contact-info {
+            margin-top: 2rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sponsors {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .sponsor-logo {
+            height: 60px;
+            filter: grayscale(100%) brightness(10);
+            transition: all 0.3s;
+        }
+        
+        .sponsor-logo:hover {
+            filter: none;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-date {
+                width: auto;
+                margin-bottom: 0.5rem;
+            }
+            
+            .timeline-content {
+                padding-left: 1rem;
+            }
+            
+            .detail-card, .resource-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">DCVLR</div>
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#timeline">Timeline</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="cta-button">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>DCVLR: Data Curation for Vision Language Reasoning</h1>
+            <p>A NeurIPS 2025 Competition focused on advancing visual reasoning capabilities in vision-language models through high-quality data curation.</p>
+            <a href="#" class="cta-button">Register for the Competition</a>
+        </div>
+    </section>
+
+    <section class="competition-overview" id="overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Competition Overview</h2>
+                <p>Reframing data curation as the primary variable for scientific investigation in vision-language reasoning</p>
+            </div>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3>Challenge</h3>
+                    <p>Participants will be provided with a pool of 1 million image-text pairs and tasked with generating a small (1K) or large (10K) instruction-tuning dataset using any method of their choice.</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Evaluation</h3>
+                    <p>Submissions will be evaluated by fine-tuning a fixed VLM (Molmo) on the curated data and measuring performance on VMCBench, a benchmark of multiple-choice visual reasoning questions spanning six diverse datasets.</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Impact</h3>
+                    <p>This challenge reframes data curation as a scientific discipline with implications for adapting foundation models to real-world domains such as education, biomedicine, and scientific reasoning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline" id="timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>Competition Timeline</h2>
+                <p>Key dates and milestones for the DCVLR competition</p>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-date">July 1, 2025</div>
+                    <div class="timeline-content">
+                        <h3>Release of Competition Materials</h3>
+                        <p>Competition website and starter kit (data, code, baselines) available for download.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">August 1, 2025</div>
+                    <div class="timeline-content">
+                        <h3>Dry-run Testing</h3>
+                        <p>Dry-run of the submission pipeline and test server.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">September 1, 2025</div>
+                    <div class="timeline-content">
+                        <h3>Submission System Opens</h3>
+                        <p>Participants can begin submitting their curated datasets for evaluation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">October 15, 2025</div>
+                    <div class="timeline-content">
+                        <h3>Final Submission Deadline</h3>
+                        <p>Last day to submit curated datasets for the competition.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">November 1, 2025</div>
+                    <div class="timeline-content">
+                        <h3>Results Announced</h3>
+                        <p>Leaderboard released with final results.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">December 2025</div>
+                    <div class="timeline-content">
+                        <h3>NeurIPS 2025</h3>
+                        <p>Presentation of results and awards at the NeurIPS conference.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resources" id="resources">
+        <div class="container">
+            <div class="section-title">
+                <h2>Competition Resources</h2>
+                <p>Everything you need to participate in the DCVLR competition</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📊</div>
+                    <h3>Data Pool</h3>
+                    <p>Access to 1 million image-text pairs selected from the DataComp pool, filtered for quality and diversity.</p>
+                    <a href="#">Download Soon</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">💻</div>
+                    <h3>Training Scripts</h3>
+                    <p>Code for fine-tuning the Molmo vision-language model on your curated datasets.</p>
+                    <a href="#">Download Soon</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🧪</div>
+                    <h3>Evaluation Code</h3>
+                    <p>Scripts to evaluate model outputs on the VMCBench development set.</p>
+                    <a href="#">Download Soon</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">📝</div>
+                    <h3>Baseline Submissions</h3>
+                    <p>Reference implementations using GPT-4o and Claude for conversation generation.</p>
+                    <a href="#">Download Soon</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">☁️</div>
+                    <h3>Compute Resources</h3>
+                    <p>$400 USD in GPU credits from Lambda Labs for participants.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h3>Documentation</h3>
+                    <p>Complete guides and tutorials to help you get started.</p>
+                    <a href="#">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="competition-process">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>A step-by-step guide to participating in the DCVLR competition</p>
+            </div>
+            <img src="/api/placeholder/1000/500" alt="DCVLR Competition Workflow" style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 2rem;">
+            <div style="text-align: center; margin-top: 2rem;">
+                <p><strong>Figure 1:</strong> Overview of DCVLR competition workflow. Participants begin by selecting a scale—either 1K or 10K samples, then curate instruction-tuning data through a three-step process: selecting image-text pairs, synthesizing multi-turn conversations, and formatting the data for training.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="teams" id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Organizing Team</h2>
+                <p>Meet the researchers behind the DCVLR competition</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="/api/placeholder/150/150" alt="Benjamin Feuer">
+                    <h3>Benjamin Feuer</h3>
+                    <p>Lead Organizer</p>
+                    <p>NYU</p>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/150/150" alt="Rohun Tripathi">
+                    <h3>Rohun Tripathi</h3>
+                    <p>Lead Organizer</p>
+                    <p>Allen Institute for AI</p>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/150/150" alt="Oussama Elachqar">
+                    <h3>Oussama Elachqar</h3>
+                    <p>Lead Organizer</p>
+                    <p>Oumi</p>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/150/150" alt="Yuhui Zhang">
+                    <h3>Yuhui Zhang</h3>
+                    <p>Lead Organizer</p>
+                    <p>Stanford University</p>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/150/150" alt="Neha Hulkund">
+                    <h3>Neha Hulkund</h3>
+                    <p>Lead Organizer</p>
+                    <p>MIT</p>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/150/150" alt="Thao Nguyen">
+                    <h3>Thao Nguyen</h3>
+                    <p>Helping Organizer</p>
+                    <p>University of Washington</p>
+                </div>
+                <!-- Add more team members as needed -->
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#" class="cta-button">View Full Team</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about the DCVLR competition</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>What is the goal of this competition?</h3>
+                    <div class="faq-answer">
+                        <p>The goal is to advance the visual reasoning capabilities of vision-language models through instruction-tuning dataset curation. By isolating data as the primary variable, we aim to understand what data properties catalyze reasoning capabilities in neural systems.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>Who can participate?</h3>
+                    <div class="faq-answer">
+                        <p>The competition is open to everyone, from students and academic researchers to industry professionals. We especially encourage participation from diverse backgrounds and institutions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>What computational resources do I need?</h3>
+                    <div class="faq-answer">
+                        <p>Fine-tuning and evaluation can be done on a single GPU. We provide $400 USD in GPU credits from Lambda Labs for each participant to ensure accessibility.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>How will submissions be evaluated?</h3>
+                    <div class="faq-answer">
+                        <p>Submissions will be evaluated by fine-tuning a fixed VLM (Molmo) on the curated data and measuring accuracy on VMCBench, a benchmark of multiple-choice visual reasoning questions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I use external data or models?</h3>
+                    <div class="faq-answer">
+                        <p>You must use only the 1M provided image-text pairs as your base data. However, you may use external tools (e.g., LLMs) to synthesize instruction-tuning examples from these pairs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>Are there any prizes?</h3>
+                    <div class="faq-answer">
+                        <p>Yes, there will be monetary prizes for top submissions, podium presentations at NeurIPS, and an invitation to co-author a joint system paper summarizing competition insights.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>How many submissions can I make?</h3>
+                    <div class="faq-answer">
+                        <p>Each team may submit up to 3 final versions. The highest-scoring submission will be used for ranking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Have questions? Get in touch with the DCVLR team</p>
+            </div>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:dcvlr_neurips@googlegroups.com">dcvlr_neurips@googlegroups.com</a></p>
+                <p>GitHub: <a href="#">DCVLR Competition Repository</a></p>
+                <p>Twitter: <a href="#">@DCVLR_NeurIPS</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 DCVLR Competition. All rights reserved.</p>
+            <div class="sponsors">
+                <p>Sponsored by:</p>
+                <img src="/api/placeholder/150/60" alt="NeurIPS" class="sponsor-logo">
+                <img src="/api/placeholder/150/60" alt="Lambda Labs" class="sponsor-logo">
+                <img src="/api/placeholder/150/60" alt="Oumi.ai" class="sponsor-logo">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ toggle functionality
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', event => {
+                const answer = event.target.nextElementSibling;
+                if (answer.style.display === 'none' || answer.style.display === '') {
+                    answer.style.display = 'block';
+                } else {
+                    answer.style.display = 'none';
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
