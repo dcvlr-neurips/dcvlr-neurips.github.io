@@ -6,13 +6,23 @@
     <title>DCVLR: Data Curation for Vision Language Reasoning - NeurIPS 2025 Competition</title>
     <style>
         :root {
-            --primary-color: #4a6baf;
-            --secondary-color: #6abf69;
-            --accent-color: #e67e22;
-            --light-bg: #f9f9f9;
-            --dark-bg: #2c3e50;
-            --text-color: #333;
-            --light-text: #f9f9f9;
+            --primary-color: #2563eb;
+            --secondary-color: #059669;
+            --accent-color: #dc2626;
+            --light-bg: #ffffff;
+            --lighter-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --text-color: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --gradient-secondary: linear-gradient(135deg, #059669 0%, #2563eb 100%);
+            --gradient-hero: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #dbeafe 100%);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
         
         * {
@@ -22,35 +32,40 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: var(--light-bg);
+            background-color: var(--lighter-bg);
+            font-weight: 400;
         }
         
         a {
             color: var(--primary-color);
             text-decoration: none;
+            transition: all 0.3s ease;
         }
         
         a:hover {
-            text-decoration: underline;
+            color: var(--secondary-color);
+            text-decoration: none;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
         
         header {
-            background-color: var(--primary-color);
-            color: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-color);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-sm);
         }
         
         .header-content {
@@ -60,147 +75,216 @@
         }
         
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         nav ul {
             display: flex;
             list-style: none;
+            align-items: center;
         }
         
         nav ul li {
-            margin-left: 1.5rem;
+            margin-left: 2rem;
         }
         
         nav ul li a {
-            color: white;
+            color: var(--text-secondary);
             font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--text-color);
         }
         
         .hero {
-            background: linear-gradient(135deg, var(--primary-color), #7f8fa6);
-            color: white;
-            padding: 4rem 0;
+            background: var(--gradient-hero);
+            color: var(--text-color);
+            padding: 6rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+            pointer-events: none;
         }
         
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #1e293b 0%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 3rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
         
         .cta-button {
             display: inline-block;
-            background-color: var(--accent-color);
+            background: var(--gradient-secondary);
             color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background-color 0.3s;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: var(--shadow-lg);
         }
         
         .cta-button:hover {
-            background-color: #d35400;
-            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+            color: white;
         }
         
         section {
-            padding: 4rem 0;
+            padding: 5rem 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
         
         .section-title h2 {
-            font-size: 2rem;
-            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .section-title p {
             max-width: 800px;
-            margin: 1rem auto 0;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
         
         .competition-overview {
-            background-color: white;
+            background-color: var(--light-bg);
         }
         
         .details-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
         
         .detail-card {
-            background-color: var(--light-bg);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-secondary);
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-xl);
         }
         
         .detail-card h3 {
-            color: var(--primary-color);
+            color: var(--text-color);
             margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .detail-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
         
         .timeline {
-            background-color: var(--light-bg);
+            background-color: var(--lighter-bg);
         }
         
         .timeline-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
         .timeline-item {
             display: flex;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+            align-items: flex-start;
         }
         
         .timeline-date {
-            width: 150px;
-            font-weight: bold;
+            width: 180px;
+            font-weight: 600;
             color: var(--primary-color);
+            font-size: 0.95rem;
+            flex-shrink: 0;
         }
         
         .timeline-content {
             flex: 1;
             padding-left: 2rem;
             position: relative;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
         }
         
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 2px;
-            background-color: var(--primary-color);
+        .timeline-content h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
         
-        .timeline-content::after {
-            content: '';
-            position: absolute;
-            top: 6px;
-            left: -4px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
+        .timeline-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
         
         .resources {
-            background-color: white;
+            background-color: var(--light-bg);
         }
         
         .resources-grid {
@@ -210,17 +294,71 @@
         }
         
         .resource-card {
-            background-color: var(--light-bg);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
             text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-xl);
         }
         
         .resource-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .resource-card h3 {
+            color: var(--text-color);
             margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .resource-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .resource-card a {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .resource-card a:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+            color: white;
+        }
+        
+        .competition-process {
+            background-color: var(--lighter-bg);
         }
         
         .teams {
@@ -235,53 +373,104 @@
         
         .team-member {
             text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-xl);
         }
         
         .team-member img {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            border: 3px solid var(--primary-color);
         }
         
         .team-member h3 {
-            color: var(--primary-color);
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
         
         .team-member p {
             font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
         }
         
         .faq {
-            background-color: white;
+            background-color: var(--lighter-bg);
         }
         
         .faq-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
         .faq-item {
             margin-bottom: 1.5rem;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
         }
         
         .faq-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            padding: 1.5rem;
             cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .faq-item h3:hover {
+            background: rgba(37, 99, 235, 0.05);
+        }
+        
+        .faq-answer {
+            padding: 1.5rem;
+            display: none;
+            background: var(--lighter-bg);
+        }
+        
+        .faq-answer p {
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
         
         .contact {
-            background-color: var(--dark-bg);
-            color: var(--light-text);
+            background: var(--gradient-hero);
             text-align: center;
+            position: relative;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+            pointer-events: none;
         }
         
         .contact h2 {
-            color: white;
+            color: var(--text-color);
+            font-weight: 700;
         }
         
         .contact-info {
@@ -290,14 +479,20 @@
         
         .contact-info p {
             margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .contact-info a {
+            color: var(--primary-color);
+            font-weight: 500;
         }
         
         footer {
-            background-color: var(--dark-bg);
-            color: var(--light-text);
+            background-color: var(--light-bg);
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
             text-align: center;
-            padding: 2rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 0;
         }
         
         .sponsors {
@@ -305,21 +500,34 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 3rem;
             margin-top: 2rem;
         }
         
+        .sponsors p {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
         .sponsor-logo {
-            height: 60px;
-            filter: grayscale(100%) brightness(10);
-            transition: all 0.3s;
+            height: 50px;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
         }
         
         .sponsor-logo:hover {
-            filter: none;
+            opacity: 1;
+            filter: grayscale(0%);
         }
         
         @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            
             .header-content {
                 flex-direction: column;
                 text-align: center;
@@ -327,6 +535,20 @@
             
             nav ul {
                 margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
             }
             
             .timeline-item {
@@ -339,12 +561,54 @@
             }
             
             .timeline-content {
-                padding-left: 1rem;
+                padding-left: 0;
             }
             
-            .detail-card, .resource-card {
-                padding: 1.5rem;
+            .detail-card, .resource-card, .team-member {
+                padding: 2rem;
             }
+            
+            .details-grid, .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+        }
+        
+        /* Smooth animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .detail-card, .resource-card, .team-member, .timeline-content {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--lighter-bg);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
         }
     </style>
 </head>
@@ -503,7 +767,7 @@
                 <h2>How It Works</h2>
                 <p>A step-by-step guide to participating in the DCVLR competition</p>
             </div>
-            <img src="/api/placeholder/1000/500" alt="DCVLR Competition Workflow" style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 2rem;">
+            <img src="https://via.placeholder.com/1000x500/f8fafc/2563eb?text=DCVLR+Competition+Workflow" alt="DCVLR Competition Workflow" style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 2rem;">
             <div style="text-align: center; margin-top: 2rem;">
                 <p><strong>Figure 1:</strong> Overview of DCVLR competition workflow. Participants begin by selecting a scale—either 1K or 10K samples, then curate instruction-tuning data through a three-step process: selecting image-text pairs, synthesizing multi-turn conversations, and formatting the data for training.</p>
             </div>
@@ -518,37 +782,37 @@
             </div>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="/api/placeholder/150/150" alt="Benjamin Feuer">
+                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=BF" alt="Benjamin Feuer">
                     <h3>Benjamin Feuer</h3>
                     <p>Lead Organizer</p>
                     <p>NYU</p>
                 </div>
                 <div class="team-member">
-                    <img src="/api/placeholder/150/150" alt="Rohun Tripathi">
+                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=RT" alt="Rohun Tripathi">
                     <h3>Rohun Tripathi</h3>
                     <p>Lead Organizer</p>
                     <p>Allen Institute for AI</p>
                 </div>
                 <div class="team-member">
-                    <img src="/api/placeholder/150/150" alt="Oussama Elachqar">
+                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=OE" alt="Oussama Elachqar">
                     <h3>Oussama Elachqar</h3>
                     <p>Lead Organizer</p>
                     <p>Oumi</p>
                 </div>
                 <div class="team-member">
-                    <img src="/api/placeholder/150/150" alt="Yuhui Zhang">
+                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=YZ" alt="Yuhui Zhang">
                     <h3>Yuhui Zhang</h3>
                     <p>Lead Organizer</p>
                     <p>Stanford University</p>
                 </div>
                 <div class="team-member">
-                    <img src="/api/placeholder/150/150" alt="Neha Hulkund">
+                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=NH" alt="Neha Hulkund">
                     <h3>Neha Hulkund</h3>
                     <p>Lead Organizer</p>
                     <p>MIT</p>
                 </div>
                 <div class="team-member">
-                    <img src="/api/placeholder/150/150" alt="Thao Nguyen">
+                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=TN" alt="Thao Nguyen">
                     <h3>Thao Nguyen</h3>
                     <p>Helping Organizer</p>
                     <p>University of Washington</p>
@@ -633,9 +897,9 @@
             <p>© 2025 DCVLR Competition. All rights reserved.</p>
             <div class="sponsors">
                 <p>Sponsored by:</p>
-                <img src="/api/placeholder/150/60" alt="NeurIPS" class="sponsor-logo">
-                <img src="/api/placeholder/150/60" alt="Lambda Labs" class="sponsor-logo">
-                <img src="/api/placeholder/150/60" alt="Oumi.ai" class="sponsor-logo">
+                <img src="https://via.placeholder.com/150x60/1e293b/ffffff?text=NeurIPS" alt="NeurIPS" class="sponsor-logo">
+                <img src="https://via.placeholder.com/150x60/1e293b/ffffff?text=Lambda+Labs" alt="Lambda Labs" class="sponsor-logo">
+                <img src="https://via.placeholder.com/150x60/1e293b/ffffff?text=Oumi.ai" alt="Oumi.ai" class="sponsor-logo">
             </div>
         </div>
     </footer>
