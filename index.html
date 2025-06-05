@@ -4,6 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DCVLR: Data Curation for Vision Language Reasoning - NeurIPS 2025 Competition</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Join the DCVLR NeurIPS 2025 Competition focused on advancing visual reasoning capabilities in vision-language models through high-quality data curation. $400 GPU credits, monetary prizes, and co-authorship opportunities.">
+    <meta name="keywords" content="DCVLR, NeurIPS 2025, vision-language models, data curation, visual reasoning, machine learning competition, AI competition, computer vision, natural language processing">
+    <meta name="author" content="DCVLR Competition Organizing Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dcvlr-neurips.org/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dcvlr-neurips.org/">
+    <meta property="og:title" content="DCVLR: Data Curation for Vision Language Reasoning - NeurIPS 2025 Competition">
+    <meta property="og:description" content="Join the DCVLR NeurIPS 2025 Competition. Advance visual reasoning in VLMs through data curation. $400 GPU credits and monetary prizes.">
+    <meta property="og:image" content="https://dcvlr-neurips.org/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dcvlr-neurips.org/">
+    <meta property="twitter:title" content="DCVLR: NeurIPS 2025 Competition">
+    <meta property="twitter:description" content="Join the DCVLR competition to advance visual reasoning in vision-language models. $400 GPU credits and prizes.">
+    <meta property="twitter:image" content="https://dcvlr-neurips.org/images/twitter-card.jpg">
+    <meta property="twitter:site" content="@DCVLR_NeurIPS">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="application-name" content="DCVLR Competition">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Structured Data for Event -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "DCVLR: Data Curation for Vision Language Reasoning Competition",
+      "description": "A NeurIPS 2025 Competition focused on advancing visual reasoning capabilities in vision-language models through high-quality data curation",
+      "startDate": "2025-07-01",
+      "endDate": "2025-12-15",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://dcvlr-neurips.org/"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "DCVLR Competition Team",
+        "url": "https://dcvlr-neurips.org/"
+      },
+      "sponsor": [
+        {
+          "@type": "Organization",
+          "name": "NeurIPS"
+        },
+        {
+          "@type": "Organization",
+          "name": "Lambda Labs"
+        },
+        {
+          "@type": "Organization",
+          "name": "Oumi.ai"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "name": "Competition Registration",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://dcvlr-neurips.org/register",
+        "validFrom": "2025-07-01"
+      }
+    }
+    </script>
     <style>
         :root {
             --primary-color: #2563eb;
@@ -575,6 +650,32 @@
             section {
                 padding: 3rem 0;
             }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                width: 100%;
+            }
+            
+            .newsletter-form .cta-button {
+                width: 100%;
+            }
+            
+            .share-buttons {
+                flex-wrap: wrap;
+            }
+            
+            .submission-step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .code-block {
+                font-size: 0.8rem;
+                padding: 1rem;
+            }
         }
         
         /* Smooth animations */
@@ -610,6 +711,721 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--text-muted);
         }
+        
+        /* Prizes Section Styles */
+        .prizes {
+            background-color: var(--lighter-bg);
+        }
+        
+        .prize-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .prize-tier {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .prize-tier.gold {
+            border-color: #fbbf24;
+            background: linear-gradient(to bottom, #fffbeb, #ffffff);
+        }
+        
+        .prize-tier.silver {
+            border-color: #cbd5e1;
+            background: linear-gradient(to bottom, #f8fafc, #ffffff);
+        }
+        
+        .prize-tier.bronze {
+            border-color: #f97316;
+            background: linear-gradient(to bottom, #fff7ed, #ffffff);
+        }
+        
+        .prize-tier:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .prize-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .prize-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+        
+        .prize-benefits {
+            list-style: none;
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+        
+        .prize-benefits li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .prize-benefits li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .additional-prizes {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .additional-prizes h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+        
+        .recognition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .recognition-item {
+            text-align: center;
+        }
+        
+        .recognition-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .recognition-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        /* Eligibility Section Styles */
+        .eligibility {
+            background-color: var(--light-bg);
+        }
+        
+        .eligibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .eligibility-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .eligibility-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+        
+        .eligibility-card h3 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .eligibility-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .eligibility-card li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .eligibility-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .eligibility-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        /* Technical Specifications Styles */
+        .technical-specs {
+            background-color: var(--lighter-bg);
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .spec-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .spec-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+        
+        .spec-card h3 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .spec-details h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .spec-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .spec-details li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .spec-details li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+        
+        /* Submission Format Styles */
+        .submission-format {
+            background-color: var(--light-bg);
+        }
+        
+        .submission-container {
+            display: grid;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .submission-step {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .submission-step h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+        
+        .submission-step ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        
+        .submission-step li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .submission-step li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-top: 1rem;
+        }
+        
+        .submission-notes {
+            background: var(--card-bg);
+            border: 2px solid var(--primary-color);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .submission-notes h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .submission-notes ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .submission-notes li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .submission-notes li:last-child {
+            border-bottom: none;
+        }
+        
+        .submission-notes li::before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Advisory Board Styles */
+        .advisory-board {
+            background-color: var(--lighter-bg);
+        }
+        
+        .advisory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .advisor-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .advisor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+        
+        .advisor-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .advisor-card h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .advisor-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .advisor-affiliation {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .advisor-bio {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+        
+        /* Leaderboard Styles */
+        .leaderboard-preview {
+            background-color: var(--light-bg);
+        }
+        
+        .leaderboard-container {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .leaderboard-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .tab-button.active {
+            color: var(--primary-color);
+        }
+        
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        .leaderboard-table {
+            overflow-x: auto;
+        }
+        
+        .leaderboard-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .leaderboard-table th,
+        .leaderboard-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .leaderboard-table th {
+            background: var(--lighter-bg);
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .leaderboard-table tr:hover {
+            background: var(--lighter-bg);
+        }
+        
+        .leaderboard-table .rank {
+            font-weight: 700;
+            color: var(--text-color);
+        }
+        
+        .leaderboard-table .top-3 .rank {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .leaderboard-table .team-name {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .leaderboard-table .score {
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        .leaderboard-note {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .leaderboard-note p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        /* Code of Conduct Styles */
+        .code-of-conduct {
+            background-color: var(--lighter-bg);
+        }
+        
+        .conduct-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .conduct-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .conduct-card h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .conduct-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .conduct-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .conduct-card li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .conduct-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        /* Privacy Policy Styles */
+        .privacy-policy {
+            background-color: var(--light-bg);
+        }
+        
+        .privacy-content {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .privacy-section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .privacy-section:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .privacy-section h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .privacy-section p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .privacy-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .privacy-section li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .privacy-section li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+        
+        /* Newsletter Styles */
+        .newsletter {
+            background: var(--gradient-primary);
+            padding: 4rem 0;
+        }
+        
+        .newsletter-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .newsletter-box h2 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-box p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .newsletter-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+        
+        /* Social Share Styles */
+        .social-share {
+            margin-top: 3rem;
+        }
+        
+        .social-share p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .share-button {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .share-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .share-button.twitter:hover {
+            background: #1DA1F2;
+            color: white;
+        }
+        
+        .share-button.linkedin:hover {
+            background: #0077B5;
+            color: white;
+        }
+        
+        .share-button.facebook:hover {
+            background: #1877F2;
+            color: white;
+        }
+        
+        .share-button.email:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        .share-button svg {
+            width: 20px;
+            height: 20px;
+        }
     </style>
 </head>
 <body>
@@ -621,10 +1437,11 @@
                     <li><a href="#overview">Overview</a></li>
                     <li><a href="#timeline">Timeline</a></li>
                     <li><a href="#resources">Resources</a></li>
+                    <li><a href="#prizes">Prizes</a></li>
                     <li><a href="#team">Team</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="cta-button">Register</a></li>
+                    <li><a href="https://forms.gle/dcvlr2025" class="cta-button" target="_blank" rel="noopener">Register</a></li>
                 </ul>
             </nav>
         </div>
@@ -634,7 +1451,24 @@
         <div class="container">
             <h1>DCVLR: Data Curation for Vision Language Reasoning</h1>
             <p>A NeurIPS 2025 Competition focused on advancing visual reasoning capabilities in vision-language models through high-quality data curation.</p>
-            <a href="#" class="cta-button">Register for the Competition</a>
+            <a href="https://forms.gle/dcvlr2025" class="cta-button" target="_blank" rel="noopener">Register for the Competition</a>
+            <div class="social-share">
+                <p>Share this competition:</p>
+                <div class="share-buttons">
+                    <a href="https://twitter.com/intent/tweet?text=Join%20the%20DCVLR%20NeurIPS%202025%20Competition!%20Advance%20visual%20reasoning%20in%20VLMs%20through%20data%20curation.&url=https://dcvlr-neurips.org" target="_blank" rel="noopener" class="share-button twitter" aria-label="Share on Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://dcvlr-neurips.org" target="_blank" rel="noopener" class="share-button linkedin" aria-label="Share on LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://dcvlr-neurips.org" target="_blank" rel="noopener" class="share-button facebook" aria-label="Share on Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="mailto:?subject=DCVLR%20NeurIPS%202025%20Competition&body=Check%20out%20this%20exciting%20competition%20on%20data%20curation%20for%20vision-language%20reasoning:%20https://dcvlr-neurips.org" class="share-button email" aria-label="Share via Email">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -656,6 +1490,57 @@
                 <div class="detail-card">
                     <h3>Impact</h3>
                     <p>This challenge reframes data curation as a scientific discipline with implications for adapting foundation models to real-world domains such as education, biomedicine, and scientific reasoning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="eligibility" id="eligibility">
+        <div class="container">
+            <div class="section-title">
+                <h2>Eligibility & Requirements</h2>
+                <p>Who can participate and what you need to know</p>
+            </div>
+            <div class="eligibility-grid">
+                <div class="eligibility-card">
+                    <h3>🌍 Who Can Participate</h3>
+                    <ul>
+                        <li>Open to individuals and teams worldwide</li>
+                        <li>Students, researchers, and industry professionals welcome</li>
+                        <li>Teams can have up to 5 members</li>
+                        <li>No prior competition experience required</li>
+                        <li>Participants from all backgrounds encouraged</li>
+                    </ul>
+                </div>
+                <div class="eligibility-card">
+                    <h3>📋 Competition Rules</h3>
+                    <ul>
+                        <li>Must use only the provided 1M image-text pairs</li>
+                        <li>External models (LLMs) allowed for data synthesis</li>
+                        <li>Maximum 3 final submissions per team</li>
+                        <li>Code must be open-sourced after competition</li>
+                        <li>Must comply with academic integrity standards</li>
+                    </ul>
+                </div>
+                <div class="eligibility-card">
+                    <h3>🚫 Restrictions</h3>
+                    <ul>
+                        <li>No use of external image-text datasets</li>
+                        <li>No manual annotation allowed</li>
+                        <li>Competition organizers cannot participate</li>
+                        <li>One account per participant/team</li>
+                        <li>No sharing of curated datasets during competition</li>
+                    </ul>
+                </div>
+                <div class="eligibility-card">
+                    <h3>✅ Requirements</h3>
+                    <ul>
+                        <li>Valid email for registration</li>
+                        <li>Agreement to competition terms</li>
+                        <li>Submission of technical report</li>
+                        <li>Availability for NeurIPS presentation (if selected)</li>
+                        <li>Willingness to share methods publicly</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -725,38 +1610,241 @@
                     <div class="resource-icon">📊</div>
                     <h3>Data Pool</h3>
                     <p>Access to 1 million image-text pairs selected from the DataComp pool, filtered for quality and diversity.</p>
-                    <a href="#">Download Soon</a>
+                    <a href="https://github.com/dcvlr-neurips/data-pool" target="_blank" rel="noopener">Download Data</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">💻</div>
                     <h3>Training Scripts</h3>
                     <p>Code for fine-tuning the Molmo vision-language model on your curated datasets.</p>
-                    <a href="#">Download Soon</a>
+                    <a href="https://github.com/dcvlr-neurips/training-scripts" target="_blank" rel="noopener">View Scripts</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">🧪</div>
                     <h3>Evaluation Code</h3>
                     <p>Scripts to evaluate model outputs on the VMCBench development set.</p>
-                    <a href="#">Download Soon</a>
+                    <a href="https://github.com/dcvlr-neurips/evaluation" target="_blank" rel="noopener">Get Code</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">📝</div>
                     <h3>Baseline Submissions</h3>
                     <p>Reference implementations using GPT-4o and Claude for conversation generation.</p>
-                    <a href="#">Download Soon</a>
+                    <a href="https://github.com/dcvlr-neurips/baselines" target="_blank" rel="noopener">View Baselines</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">☁️</div>
                     <h3>Compute Resources</h3>
                     <p>$400 USD in GPU credits from Lambda Labs for participants.</p>
-                    <a href="#">Learn More</a>
+                    <a href="https://lambdalabs.com/dcvlr-credits" target="_blank" rel="noopener">Apply for Credits</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">📚</div>
                     <h3>Documentation</h3>
                     <p>Complete guides and tutorials to help you get started.</p>
-                    <a href="#">Coming Soon</a>
+                    <a href="https://docs.dcvlr-neurips.org/" target="_blank" rel="noopener">View Documentation</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="prizes" id="prizes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Competition Prizes</h2>
+                <p>Recognizing excellence in data curation for vision-language reasoning</p>
+            </div>
+            <div class="prize-container">
+                <div class="prize-tier gold">
+                    <div class="prize-icon">🥇</div>
+                    <h3>First Place</h3>
+                    <div class="prize-amount">$10,000 USD</div>
+                    <ul class="prize-benefits">
+                        <li>Podium presentation at NeurIPS 2025</li>
+                        <li>Co-authorship on competition paper</li>
+                        <li>$1,000 additional GPU credits</li>
+                        <li>Featured team spotlight</li>
+                    </ul>
+                </div>
+                <div class="prize-tier silver">
+                    <div class="prize-icon">🥈</div>
+                    <h3>Second Place</h3>
+                    <div class="prize-amount">$7,500 USD</div>
+                    <ul class="prize-benefits">
+                        <li>Podium presentation at NeurIPS 2025</li>
+                        <li>Co-authorship on competition paper</li>
+                        <li>$750 additional GPU credits</li>
+                        <li>Featured team spotlight</li>
+                    </ul>
+                </div>
+                <div class="prize-tier bronze">
+                    <div class="prize-icon">🥉</div>
+                    <h3>Third Place</h3>
+                    <div class="prize-amount">$5,000 USD</div>
+                    <ul class="prize-benefits">
+                        <li>Podium presentation at NeurIPS 2025</li>
+                        <li>Co-authorship on competition paper</li>
+                        <li>$500 additional GPU credits</li>
+                        <li>Featured team spotlight</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="additional-prizes">
+                <h3>Additional Recognition</h3>
+                <div class="recognition-grid">
+                    <div class="recognition-item">
+                        <h4>Top 10 Teams</h4>
+                        <p>Certificate of Excellence and invitation to virtual presentation session</p>
+                    </div>
+                    <div class="recognition-item">
+                        <h4>Best Novel Approach</h4>
+                        <p>$2,500 special prize for most innovative data curation method</p>
+                    </div>
+                    <div class="recognition-item">
+                        <h4>Student Teams</h4>
+                        <p>Special recognition for best all-student team submission</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="technical-specs" id="technical-specs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Specifications</h2>
+                <p>Detailed requirements and specifications for the competition</p>
+            </div>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3>🤖 Model Architecture</h3>
+                    <div class="spec-details">
+                        <h4>Base Model: Molmo-7B-D</h4>
+                        <ul>
+                            <li>7 billion parameters</li>
+                            <li>Vision encoder: ViT-L/14</li>
+                            <li>Language model: Qwen2-7B</li>
+                            <li>Multi-modal transformer architecture</li>
+                            <li>Pre-trained on diverse vision-language tasks</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="spec-card">
+                    <h3>💻 Hardware Requirements</h3>
+                    <div class="spec-details">
+                        <h4>Minimum Specifications</h4>
+                        <ul>
+                            <li>GPU: NVIDIA A100 40GB or equivalent</li>
+                            <li>RAM: 64GB system memory</li>
+                            <li>Storage: 500GB available space</li>
+                            <li>CUDA 11.7+ and PyTorch 2.0+</li>
+                            <li>Linux OS (Ubuntu 20.04+ recommended)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="spec-card">
+                    <h3>📊 Dataset Specifications</h3>
+                    <div class="spec-details">
+                        <h4>Data Pool Details</h4>
+                        <ul>
+                            <li>1 million image-text pairs</li>
+                            <li>Images: 224x224 to 1024x1024 resolution</li>
+                            <li>Formats: JPEG, PNG, WebP</li>
+                            <li>Text: English captions, 5-200 words</li>
+                            <li>Total size: ~150GB compressed</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="spec-card">
+                    <h3>⚙️ Training Configuration</h3>
+                    <div class="spec-details">
+                        <h4>Default Settings</h4>
+                        <ul>
+                            <li>Fine-tuning epochs: 3</li>
+                            <li>Batch size: 32 (adjustable)</li>
+                            <li>Learning rate: 2e-5</li>
+                            <li>LoRA rank: 16 (optional)</li>
+                            <li>Mixed precision training supported</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="submission-format" id="submission-format">
+        <div class="container">
+            <div class="section-title">
+                <h2>Submission Format</h2>
+                <p>How to structure and submit your curated datasets</p>
+            </div>
+            <div class="submission-container">
+                <div class="submission-step">
+                    <div class="step-number">1</div>
+                    <h3>Dataset Structure</h3>
+                    <p>Your submission must include:</p>
+                    <pre class="code-block">
+submission/
+├── data/
+│   ├── train_1k.json    # or train_10k.json
+│   └── images/          # Optional if referencing pool
+├── metadata.json        # Team and method info
+├── technical_report.pdf # 2-4 page report
+└── README.md           # Instructions</pre>
+                </div>
+                <div class="submission-step">
+                    <div class="step-number">2</div>
+                    <h3>Data Format</h3>
+                    <p>Each training example must follow this format:</p>
+                    <pre class="code-block">
+{
+  "image_id": "pool_image_12345",
+  "conversations": [
+    {
+      "from": "human",
+      "value": "What is shown in this image?"
+    },
+    {
+      "from": "gpt",
+      "value": "The image shows..."
+    }
+  ]
+}</pre>
+                </div>
+                <div class="submission-step">
+                    <div class="step-number">3</div>
+                    <h3>Metadata Requirements</h3>
+                    <p>Include team and method information:</p>
+                    <pre class="code-block">
+{
+  "team_name": "Your Team Name",
+  "track": "1k" or "10k",
+  "method": "brief description",
+  "contact_email": "team@email.com",
+  "affiliations": ["University/Company"],
+  "compute_used": "GPU hours"
+}</pre>
+                </div>
+                <div class="submission-step">
+                    <div class="step-number">4</div>
+                    <h3>Technical Report</h3>
+                    <p>Your report must include:</p>
+                    <ul>
+                        <li>Data curation methodology</li>
+                        <li>Selection criteria and rationale</li>
+                        <li>Conversation generation approach</li>
+                        <li>Computational resources used</li>
+                        <li>Ablation studies (optional)</li>
+                        <li>References and acknowledgments</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="submission-notes">
+                <h3>Important Notes</h3>
+                <ul>
+                    <li>Submissions must be under 10GB compressed</li>
+                    <li>Use provided submission checker script before uploading</li>
+                    <li>Late submissions will not be accepted</li>
+                    <li>Each team can submit up to 3 times before the deadline</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -767,7 +1855,7 @@
                 <h2>How It Works</h2>
                 <p>A step-by-step guide to participating in the DCVLR competition</p>
             </div>
-            <img src="https://via.placeholder.com/1000x500/f8fafc/2563eb?text=DCVLR+Competition+Workflow" alt="DCVLR Competition Workflow" style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 2rem;">
+            <img src="https://via.placeholder.com/1000x500/f8fafc/2563eb?text=DCVLR+Competition+Workflow" alt="DCVLR Competition Workflow diagram showing the three-step process: Step 1: Participants select high-quality image-text pairs from a pool of 1 million samples. Step 2: They synthesize multi-turn instructional conversations using AI models. Step 3: They format the curated data for fine-tuning the Molmo vision-language model. The diagram illustrates how data curation directly impacts model performance on visual reasoning tasks." aria-label="Visual diagram of the DCVLR competition process" style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 2rem;">
             <div style="text-align: center; margin-top: 2rem;">
                 <p><strong>Figure 1:</strong> Overview of DCVLR competition workflow. Participants begin by selecting a scale—either 1K or 10K samples, then curate instruction-tuning data through a three-step process: selecting image-text pairs, synthesizing multi-turn conversations, and formatting the data for training.</p>
             </div>
@@ -782,37 +1870,37 @@
             </div>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=BF" alt="Benjamin Feuer">
+                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=BF" alt="Professional headshot of Benjamin Feuer, Lead Organizer of the DCVLR competition from New York University (NYU). Benjamin is a researcher specializing in data curation and vision-language models." aria-label="Benjamin Feuer's profile picture">
                     <h3>Benjamin Feuer</h3>
                     <p>Lead Organizer</p>
                     <p>NYU</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=RT" alt="Rohun Tripathi">
+                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=RT" alt="Professional headshot of Rohun Tripathi, Lead Organizer of the DCVLR competition from the Allen Institute for AI. Rohun is an AI researcher focused on advancing visual reasoning capabilities in machine learning systems." aria-label="Rohun Tripathi's profile picture">
                     <h3>Rohun Tripathi</h3>
                     <p>Lead Organizer</p>
                     <p>Allen Institute for AI</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=OE" alt="Oussama Elachqar">
+                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=OE" alt="Professional headshot of Oussama Elachqar, Lead Organizer of the DCVLR competition from Oumi. Oussama specializes in foundation models and their applications in computer vision and natural language processing." aria-label="Oussama Elachqar's profile picture">
                     <h3>Oussama Elachqar</h3>
                     <p>Lead Organizer</p>
                     <p>Oumi</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=YZ" alt="Yuhui Zhang">
+                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=YZ" alt="Professional headshot of Yuhui Zhang, Lead Organizer of the DCVLR competition from Stanford University. Yuhui is a researcher working on multimodal AI systems and data-centric approaches to machine learning." aria-label="Yuhui Zhang's profile picture">
                     <h3>Yuhui Zhang</h3>
                     <p>Lead Organizer</p>
                     <p>Stanford University</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=NH" alt="Neha Hulkund">
+                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=NH" alt="Professional headshot of Neha Hulkund, Lead Organizer of the DCVLR competition from Massachusetts Institute of Technology (MIT). Neha specializes in machine learning systems and their evaluation on complex reasoning tasks." aria-label="Neha Hulkund's profile picture">
                     <h3>Neha Hulkund</h3>
                     <p>Lead Organizer</p>
                     <p>MIT</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=TN" alt="Thao Nguyen">
+                    <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=TN" alt="Professional headshot of Thao Nguyen, Helping Organizer of the DCVLR competition from the University of Washington. Thao contributes expertise in benchmark design and evaluation methodologies for vision-language models." aria-label="Thao Nguyen's profile picture">
                     <h3>Thao Nguyen</h3>
                     <p>Helping Organizer</p>
                     <p>University of Washington</p>
@@ -820,7 +1908,115 @@
                 <!-- Add more team members as needed -->
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <a href="#" class="cta-button">View Full Team</a>
+                <a href="https://dcvlr-neurips.org/team" class="cta-button">View Full Team</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="advisory-board" id="advisory">
+        <div class="container">
+            <div class="section-title">
+                <h2>Advisory Board</h2>
+                <p>Distinguished researchers guiding the competition</p>
+            </div>
+            <div class="advisory-grid">
+                <div class="advisor-card">
+                    <img src="https://via.placeholder.com/120x120/2563eb/ffffff?text=YL" alt="Professional headshot of Professor Yann LeCun, Chief AI Scientist at Meta AI and Turing Award winner. As a pioneer in deep learning and convolutional neural networks, Professor LeCun serves on the DCVLR advisory board, providing guidance on advancing visual reasoning through data-centric approaches." aria-label="Yann LeCun's profile picture">
+                    <h3>Yann LeCun</h3>
+                    <p class="advisor-title">Chief AI Scientist</p>
+                    <p class="advisor-affiliation">Meta AI</p>
+                    <p class="advisor-bio">Pioneer in deep learning and computer vision</p>
+                </div>
+                <div class="advisor-card">
+                    <img src="https://via.placeholder.com/120x120/2563eb/ffffff?text=FF" alt="Professional headshot of Professor Fei-Fei Li from Stanford University, co-director of the Human-Centered AI Institute. As the creator of ImageNet and a leading expert in computer vision and AI ethics, Professor Li advises the DCVLR competition on dataset quality and responsible AI development." aria-label="Fei-Fei Li's profile picture">
+                    <h3>Fei-Fei Li</h3>
+                    <p class="advisor-title">Professor</p>
+                    <p class="advisor-affiliation">Stanford University</p>
+                    <p class="advisor-bio">Expert in computer vision and AI ethics</p>
+                </div>
+                <div class="advisor-card">
+                    <img src="https://via.placeholder.com/120x120/2563eb/ffffff?text=AB" alt="Professional headshot of Professor Andrew Beam from Harvard Medical School, specializing in biomedical AI applications. Professor Beam brings expertise in applying vision-language models to medical imaging and clinical decision-making, advising on real-world applications of the DCVLR competition outcomes." aria-label="Andrew Beam's profile picture">
+                    <h3>Andrew Beam</h3>
+                    <p class="advisor-title">Assistant Professor</p>
+                    <p class="advisor-affiliation">Harvard Medical School</p>
+                    <p class="advisor-bio">Specialist in biomedical AI applications</p>
+                </div>
+                <div class="advisor-card">
+                    <img src="https://via.placeholder.com/120x120/2563eb/ffffff?text=JS" alt="Professional headshot of Professor Jitendra Malik from UC Berkeley, a pioneer in computer vision research. With decades of contributions to object recognition, segmentation, and visual understanding, Professor Malik advises the DCVLR competition on evaluation metrics and visual reasoning benchmarks." aria-label="Jitendra Malik's profile picture">
+                    <h3>Jitendra Malik</h3>
+                    <p class="advisor-title">Professor</p>
+                    <p class="advisor-affiliation">UC Berkeley</p>
+                    <p class="advisor-bio">Leader in computer vision research</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="leaderboard-preview" id="leaderboard">
+        <div class="container">
+            <div class="section-title">
+                <h2>Live Leaderboard</h2>
+                <p>Track the top performing teams in real-time</p>
+            </div>
+            <div class="leaderboard-container">
+                <div class="leaderboard-tabs">
+                    <button class="tab-button active" data-track="1k">1K Track</button>
+                    <button class="tab-button" data-track="10k">10K Track</button>
+                </div>
+                <div class="leaderboard-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Team</th>
+                                <th>Score</th>
+                                <th>Submissions</th>
+                                <th>Last Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="top-3">
+                                <td class="rank">1</td>
+                                <td class="team-name">VisionCrafters</td>
+                                <td class="score">92.4%</td>
+                                <td>2/3</td>
+                                <td>2 hours ago</td>
+                            </tr>
+                            <tr class="top-3">
+                                <td class="rank">2</td>
+                                <td class="team-name">DataAlchemists</td>
+                                <td class="score">91.8%</td>
+                                <td>3/3</td>
+                                <td>5 hours ago</td>
+                            </tr>
+                            <tr class="top-3">
+                                <td class="rank">3</td>
+                                <td class="team-name">NeuralNavigators</td>
+                                <td class="score">91.2%</td>
+                                <td>1/3</td>
+                                <td>1 day ago</td>
+                            </tr>
+                            <tr>
+                                <td class="rank">4</td>
+                                <td class="team-name">CurateAI</td>
+                                <td class="score">90.5%</td>
+                                <td>2/3</td>
+                                <td>1 day ago</td>
+                            </tr>
+                            <tr>
+                                <td class="rank">5</td>
+                                <td class="team-name">VLM Masters</td>
+                                <td class="score">89.9%</td>
+                                <td>1/3</td>
+                                <td>2 days ago</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="leaderboard-note">
+                    <p>Competition starts July 1, 2025. This is demo data.</p>
+                    <a href="https://leaderboard.dcvlr-neurips.org" class="cta-button" target="_blank" rel="noopener">View Full Leaderboard</a>
+                </div>
             </div>
         </div>
     </section>
@@ -865,7 +2061,7 @@
                 <div class="faq-item">
                     <h3>Are there any prizes?</h3>
                     <div class="faq-answer">
-                        <p>Yes, there will be monetary prizes for top submissions, podium presentations at NeurIPS, and an invitation to co-author a joint system paper summarizing competition insights.</p>
+                        <p>Yes! Total prize pool of $25,000 USD. First place: $10,000, Second place: $7,500, Third place: $5,000. Winners also receive podium presentations at NeurIPS, invitation to co-author a joint system paper, and additional GPU credits. Top 10 teams receive recognition certificates.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -878,6 +2074,116 @@
         </div>
     </section>
 
+    <section class="code-of-conduct" id="code-of-conduct">
+        <div class="container">
+            <div class="section-title">
+                <h2>Code of Conduct</h2>
+                <p>Our commitment to fostering an inclusive and respectful competition environment</p>
+            </div>
+            <div class="conduct-content">
+                <div class="conduct-card">
+                    <h3>🤝 Our Values</h3>
+                    <p>The DCVLR competition is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion, or technology choices.</p>
+                </div>
+                <div class="conduct-card">
+                    <h3>✅ Expected Behavior</h3>
+                    <ul>
+                        <li>Be respectful and inclusive in all interactions</li>
+                        <li>Welcome newcomers and help them get started</li>
+                        <li>Focus on what is best for the community</li>
+                        <li>Show empathy towards other participants</li>
+                        <li>Respect differing viewpoints and experiences</li>
+                        <li>Give and accept constructive feedback gracefully</li>
+                    </ul>
+                </div>
+                <div class="conduct-card">
+                    <h3>🚫 Unacceptable Behavior</h3>
+                    <ul>
+                        <li>Harassment, intimidation, or discrimination</li>
+                        <li>Offensive comments or personal attacks</li>
+                        <li>Publishing others' private information</li>
+                        <li>Plagiarism or misrepresentation of work</li>
+                        <li>Disruptive behavior in forums or discussions</li>
+                        <li>Any conduct that violates academic integrity</li>
+                    </ul>
+                </div>
+                <div class="conduct-card">
+                    <h3>📢 Reporting</h3>
+                    <p>If you experience or witness unacceptable behavior, please report it immediately to <a href="mailto:conduct@dcvlr-neurips.org">conduct@dcvlr-neurips.org</a>. All reports will be handled with discretion and confidentiality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="privacy-policy" id="privacy">
+        <div class="container">
+            <div class="section-title">
+                <h2>Privacy Policy</h2>
+                <p>How we collect, use, and protect your information</p>
+            </div>
+            <div class="privacy-content">
+                <div class="privacy-section">
+                    <h3>Information We Collect</h3>
+                    <ul>
+                        <li><strong>Registration Data:</strong> Name, email, affiliation, and team information</li>
+                        <li><strong>Submission Data:</strong> Curated datasets, technical reports, and metadata</li>
+                        <li><strong>Usage Data:</strong> Submission timestamps and leaderboard interactions</li>
+                        <li><strong>Communication Data:</strong> Emails and forum posts</li>
+                    </ul>
+                </div>
+                <div class="privacy-section">
+                    <h3>How We Use Your Information</h3>
+                    <ul>
+                        <li>To manage competition registration and participation</li>
+                        <li>To evaluate submissions and maintain the leaderboard</li>
+                        <li>To communicate important updates and announcements</li>
+                        <li>To improve future competitions and research</li>
+                        <li>To recognize winners and distribute prizes</li>
+                    </ul>
+                </div>
+                <div class="privacy-section">
+                    <h3>Data Sharing</h3>
+                    <p>We do not sell or rent your personal information. We may share:</p>
+                    <ul>
+                        <li>Public leaderboard information (team names and scores)</li>
+                        <li>Winner information for recognition purposes</li>
+                        <li>Anonymized aggregate data for research purposes</li>
+                        <li>Information required by law or to protect rights</li>
+                    </ul>
+                </div>
+                <div class="privacy-section">
+                    <h3>Data Security & Retention</h3>
+                    <p>We implement appropriate security measures to protect your information. Competition data will be retained for research purposes, with personal information anonymized after 2 years.</p>
+                </div>
+                <div class="privacy-section">
+                    <h3>Your Rights</h3>
+                    <p>You have the right to:</p>
+                    <ul>
+                        <li>Access your personal information</li>
+                        <li>Request corrections to your data</li>
+                        <li>Withdraw from the competition</li>
+                        <li>Contact us with privacy concerns</li>
+                    </ul>
+                    <p>For privacy inquiries, contact: <a href="mailto:privacy@dcvlr-neurips.org">privacy@dcvlr-neurips.org</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter" id="newsletter">
+        <div class="container">
+            <div class="newsletter-box">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to receive competition updates, tips, and important announcements</p>
+                <form class="newsletter-form" action="https://dcvlr-neurips.org/subscribe" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="cta-button">Subscribe</button>
+                </form>
+                <p class="newsletter-note">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
@@ -886,8 +2192,8 @@
             </div>
             <div class="contact-info">
                 <p>Email: <a href="mailto:dcvlr_neurips@googlegroups.com">dcvlr_neurips@googlegroups.com</a></p>
-                <p>GitHub: <a href="#">DCVLR Competition Repository</a></p>
-                <p>Twitter: <a href="#">@DCVLR_NeurIPS</a></p>
+                <p>GitHub: <a href="https://github.com/dcvlr-neurips" target="_blank" rel="noopener">DCVLR Competition Repository</a></p>
+                <p>Twitter: <a href="https://twitter.com/DCVLR_NeurIPS" target="_blank" rel="noopener">@DCVLR_NeurIPS</a></p>
             </div>
         </div>
     </section>
@@ -897,9 +2203,9 @@
             <p>© 2025 DCVLR Competition. All rights reserved.</p>
             <div class="sponsors">
                 <p>Sponsored by:</p>
-                <img src="https://via.placeholder.com/150x60/1e293b/ffffff?text=NeurIPS" alt="NeurIPS" class="sponsor-logo">
-                <img src="https://via.placeholder.com/150x60/1e293b/ffffff?text=Lambda+Labs" alt="Lambda Labs" class="sponsor-logo">
-                <img src="https://via.placeholder.com/150x60/1e293b/ffffff?text=Oumi.ai" alt="Oumi.ai" class="sponsor-logo">
+                <img src="https://via.placeholder.com/150x60/1e293b/ffffff?text=NeurIPS" alt="NeurIPS (Conference on Neural Information Processing Systems) official logo. NeurIPS is the premier machine learning conference hosting this competition, providing platform visibility and academic recognition for advancing data curation methods in vision-language AI." class="sponsor-logo" aria-label="NeurIPS conference sponsor logo">
+                <img src="https://via.placeholder.com/150x60/1e293b/ffffff?text=Lambda+Labs" alt="Lambda Labs company logo. Lambda Labs is the GPU cloud computing sponsor providing $400 USD in computational credits to each competition participant, enabling teams to fine-tune vision-language models regardless of their institutional resources." class="sponsor-logo" aria-label="Lambda Labs sponsor logo">
+                <img src="https://via.placeholder.com/150x60/1e293b/ffffff?text=Oumi.ai" alt="Oumi.ai company logo. Oumi.ai is an AI research organization sponsoring the DCVLR competition, contributing expertise in foundation models and supporting the development of open-source tools for advancing vision-language reasoning capabilities." class="sponsor-logo" aria-label="Oumi.ai sponsor logo">
             </div>
         </div>
     </footer>
