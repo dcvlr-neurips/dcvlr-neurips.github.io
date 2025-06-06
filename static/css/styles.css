@@ -193,7 +193,7 @@ section {
 
 /* Competition Overview */
 .competition-overview {
-    background-color: var(--light-bg);
+    background: var(--light-bg);
 }
 
 .details-grid {
@@ -248,7 +248,7 @@ section {
 
 /* Timeline - Academic style with color */
 .timeline {
-    background: linear-gradient(to bottom, #ffffff 0%, #f0f8ff 100%);
+    background: var(--light-bg);
 }
 
 .timeline-container {
@@ -297,7 +297,7 @@ section {
 
 /* Resources - Clean grid with subtle background */
 .resources {
-    background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
 }
 
 .resources-grid {
@@ -365,7 +365,7 @@ section {
 
 /* Team Section */
 .teams {
-    background-color: var(--light-bg);
+    background: var(--light-bg);
 }
 
 .team-grid {
@@ -438,7 +438,7 @@ section {
 
 /* FAQ - Academic style with color */
 .faq {
-    background: linear-gradient(to bottom, #f8f9fa 0%, #e8f5e9 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
 }
 
 .faq-container {
@@ -483,7 +483,7 @@ section {
 
 /* Contact Section */
 .contact {
-    background: var(--lighter-bg);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
     text-align: center;
     border-top: 1px solid var(--border-color);
 }
@@ -493,19 +493,43 @@ section {
     font-weight: 600;
 }
 
-.contact-info {
-    margin-top: 2rem;
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
-.contact-info p {
-    margin-bottom: 0.75rem;
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-bg);
     color: var(--text-secondary);
+    transition: all 0.3s ease;
+    border: 2px solid var(--border-color);
+    text-decoration: none;
 }
 
-.contact-info a {
-    color: var(--accent-color);
-    font-weight: 400;
+.contact-icon:hover {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
 }
+
+.contact-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+
 
 /* Footer */
 footer {
@@ -517,9 +541,19 @@ footer {
     font-size: 0.875rem;
 }
 
+footer .social-share {
+    margin-bottom: 2rem;
+}
+
+footer .social-share p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
 /* Sponsors - Minimal */
 .sponsors {
-    background-color: var(--light-bg);
+    background: var(--light-bg);
     border-top: 1px solid var(--border-color);
 }
 
@@ -534,7 +568,7 @@ footer {
 
 .sponsor-logo-link {
     display: block;
-    opacity: 0.6;
+    opacity: 1;
     transition: opacity 0.2s ease;
 }
 
@@ -543,12 +577,12 @@ footer {
 }
 
 .sponsor-logo {
-    max-width: 180px;
-    max-height: 60px;
+    max-width: 220px;
+    max-height: 80px;
     height: auto;
     width: auto;
     object-fit: contain;
-    filter: grayscale(80%);
+    filter: grayscale(0%);
     transition: all 0.3s ease;
 }
 
@@ -559,7 +593,7 @@ footer {
 
 /* Prizes Section - Academic style */
 .prizes {
-    background-color: var(--lighter-bg);
+    background: var(--light-bg);
 }
 
 .prize-container {
@@ -673,7 +707,7 @@ footer {
 
 /* Eligibility Section */
 .eligibility {
-    background: linear-gradient(to bottom, #ffffff 0%, #f0f8ff 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
 }
 
 .eligibility-grid {
@@ -725,7 +759,7 @@ footer {
 
 /* Technical Specifications */
 .technical-specs {
-    background: linear-gradient(to bottom, #f8f9fa 0%, #e8f5e9 100%);
+    background: var(--light-bg);
 }
 
 .specs-grid {
@@ -784,7 +818,7 @@ footer {
 
 /* Submission Format */
 .submission-format {
-    background-color: var(--light-bg);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
 }
 
 .submission-container {
@@ -861,7 +895,7 @@ footer {
 
 /* Quick Start Section */
 .quick-start {
-    background-color: var(--lighter-bg);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
 }
 
 .quickstart-content {
@@ -1078,8 +1112,22 @@ footer {
     }
     
     .sponsor-logo {
-        max-width: 150px;
-        max-height: 50px;
+        max-width: 180px;
+        max-height: 70px;
+    }
+    
+    .contact-icons {
+        gap: 1.5rem;
+    }
+    
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .contact-icon svg {
+        width: 28px;
+        height: 28px;
     }
 }
 
