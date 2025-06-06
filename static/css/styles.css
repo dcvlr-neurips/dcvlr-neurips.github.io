@@ -1231,6 +1231,14 @@ footer {
     height: 20px;
 }
 
+/* Subscription Note Styles */
+.hero .subscription-note {
+    font-size: 1rem !important;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    font-weight: 400;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
