@@ -1159,7 +1159,7 @@ footer .social-share p {
 
 /* Leaderboard Styling */
 .leaderboard-preview {
-    background: var(--light-bg);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
 }
 
 .leaderboard-container {
@@ -1176,7 +1176,7 @@ footer .social-share p {
 
 .tab-button {
     padding: 0.75rem 1.5rem;
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color);
     background: var(--card-bg);
     color: var(--text-secondary);
     border-radius: 8px;
@@ -1190,6 +1190,8 @@ footer .social-share p {
 .tab-button:hover {
     border-color: var(--accent-color);
     color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .tab-button.active {
@@ -1200,7 +1202,7 @@ footer .social-share p {
 
 .leaderboard-table {
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
@@ -1222,7 +1224,6 @@ footer .social-share p {
     font-weight: 600;
     font-size: 0.9rem;
     letter-spacing: 0.025em;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .leaderboard-table th:first-child {
@@ -1291,11 +1292,8 @@ footer .social-share p {
 }
 
 .leaderboard-table .top-3 .rank {
-    background: linear-gradient(135deg, var(--accent-color), #ff8c00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
 /* Gold, Silver, Bronze styling for ranks 1, 2, 3 */
