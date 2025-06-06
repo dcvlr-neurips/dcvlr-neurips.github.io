@@ -105,8 +105,10 @@
         <div class="container">
             <h1>DCVLR: Data Curation for Vision Language Reasoning</h1>
             <p>A NeurIPS 2025 Competition focused on advancing visual reasoning capabilities in vision-language models through high-quality data curation.</p>
-            <a href="https://oumi-ai.typeform.com/to/LnYoisi5" class="cta-button" target="_blank" rel="noopener">Interested in participating?</a>
-            <p>Subscribe to receive competition updates, tips, and important announcements</p>
+            <div class="hero-actions">
+                <a href="https://oumi-ai.typeform.com/to/LnYoisi5" class="cta-button" target="_blank" rel="noopener">Interested in participating?</a>
+                <p class="subscription-note">Subscribe to receive competition updates, tips, and important announcements</p>
+            </div>
             <div class="social-share">
                 <p>Share this competition:</p>
                 <div class="share-buttons">
@@ -133,11 +135,11 @@
             <div class="details-grid">
                 <div class="detail-card">
                     <h3>Challenge</h3>
-                    <p>Participants will be provided with a pool of 1 million image-text pairs and tasked with generating a small (1K) or large (10K) instruction-tuning dataset using any method of their choice.</p>
+                    <p>Participants can use any datasets they want to generate small (1K) or large (10K) instruction-tuning datasets using any method of their choice. We provide a comprehensive starter kit to help participants get started.</p>
                 </div>
                 <div class="detail-card">
                     <h3>Evaluation</h3>
-                    <p>Submissions will be evaluated by fine-tuning a fixed VLM (Molmo) on the curated data and measuring performance on VMCBench, a benchmark of multiple-choice visual reasoning questions spanning six diverse datasets.</p>
+                    <p>Submissions will be evaluated by fine-tuning an undisclosed vision-language model on the curated data and measuring performance across a wide variety of benchmarks. Participants receive starting scripts for several different models to develop their approaches.</p>
                 </div>
                 <div class="detail-card">
                     <h3>Impact</h3>
@@ -167,21 +169,17 @@
                 <div class="eligibility-card">
                     <h3>📋 Competition Rules</h3>
                     <ul>
-                        <li>Must use only the provided 1M image-text pairs</li>
+                        <li>Can use any datasets for training data curation</li>
                         <li>External models (LLMs) allowed for data synthesis</li>
                         <li>Maximum 3 final submissions per team</li>
                         <li>Code must be open-sourced after competition</li>
-                        <li>Must comply with academic integrity standards</li>
                     </ul>
                 </div>
                 <div class="eligibility-card">
                     <h3>🚫 Restrictions</h3>
                     <ul>
-                        <li>No use of external image-text datasets</li>
-                        <li>No manual annotation allowed</li>
-                        <li>Competition organizers cannot participate</li>
                         <li>One account per participant/team</li>
-                        <li>No sharing of curated datasets during competition</li>
+                        <li>Must follow ethical data usage guidelines</li>
                     </ul>
                 </div>
             </div>
@@ -243,27 +241,27 @@
             <div class="resources-grid">
                 <div class="resource-card">
                     <div class="resource-icon">📊</div>
-                    <h3>Data Pool</h3>
-                    <p>Access to 1 million image-text pairs selected from the DataComp pool, filtered for quality and diversity.</p>
-                    <a href="https://github.com/dcvlr-neurips/data-pool" target="_blank" rel="noopener">Download Data</a>
+                    <h3>Starter Kit</h3>
+                    <p>Comprehensive starter kit with example datasets, training scripts, and best practices to help participants get started.</p>
+                    <a href="https://huggingface.co/datasets/oumi-ai/dcvlr-starter-kit" target="_blank" rel="noopener">Access Starter Kit</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">💻</div>
                     <h3>Training Scripts</h3>
-                    <p>Code for fine-tuning the Molmo vision-language model on your curated datasets.</p>
-                    <a href="https://github.com/dcvlr-neurips/training-scripts" target="_blank" rel="noopener">View Scripts</a>
+                    <p>Starting scripts for fine-tuning multiple vision-language models on your curated datasets.</p>
+                    <a href="https://github.com/oumi-ai/oumi/tree/main/configs/projects/dcvlr" target="_blank" rel="noopener">View Scripts</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">🧪</div>
                     <h3>Evaluation Code</h3>
-                    <p>Scripts to evaluate model outputs on the VMCBench development set.</p>
-                    <a href="https://github.com/dcvlr-neurips/evaluation" target="_blank" rel="noopener">Get Code</a>
+                    <p>Scripts to evaluate model outputs on diverse benchmark development sets for local testing.</p>
+                    <a href="https://github.com/oumi-ai/oumi/tree/main/configs/projects/dcvlr" target="_blank" rel="noopener">Get Code</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">📝</div>
                     <h3>Baseline Submissions</h3>
-                    <p>Reference implementations using GPT-4o and Claude for conversation generation.</p>
-                    <a href="https://github.com/dcvlr-neurips/baselines" target="_blank" rel="noopener">View Baselines</a>
+                    <p>Reference implementations and baseline approaches for data curation and model training.</p>
+                    <a href="https://github.com/oumi-ai/oumi/tree/main/configs/projects/dcvlr" target="_blank" rel="noopener">View Baselines</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">☁️</div>
@@ -291,7 +289,7 @@
                 <div class="prize-tier gold">
                     <div class="prize-icon">🥇</div>
                     <h3>First Place</h3>
-                    <div class="prize-amount">$10,000 USD</div>
+                    <div class="prize-amount">$2,500 USD</div>
                     <ul class="prize-benefits">
                         <li>Podium presentation at NeurIPS 2025</li>
                         <li>Co-authorship on competition paper</li>
@@ -302,7 +300,7 @@
                 <div class="prize-tier silver">
                     <div class="prize-icon">🥈</div>
                     <h3>Second Place</h3>
-                    <div class="prize-amount">$7,500 USD</div>
+                    <div class="prize-amount">$1,000 USD</div>
                     <ul class="prize-benefits">
                         <li>Podium presentation at NeurIPS 2025</li>
                         <li>Co-authorship on competition paper</li>
@@ -313,7 +311,7 @@
                 <div class="prize-tier bronze">
                     <div class="prize-icon">🥉</div>
                     <h3>Third Place</h3>
-                    <div class="prize-amount">$5,000 USD</div>
+                    <div class="prize-amount">$500 USD</div>
                     <ul class="prize-benefits">
                         <li>Podium presentation at NeurIPS 2025</li>
                         <li>Co-authorship on competition paper</li>
@@ -331,13 +329,34 @@
                     </div>
                     <div class="recognition-item">
                         <h4>Best Novel Approach</h4>
-                        <p>$2,500 special prize for most innovative data curation method</p>
+                        <p>$51,000 special prize for most innovative data curation method</p>
                     </div>
                     <div class="recognition-item">
                         <h4>Student Teams</h4>
                         <p>Special recognition for best all-student team submission</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-start" id="quick-start">
+        <div class="container">
+            <div class="section-title">
+                <h2>🚀 Quick Start</h2>
+                <p>Get started with training in minutes</p>
+            </div>
+            <div class="quickstart-content">
+                <pre class="code-block">
+# install oumi
+uv pip install "oumi[gpu]"
+
+# train with Molmo-7B-O
+oumi train -c molmo-o --dataset dataset.jsonl
+
+# train with Qwen2.5-VL-7B-Instruct
+oumi train -c qwen2.5-vl-7b-instruct --dataset dataset.jsonl
+</pre>
             </div>
         </div>
     </section>
@@ -352,13 +371,27 @@
                 <div class="spec-card">
                     <h3>🤖 Model Architecture</h3>
                     <div class="spec-details">
-                        <h4>Base Model: Molmo-7B-D</h4>
+                        <h4>Evaluation Model: Undisclosed 8B-class model</h4>
                         <ul>
-                            <li>7 billion parameters</li>
-                            <li>Vision encoder: ViT-L/14</li>
-                            <li>Language model: Qwen2-7B</li>
-                            <li>Multi-modal transformer architecture</li>
-                            <li>Pre-trained on diverse vision-language tasks</li>
+                            <li>Final evaluation uses an undisclosed model</li>
+                            <li>Participants get scripts for multiple models</li>
+                            <li>Good curation strategies should generalize</li>
+                            <li>Multi-modal transformer architectures</li>
+                            <li>Various parameter sizes available for development</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="spec-card">
+                    <h3>📊 Dataset Specifications</h3>
+                    <div class="spec-details">
+                        <h4>Dataset Flexibility</h4>
+                        <ul>
+                            <li>Use any datasets for curation</li>
+                            <li>Starter kit provides examples and guidance</li>
+                            <li>Support for various image formats and resolutions</li>
+                            <li>Flexible text formats and lengths</li>
+                            <li>Focus on instruction-tuning quality over quantity</li>
                         </ul>
                     </div>
                 </div>
@@ -367,37 +400,9 @@
                     <div class="spec-details">
                         <h4>Minimum Specifications</h4>
                         <ul>
-                            <li>GPU: NVIDIA A100 40GB or equivalent</li>
+                            <li>GPU: 1x NVIDIA A100-80GB or equivalent (4x GPUs recommended)</li>
                             <li>RAM: 64GB system memory</li>
                             <li>Storage: 500GB available space</li>
-                            <li>CUDA 11.7+ and PyTorch 2.0+</li>
-                            <li>Linux OS (Ubuntu 20.04+ recommended)</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="spec-card">
-                    <h3>📊 Dataset Specifications</h3>
-                    <div class="spec-details">
-                        <h4>Data Pool Details</h4>
-                        <ul>
-                            <li>1 million image-text pairs</li>
-                            <li>Images: 224x224 to 1024x1024 resolution</li>
-                            <li>Formats: JPEG, PNG, WebP</li>
-                            <li>Text: English captions, 5-200 words</li>
-                            <li>Total size: ~150GB compressed</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="spec-card">
-                    <h3>⚙️ Training Configuration</h3>
-                    <div class="spec-details">
-                        <h4>Default Settings</h4>
-                        <ul>
-                            <li>Fine-tuning epochs: 3</li>
-                            <li>Batch size: 32 (adjustable)</li>
-                            <li>Learning rate: 2e-5</li>
-                            <li>LoRA rank: 16 (optional)</li>
-                            <li>Mixed precision training supported</li>
                         </ul>
                     </div>
                 </div>
@@ -668,13 +673,13 @@ submission/
                 <div class="faq-item">
                     <h3>How will submissions be evaluated?</h3>
                     <div class="faq-answer">
-                        <p>Submissions will be evaluated by fine-tuning a fixed VLM (Molmo) on the curated data and measuring accuracy on VMCBench, a benchmark of multiple-choice visual reasoning questions.</p>
+                        <p>Submissions will be evaluated by fine-tuning an undisclosed vision-language model on the curated data and measuring performance across a wide variety of benchmarks. This approach tests whether good data curation strategies generalize across different models and evaluation settings.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <h3>Can I use external data or models?</h3>
                     <div class="faq-answer">
-                        <p>You must use only the 1M provided image-text pairs as your base data. However, you may use external tools (e.g., LLMs) to synthesize instruction-tuning examples from these pairs.</p>
+                        <p>You can use any datasets you want for data curation. We provide a comprehensive starter kit to help you get started, and you may use external tools (e.g., LLMs) to synthesize instruction-tuning examples. The key constraint is no manual annotation.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -696,7 +701,7 @@ submission/
     <section class="sponsors" id="sponsors">
         <div class="container">
             <div class="section-title">
-                <h2>Our Sponsors</h2>
+                <h2>Competition Sponsors</h2>
             </div>
             <div class="sponsors-logos">
                 <a href="https://lambda.ai" target="_blank" rel="noopener" class="sponsor-logo-link">
