@@ -6,7 +6,7 @@
     <title>DCVLR: Data Curation for Vision Language Reasoning - NeurIPS 2025 Competition</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Join the DCVLR NeurIPS 2025 Competition focused on advancing visual reasoning capabilities in vision-language models through high-quality data curation. $400 GPU credits, monetary prizes, and co-authorship opportunities.">
+    <meta name="description" content="Join the DCVLR NeurIPS 2025 Competition focused on advancing visual reasoning capabilities in vision-language models through high-quality data curation. GPU credits, monetary prizes, and co-authorship opportunities.">
     <meta name="keywords" content="DCVLR, NeurIPS 2025, vision-language models, data curation, visual reasoning, machine learning competition, AI competition, computer vision, natural language processing">
     <meta name="author" content="DCVLR Competition Organizing Team">
     <meta name="robots" content="index, follow">
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dcvlr-neurips.github.io/dcvlr-neurips/">
     <meta property="og:title" content="DCVLR: Data Curation for Vision Language Reasoning - NeurIPS 2025 Competition">
-    <meta property="og:description" content="Join the DCVLR NeurIPS 2025 Competition. Advance visual reasoning in VLMs through data curation. $400 GPU credits and monetary prizes.">
+    <meta property="og:description" content="Join the DCVLR NeurIPS 2025 Competition. Advance visual reasoning in VLMs through data curation. GPU credits and monetary prizes.">
     <meta property="og:image" content="https://dcvlr-neurips.github.io/dcvlr-neurips/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -25,7 +25,7 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://dcvlr-neurips.github.io/dcvlr-neurips/">
     <meta property="twitter:title" content="DCVLR: NeurIPS 2025 Competition">
-    <meta property="twitter:description" content="Join the DCVLR competition to advance visual reasoning in vision-language models. $400 GPU credits and prizes.">
+    <meta property="twitter:description" content="Join the DCVLR competition to advance visual reasoning in vision-language models. GPU credits and prizes.">
     <meta property="twitter:image" content="https://dcvlr-neurips.github.io/dcvlr-neurips/images/twitter-card.jpg">
     <meta property="twitter:site" content="@DCVLR_NeurIPS">
     
@@ -80,157 +80,8 @@
     }
     </script>
     <link rel="stylesheet" href="static/css/styles.css">
-    <style>
-        /* Password Protection Styles */
-        .password-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-        }
-
-        .password-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-        }
-
-        .password-header h2 {
-            color: #333;
-            margin-bottom: 0.5rem;
-            font-size: 1.5rem;
-        }
-
-        .password-header p {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        .password-form input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 6px;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease;
-        }
-
-        .password-form input:focus {
-            outline: none;
-            border-color: #2563eb;
-        }
-
-        .password-form button {
-            width: 100%;
-            padding: 0.75rem;
-            background: #2563eb;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .password-form button:hover {
-            background: #1d4ed8;
-        }
-
-        .password-error {
-            color: #dc2626;
-            font-size: 0.875rem;
-            margin-top: 0.5rem;
-        }
-
-        .main-content {
-            min-height: 100vh;
-        }
-    </style>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRCL2NG8LH"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        
-        gtag('config', 'G-LRCL2NG8LH', {
-            page_title: 'DCVLR Competition',
-            page_location: window.location.href,
-            custom_map: {
-                'custom_parameter_1': 'competition_section'
-            }
-        });
-        
-        // Custom event tracking function
-        function trackEvent(eventName, parameters = {}) {
-            gtag('event', eventName, {
-                event_category: 'DCVLR_Competition',
-                event_label: parameters.label || '',
-                value: parameters.value || 0,
-                custom_parameter_1: parameters.section || '',
-                ...parameters
-            });
-        }
-        
-        // Track page sections viewed
-        function trackSectionView(sectionName) {
-            trackEvent('section_view', {
-                label: sectionName,
-                section: sectionName
-            });
-        }
-        
-        // Track button clicks
-        function trackButtonClick(buttonName, buttonType = 'cta') {
-            trackEvent('button_click', {
-                label: buttonName,
-                section: buttonType,
-                value: 1
-            });
-        }
-        
-        // Track form submissions
-        function trackFormSubmission(formName, success = true) {
-            trackEvent('form_submission', {
-                label: formName,
-                section: 'forms',
-                success: success,
-                value: success ? 1 : 0
-            });
-        }
-        
-        // Track resource downloads/views
-        function trackResourceAccess(resourceName, resourceType) {
-            trackEvent('resource_access', {
-                label: resourceName,
-                section: 'resources',
-                resource_type: resourceType,
-                value: 1
-            });
-        }
-        
-        // Track social sharing
-        function trackSocialShare(platform) {
-            trackEvent('social_share', {
-                label: platform,
-                section: 'social',
-                platform: platform,
-                value: 1
-            });
-        }
-    </script>
 </head>
 <body>
     <!-- Password Protection Overlay -->
@@ -436,7 +287,7 @@
                 <div class="resource-card">
                     <div class="resource-icon">☁️</div>
                     <h3>Compute Resources</h3>
-                    <p>$400 USD in GPU credits from Lambda Labs for participants.</p>
+                    <p>GPU credits from our compute sponsor Lambda Labs for first participants.</p>
                     <a href="https://lambdalabs.com/dcvlr-credits" target="_blank" rel="noopener" onclick="trackResourceAccess('gpu_credits', 'compute')">Apply for Credits</a>
                 </div>
                 <div class="resource-card">
@@ -837,7 +688,7 @@ submission/
                 <div class="faq-item">
                     <h3>What computational resources do I need?</h3>
                     <div class="faq-answer">
-                        <p>Fine-tuning and evaluation can be done on a single GPU. We provide $400 USD in GPU credits from Lambda Labs for each participant to ensure accessibility.</p>
+                        <p>Fine-tuning and evaluation can be done on a single GPU. We provide GPU credits from Lambda Labs for a limited number of participants to ensure accessibility.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -904,142 +755,7 @@ submission/
         </div>
     </footer>
 
-    <script>
-        // Password Protection Configuration
-        const CORRECT_PASSWORD = 'dcvlr2025'; // Change this to your desired password
-        const SESSION_KEY = 'dcvlr_authenticated';
-
-        // Check if user is already authenticated in this session
-        function checkAuthentication() {
-            return sessionStorage.getItem(SESSION_KEY) === 'true';
-        }
-
-        // Show main content and hide password overlay
-        function showMainContent() {
-            document.getElementById('password-overlay').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-            sessionStorage.setItem(SESSION_KEY, 'true');
-        }
-
-        // Handle password form submission
-        function handlePasswordSubmit(event) {
-            event.preventDefault();
-            const passwordInput = document.getElementById('password-input');
-            const errorDiv = document.getElementById('password-error');
-            const enteredPassword = passwordInput.value;
-
-            if (enteredPassword === CORRECT_PASSWORD) {
-                // Track successful authentication
-                trackFormSubmission('password_authentication', true);
-                trackEvent('authentication_success', {
-                    label: 'password_correct',
-                    section: 'authentication'
-                });
-                showMainContent();
-            } else {
-                // Track failed authentication
-                trackFormSubmission('password_authentication', false);
-                trackEvent('authentication_failure', {
-                    label: 'password_incorrect',
-                    section: 'authentication'
-                });
-                errorDiv.style.display = 'block';
-                passwordInput.value = '';
-                passwordInput.focus();
-                
-                // Hide error after 3 seconds
-                setTimeout(() => {
-                    errorDiv.style.display = 'none';
-                }, 3000);
-            }
-        }
-
-        // Initialize password protection
-        document.addEventListener('DOMContentLoaded', function() {
-            if (checkAuthentication()) {
-                showMainContent();
-                setupSectionTracking();
-            } else {
-                // Set up password form event listener
-                const passwordForm = document.getElementById('password-form');
-                passwordForm.addEventListener('submit', handlePasswordSubmit);
-                
-                // Focus on password input
-                document.getElementById('password-input').focus();
-            }
-        });
-
-        // Setup section view tracking with Intersection Observer
-        function setupSectionTracking() {
-            const sections = document.querySelectorAll('section[id]');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.3 // Track when 30% of section is visible
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const sectionId = entry.target.id;
-                        trackSectionView(sectionId);
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        }
-
-        // Override showMainContent to include section tracking setup
-        function showMainContent() {
-            document.getElementById('password-overlay').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-            sessionStorage.setItem(SESSION_KEY, 'true');
-            
-            // Setup section tracking after main content is shown
-            setTimeout(() => {
-                setupSectionTracking();
-            }, 1000);
-        }
-
-        // Simple FAQ toggle functionality
-        document.querySelectorAll('.faq-item h3').forEach(item => {
-            item.addEventListener('click', event => {
-                const answer = event.target.nextElementSibling;
-                const faqTitle = event.target.textContent;
-                
-                if (answer.style.display === 'none' || answer.style.display === '') {
-                    answer.style.display = 'block';
-                    trackEvent('faq_opened', {
-                        label: faqTitle,
-                        section: 'faq',
-                        value: 1
-                    });
-                } else {
-                    answer.style.display = 'none';
-                    trackEvent('faq_closed', {
-                        label: faqTitle,
-                        section: 'faq',
-                        value: 0
-                    });
-                }
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <script src="static/js/app.js"></script>
     </div>
 </body>
 </html>
