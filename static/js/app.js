@@ -88,6 +88,7 @@ function showMainContent() {
     setTimeout(() => {
         setupSectionTracking();
         setupTeamMemberClicks();
+        setupLeaderboardTabs();
     }, 1000);
 }
 
@@ -175,12 +176,97 @@ function setupTeamMemberClicks() {
     });
 }
 
+// Setup leaderboard track switching
+function setupLeaderboardTabs() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const leaderboardTable = document.querySelector('.leaderboard-table tbody');
+    
+    // If elements not found, try again after a short delay
+    if (tabButtons.length === 0 || !leaderboardTable) {
+        setTimeout(setupLeaderboardTabs, 500);
+        return;
+    }
+    
+    // Baseline data from DCVLR organizers
+    const leaderboardData = {
+        '1k': [
+            { rank: 1, team: 'Base model (Qwen 2.5VL)', score: '60.0%', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 2, team: 'Base model (Molmo-D)', score: '56.0%', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 3, team: 'Base model (Molmo-O)', score: '35.0%', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 4, team: 'LLMS-R1', score: 'TBD', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 5, team: 'Random', score: 'TBD', submissions: 'Baseline', lastUpdate: '-' }
+        ],
+        '10k': [
+            { rank: 1, team: 'Base model (Qwen 2.5VL)', score: '60.0%', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 2, team: 'Base model (Molmo-D)', score: '56.0%', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 3, team: 'Base model (Molmo-O)', score: '35.0%', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 4, team: 'LLMS-R1', score: 'TBD', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 5, team: 'Random', score: 'TBD', submissions: 'Baseline', lastUpdate: '-' }
+        ]
+    };
+    
+    function updateLeaderboard(track) {
+        const data = leaderboardData[track];
+        if (!data || !leaderboardTable) return;
+        
+        leaderboardTable.innerHTML = '';
+        
+        data.forEach(entry => {
+            const row = document.createElement('tr');
+            if (entry.rank <= 3) {
+                row.classList.add('top-3');
+            }
+            
+            row.innerHTML = `
+                <td class="rank">${entry.rank}</td>
+                <td class="team-name">${entry.team}</td>
+                <td class="score">${entry.score}</td>
+                <td>${entry.submissions}</td>
+                <td>${entry.lastUpdate}</td>
+            `;
+            
+            leaderboardTable.appendChild(row);
+        });
+        
+        // Track leaderboard view
+        trackEvent('leaderboard_view', {
+            label: `${track}_track`,
+            section: 'leaderboard',
+            track: track,
+            value: 1
+        });
+    }
+    
+    // Add click listeners to tab buttons
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const track = this.getAttribute('data-track');
+            
+            // Remove active class from all buttons
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Update leaderboard content
+            updateLeaderboard(track);
+            
+            // Track tab switch
+            trackButtonClick(`leaderboard_${track}_tab`, 'leaderboard');
+        });
+    });
+    
+    // Initialize with 1k track by default
+    updateLeaderboard('1k');
+}
+
 // Initialize password protection
 document.addEventListener('DOMContentLoaded', function() {
     if (checkAuthentication()) {
         showMainContent();
         setupSectionTracking();
         setupTeamMemberClicks();
+        setupLeaderboardTabs();
     } else {
         // Set up password form event listener
         const passwordForm = document.getElementById('password-form');
@@ -189,6 +275,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Focus on password input
         document.getElementById('password-input').focus();
     }
+
+    // Initialize leaderboard regardless of password protection
+    setupLeaderboardTabs();
 
     // Simple FAQ toggle functionality
     document.querySelectorAll('.faq-item h3').forEach(item => {
