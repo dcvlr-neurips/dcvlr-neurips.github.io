@@ -23,6 +23,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Account for sticky header height */
+}
+
 body {
     font-family: 'Georgia', 'Times New Roman', serif;
     line-height: 1.7;
@@ -948,7 +953,7 @@ footer .social-share p {
 
 /* Subscription Note */
 .hero .subscription-note {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     color: var(--text-secondary);
     margin-top: 0.5rem;
     font-weight: 400;
