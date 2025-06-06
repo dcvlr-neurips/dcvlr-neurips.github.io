@@ -84,9 +84,10 @@ function showMainContent() {
     document.getElementById('main-content').style.display = 'block';
     sessionStorage.setItem(SESSION_KEY, 'true');
     
-    // Setup section tracking after main content is shown
+    // Setup section tracking and team member clicks after main content is shown
     setTimeout(() => {
         setupSectionTracking();
+        setupTeamMemberClicks();
     }, 1000);
 }
 
@@ -146,11 +147,40 @@ function setupSectionTracking() {
     });
 }
 
+// Setup team member card click handlers
+function setupTeamMemberClicks() {
+    document.querySelectorAll('.team-member').forEach(member => {
+        const link = member.querySelector('h3 a');
+        if (link) {
+            // Add class to indicate this card has a link
+            member.classList.add('has-link');
+            
+            // Add click handler to the entire card
+            member.addEventListener('click', function(e) {
+                // Prevent double navigation if clicking directly on the link
+                if (e.target.tagName !== 'A' && !e.target.closest('a')) {
+                    // Track team member profile click
+                    const memberName = member.querySelector('h3').textContent;
+                    trackEvent('team_member_click', {
+                        label: memberName,
+                        section: 'team',
+                        value: 1
+                    });
+                    
+                    // Open link in new tab (matching the target="_blank" behavior)
+                    window.open(link.href, '_blank', 'noopener');
+                }
+            });
+        }
+    });
+}
+
 // Initialize password protection
 document.addEventListener('DOMContentLoaded', function() {
     if (checkAuthentication()) {
         showMainContent();
         setupSectionTracking();
+        setupTeamMemberClicks();
     } else {
         // Set up password form event listener
         const passwordForm = document.getElementById('password-form');
