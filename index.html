@@ -158,6 +158,79 @@
             min-height: 100vh;
         }
     </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRCL2NG8LH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-LRCL2NG8LH', {
+            page_title: 'DCVLR Competition',
+            page_location: window.location.href,
+            custom_map: {
+                'custom_parameter_1': 'competition_section'
+            }
+        });
+        
+        // Custom event tracking function
+        function trackEvent(eventName, parameters = {}) {
+            gtag('event', eventName, {
+                event_category: 'DCVLR_Competition',
+                event_label: parameters.label || '',
+                value: parameters.value || 0,
+                custom_parameter_1: parameters.section || '',
+                ...parameters
+            });
+        }
+        
+        // Track page sections viewed
+        function trackSectionView(sectionName) {
+            trackEvent('section_view', {
+                label: sectionName,
+                section: sectionName
+            });
+        }
+        
+        // Track button clicks
+        function trackButtonClick(buttonName, buttonType = 'cta') {
+            trackEvent('button_click', {
+                label: buttonName,
+                section: buttonType,
+                value: 1
+            });
+        }
+        
+        // Track form submissions
+        function trackFormSubmission(formName, success = true) {
+            trackEvent('form_submission', {
+                label: formName,
+                section: 'forms',
+                success: success,
+                value: success ? 1 : 0
+            });
+        }
+        
+        // Track resource downloads/views
+        function trackResourceAccess(resourceName, resourceType) {
+            trackEvent('resource_access', {
+                label: resourceName,
+                section: 'resources',
+                resource_type: resourceType,
+                value: 1
+            });
+        }
+        
+        // Track social sharing
+        function trackSocialShare(platform) {
+            trackEvent('social_share', {
+                label: platform,
+                section: 'social',
+                platform: platform,
+                value: 1
+            });
+        }
+    </script>
 </head>
 <body>
     <!-- Password Protection Overlay -->
@@ -192,7 +265,7 @@
                     <li><a href="#sponsors">Sponsors</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://oumi-ai.typeform.com/to/LnYoisi5" class="cta-button" target="_blank" rel="noopener">Stay Updated</a></li>
+                    <li><a href="https://oumi-ai.typeform.com/to/LnYoisi5" class="cta-button" target="_blank" rel="noopener" onclick="trackButtonClick('header_signup', 'registration')">Stay Updated</a></li>
                 </ul>
             </nav>
         </div>
@@ -203,19 +276,19 @@
             <h1>DCVLR: Data Curation for Vision Language Reasoning</h1>
             <p>A NeurIPS 2025 Competition focused on advancing visual reasoning capabilities in vision-language models through high-quality data curation.</p>
             <div class="hero-actions">
-                <a href="https://oumi-ai.typeform.com/to/LnYoisi5" class="cta-button" target="_blank" rel="noopener">Interested in participating?</a>
+                <a href="https://oumi-ai.typeform.com/to/LnYoisi5" class="cta-button" target="_blank" rel="noopener" onclick="trackButtonClick('hero_signup', 'registration')">Interested in participating?</a>
                 <p class="subscription-note">Subscribe to receive competition updates, tips, and important announcements</p>
             </div>
             <div class="social-share">
                 <p>Share this competition:</p>
                 <div class="share-buttons">
-                    <a href="https://twitter.com/intent/tweet?text=Join%20the%20DCVLR%20NeurIPS%202025%20Competition!%20Advance%20visual%20reasoning%20in%20VLMs%20through%20data%20curation.&url=https://dcvlr-neurips.org" target="_blank" rel="noopener" class="share-button twitter" aria-label="Share on Twitter">
+                    <a href="https://twitter.com/intent/tweet?text=Join%20the%20DCVLR%20NeurIPS%202025%20Competition!%20Advance%20visual%20reasoning%20in%20VLMs%20through%20data%20curation.&url=https://dcvlr-neurips.github.io/dcvlr-neurips/" target="_blank" rel="noopener" class="share-button twitter" aria-label="Share on Twitter" onclick="trackSocialShare('twitter')">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     </a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://dcvlr-neurips.org" target="_blank" rel="noopener" class="share-button linkedin" aria-label="Share on LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://dcvlr-neurips.github.io/dcvlr-neurips/" target="_blank" rel="noopener" class="share-button linkedin" aria-label="Share on LinkedIn" onclick="trackSocialShare('linkedin')">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                     </a>
-                    <a href="mailto:?subject=DCVLR%20NeurIPS%202025%20Competition&body=Check%20out%20this%20exciting%20competition%20on%20data%20curation%20for%20vision-language%20reasoning:%20https://dcvlr-neurips.org" class="share-button email" aria-label="Share via Email">
+                    <a href="mailto:?subject=DCVLR%20NeurIPS%202025%20Competition&body=Check%20out%20this%20exciting%20competition%20on%20data%20curation%20for%20vision-language%20reasoning:%20https://dcvlr-neurips.github.io/dcvlr-neurips/" class="share-button email" aria-label="Share via Email" onclick="trackSocialShare('email')">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     </a>
                 </div>
@@ -340,37 +413,37 @@
                     <div class="resource-icon">📊</div>
                     <h3>Starter Kit</h3>
                     <p>Comprehensive starter kit with example datasets, training scripts, and best practices to help participants get started.</p>
-                    <a href="https://huggingface.co/datasets/oumi-ai/dcvlr-starter-kit" target="_blank" rel="noopener">Access Starter Kit</a>
+                    <a href="https://huggingface.co/datasets/oumi-ai/dcvlr-starter-kit" target="_blank" rel="noopener" onclick="trackResourceAccess('starter_kit', 'dataset')">Access Starter Kit</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">💻</div>
                     <h3>Training Scripts</h3>
                     <p>Starting scripts for fine-tuning multiple vision-language models on your curated datasets.</p>
-                    <a href="https://github.com/oumi-ai/oumi/tree/main/configs/projects/dcvlr" target="_blank" rel="noopener">View Scripts</a>
+                    <a href="https://github.com/oumi-ai/oumi/tree/main/configs/projects/dcvlr" target="_blank" rel="noopener" onclick="trackResourceAccess('training_scripts', 'code')">View Scripts</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">🧪</div>
                     <h3>Evaluation Code</h3>
                     <p>Scripts to evaluate model outputs on diverse benchmark development sets for local testing.</p>
-                    <a href="https://github.com/oumi-ai/oumi/tree/main/configs/projects/dcvlr" target="_blank" rel="noopener">Get Code</a>
+                    <a href="https://github.com/oumi-ai/oumi/tree/main/configs/projects/dcvlr" target="_blank" rel="noopener" onclick="trackResourceAccess('evaluation_code', 'code')">Get Code</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">📝</div>
                     <h3>Baseline Submissions</h3>
                     <p>Reference implementations and baseline approaches for data curation and model training.</p>
-                    <a href="https://github.com/oumi-ai/oumi/tree/main/configs/projects/dcvlr" target="_blank" rel="noopener">View Baselines</a>
+                    <a href="https://github.com/oumi-ai/oumi/tree/main/configs/projects/dcvlr" target="_blank" rel="noopener" onclick="trackResourceAccess('baseline_submissions', 'code')">View Baselines</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">☁️</div>
                     <h3>Compute Resources</h3>
                     <p>$400 USD in GPU credits from Lambda Labs for participants.</p>
-                    <a href="https://lambdalabs.com/dcvlr-credits" target="_blank" rel="noopener">Apply for Credits</a>
+                    <a href="https://lambdalabs.com/dcvlr-credits" target="_blank" rel="noopener" onclick="trackResourceAccess('gpu_credits', 'compute')">Apply for Credits</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">📚</div>
                     <h3>Documentation</h3>
                     <p>Complete guides and tutorials to help you get started.</p>
-                    <a href="https://docs.dcvlr-neurips.org/" target="_blank" rel="noopener">View Documentation</a>
+                    <a href="https://docs.dcvlr-neurips.org/" target="_blank" rel="noopener" onclick="trackResourceAccess('documentation', 'docs')">View Documentation</a>
                 </div>
             </div>
         </div>
@@ -856,8 +929,20 @@ submission/
             const enteredPassword = passwordInput.value;
 
             if (enteredPassword === CORRECT_PASSWORD) {
+                // Track successful authentication
+                trackFormSubmission('password_authentication', true);
+                trackEvent('authentication_success', {
+                    label: 'password_correct',
+                    section: 'authentication'
+                });
                 showMainContent();
             } else {
+                // Track failed authentication
+                trackFormSubmission('password_authentication', false);
+                trackEvent('authentication_failure', {
+                    label: 'password_incorrect',
+                    section: 'authentication'
+                });
                 errorDiv.style.display = 'block';
                 passwordInput.value = '';
                 passwordInput.focus();
@@ -873,6 +958,7 @@ submission/
         document.addEventListener('DOMContentLoaded', function() {
             if (checkAuthentication()) {
                 showMainContent();
+                setupSectionTracking();
             } else {
                 // Set up password form event listener
                 const passwordForm = document.getElementById('password-form');
@@ -883,14 +969,61 @@ submission/
             }
         });
 
+        // Setup section view tracking with Intersection Observer
+        function setupSectionTracking() {
+            const sections = document.querySelectorAll('section[id]');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.3 // Track when 30% of section is visible
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        trackSectionView(sectionId);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // Override showMainContent to include section tracking setup
+        function showMainContent() {
+            document.getElementById('password-overlay').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            sessionStorage.setItem(SESSION_KEY, 'true');
+            
+            // Setup section tracking after main content is shown
+            setTimeout(() => {
+                setupSectionTracking();
+            }, 1000);
+        }
+
         // Simple FAQ toggle functionality
         document.querySelectorAll('.faq-item h3').forEach(item => {
             item.addEventListener('click', event => {
                 const answer = event.target.nextElementSibling;
+                const faqTitle = event.target.textContent;
+                
                 if (answer.style.display === 'none' || answer.style.display === '') {
                     answer.style.display = 'block';
+                    trackEvent('faq_opened', {
+                        label: faqTitle,
+                        section: 'faq',
+                        value: 1
+                    });
                 } else {
                     answer.style.display = 'none';
+                    trackEvent('faq_closed', {
+                        label: faqTitle,
+                        section: 'faq',
+                        value: 0
+                    });
                 }
             });
         });
