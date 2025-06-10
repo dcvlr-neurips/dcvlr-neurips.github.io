@@ -69,61 +69,7 @@ function trackSocialShare(platform) {
     });
 }
 
-// Password Protection Configuration
-const CORRECT_PASSWORD = 'dcvlr2025'; // Change this to your desired password
-const SESSION_KEY = 'dcvlr_authenticated';
 
-// Check if user is already authenticated in this session
-function checkAuthentication() {
-    return sessionStorage.getItem(SESSION_KEY) === 'true';
-}
-
-// Show main content and hide password overlay
-function showMainContent() {
-    document.getElementById('password-overlay').style.display = 'none';
-    document.getElementById('main-content').style.display = 'block';
-    sessionStorage.setItem(SESSION_KEY, 'true');
-    
-    // Setup section tracking and team member clicks after main content is shown
-    setTimeout(() => {
-        setupSectionTracking();
-        setupTeamMemberClicks();
-        setupLeaderboardTabs();
-    }, 1000);
-}
-
-// Handle password form submission
-function handlePasswordSubmit(event) {
-    event.preventDefault();
-    const passwordInput = document.getElementById('password-input');
-    const errorDiv = document.getElementById('password-error');
-    const enteredPassword = passwordInput.value;
-
-    if (enteredPassword === CORRECT_PASSWORD) {
-        // Track successful authentication
-        trackFormSubmission('password_authentication', true);
-        trackEvent('authentication_success', {
-            label: 'password_correct',
-            section: 'authentication'
-        });
-        showMainContent();
-    } else {
-        // Track failed authentication
-        trackFormSubmission('password_authentication', false);
-        trackEvent('authentication_failure', {
-            label: 'password_incorrect',
-            section: 'authentication'
-        });
-        errorDiv.style.display = 'block';
-        passwordInput.value = '';
-        passwordInput.focus();
-        
-        // Hide error after 3 seconds
-        setTimeout(() => {
-            errorDiv.style.display = 'none';
-        }, 3000);
-    }
-}
 
 // Setup section view tracking with Intersection Observer
 function setupSectionTracking() {
@@ -178,12 +124,16 @@ function setupTeamMemberClicks() {
 
 // Setup leaderboard track switching
 function setupLeaderboardTabs() {
+    console.log('Setting up leaderboard tabs...');
+    
     const tabButtons = document.querySelectorAll('.tab-button');
     const leaderboardTable = document.querySelector('.leaderboard-table tbody');
     
-    // If elements not found, try again after a short delay
+    console.log('Found tab buttons:', tabButtons.length);
+    console.log('Found leaderboard table:', !!leaderboardTable);
+    
     if (tabButtons.length === 0 || !leaderboardTable) {
-        setTimeout(setupLeaderboardTabs, 500);
+        console.log('Elements not found, skipping leaderboard setup');
         return;
     }
     
@@ -206,6 +156,7 @@ function setupLeaderboardTabs() {
     };
     
     function updateLeaderboard(track) {
+        console.log('Updating leaderboard for track:', track);
         const data = leaderboardData[track];
         if (!data || !leaderboardTable) return;
         
@@ -237,16 +188,32 @@ function setupLeaderboardTabs() {
         });
     }
     
+    function updateButtonStyles(activeTrack) {
+        tabButtons.forEach(btn => {
+            const track = btn.getAttribute('data-track');
+            if (track === activeTrack) {
+                // Active button styling
+                btn.classList.remove('text-text-secondary', 'bg-white');
+                btn.classList.add('bg-accent', 'text-white', 'border-accent');
+            } else {
+                // Inactive button styling
+                btn.classList.remove('bg-accent', 'text-white', 'border-accent');
+                btn.classList.add('text-text-secondary', 'bg-white');
+            }
+        });
+    }
+    
     // Add click listeners to tab buttons
     tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        console.log('Adding click listener to button:', button.getAttribute('data-track'));
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Button clicked:', this.getAttribute('data-track'));
+            
             const track = this.getAttribute('data-track');
             
-            // Remove active class from all buttons
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
+            // Update button styles
+            updateButtonStyles(track);
             
             // Update leaderboard content
             updateLeaderboard(track);
@@ -257,51 +224,54 @@ function setupLeaderboardTabs() {
     });
     
     // Initialize with 1k track by default
+    updateButtonStyles('1k');
     updateLeaderboard('1k');
+    console.log('Leaderboard setup complete');
 }
 
-// Initialize password protection
-document.addEventListener('DOMContentLoaded', function() {
-    if (checkAuthentication()) {
-        showMainContent();
-        setupSectionTracking();
-        setupTeamMemberClicks();
-        setupLeaderboardTabs();
-    } else {
-        // Set up password form event listener
-        const passwordForm = document.getElementById('password-form');
-        passwordForm.addEventListener('submit', handlePasswordSubmit);
-        
-        // Focus on password input
-        document.getElementById('password-input').focus();
+// Toggle mobile menu
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) {
+        mobileMenu.classList.toggle('hidden');
     }
+}
 
-    // Initialize leaderboard regardless of password protection
-    setupLeaderboardTabs();
-
-    // Simple FAQ toggle functionality
+// Setup FAQ functionality
+function setupFAQ() {
     document.querySelectorAll('.faq-item h3').forEach(item => {
         item.addEventListener('click', event => {
             const answer = event.target.nextElementSibling;
             const faqTitle = event.target.textContent;
             
-            if (answer.style.display === 'none' || answer.style.display === '') {
-                answer.style.display = 'block';
-                trackEvent('faq_opened', {
-                    label: faqTitle,
-                    section: 'faq',
-                    value: 1
-                });
-            } else {
-                answer.style.display = 'none';
-                trackEvent('faq_closed', {
-                    label: faqTitle,
-                    section: 'faq',
-                    value: 0
-                });
+            if (answer && answer.classList.contains('faq-answer')) {
+                if (answer.style.display === 'none' || answer.style.display === '') {
+                    answer.style.display = 'block';
+                    trackEvent('faq_opened', {
+                        label: faqTitle,
+                        section: 'faq',
+                        value: 1
+                    });
+                } else {
+                    answer.style.display = 'none';
+                    trackEvent('faq_closed', {
+                        label: faqTitle,
+                        section: 'faq',
+                        value: 0
+                    });
+                }
             }
         });
     });
+}
+
+// Initialize all functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Setup all functionality
+    setupFAQ();
+    setupLeaderboardTabs();
+    setupSectionTracking();
+    setupTeamMemberClicks();
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -309,9 +279,12 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            document.querySelector(targetId).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(targetId);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 }); 
