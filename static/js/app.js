@@ -124,13 +124,8 @@ function setupTeamMemberClicks() {
 
 // Setup leaderboard track switching
 function setupLeaderboardTabs() {
-    console.log('Setting up leaderboard tabs...');
-    
     const tabButtons = document.querySelectorAll('.tab-button');
     const leaderboardTable = document.querySelector('.leaderboard-table tbody');
-    
-    console.log('Found tab buttons:', tabButtons.length);
-    console.log('Found leaderboard table:', !!leaderboardTable);
     
     if (tabButtons.length === 0 || !leaderboardTable) {
         console.log('Elements not found, skipping leaderboard setup');
@@ -140,23 +135,20 @@ function setupLeaderboardTabs() {
     // Baseline data from DCVLR organizers
     const leaderboardData = {
         '1k': [
-            { rank: 1, team: 'Base model (Qwen 2.5VL)', score: '60.0%', submissions: 'Baseline', lastUpdate: '-' },
-            { rank: 2, team: 'Base model (Molmo-D)', score: '56.0%', submissions: 'Baseline', lastUpdate: '-' },
-            { rank: 3, team: 'Base model (Molmo-O)', score: '35.0%', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 1, team: 'Base model (Qwen2.5-VL-7B)', score: '60.0%', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 2, team: 'Base model (Molmo-7B-D-0924)', score: '56.0%', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 3, team: 'Base model (Molmo-7B-O-0924)', score: '35.0%', submissions: 'Baseline', lastUpdate: '-' },
             { rank: 4, team: 'LLMS-R1', score: 'TBD', submissions: 'Baseline', lastUpdate: '-' },
-            { rank: 5, team: 'Random', score: 'TBD', submissions: 'Baseline', lastUpdate: '-' }
         ],
         '10k': [
-            { rank: 1, team: 'Base model (Qwen 2.5VL)', score: '60.0%', submissions: 'Baseline', lastUpdate: '-' },
-            { rank: 2, team: 'Base model (Molmo-D)', score: '56.0%', submissions: 'Baseline', lastUpdate: '-' },
-            { rank: 3, team: 'Base model (Molmo-O)', score: '35.0%', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 1, team: 'Base model (Qwen2.5-VL-72B)', score: '72.6%', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 2, team: 'Base model (Molmo-7B-D-0924)', score: '56.0%', submissions: 'Baseline', lastUpdate: '-' },
+            { rank: 3, team: 'Base model (Molmo-7B-O-0924)', score: '35.0%', submissions: 'Baseline', lastUpdate: '-' },
             { rank: 4, team: 'LLMS-R1', score: 'TBD', submissions: 'Baseline', lastUpdate: '-' },
-            { rank: 5, team: 'Random', score: 'TBD', submissions: 'Baseline', lastUpdate: '-' }
         ]
     };
     
     function updateLeaderboard(track) {
-        console.log('Updating leaderboard for track:', track);
         const data = leaderboardData[track];
         if (!data || !leaderboardTable) return;
         
@@ -205,10 +197,8 @@ function setupLeaderboardTabs() {
     
     // Add click listeners to tab buttons
     tabButtons.forEach(button => {
-        console.log('Adding click listener to button:', button.getAttribute('data-track'));
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('Button clicked:', this.getAttribute('data-track'));
             
             const track = this.getAttribute('data-track');
             
@@ -226,7 +216,6 @@ function setupLeaderboardTabs() {
     // Initialize with 1k track by default
     updateButtonStyles('1k');
     updateLeaderboard('1k');
-    console.log('Leaderboard setup complete');
 }
 
 // Toggle mobile menu
