@@ -110,7 +110,10 @@
     <div id="main-content" class="main-content min-h-screen">
     <header class="bg-light-bg border-b border-border sticky top-0 z-40 py-6">
         <div class="container mx-auto px-6 flex justify-between items-center">
-                            <div class="logo text-2xl font-bold text-primary font-sans tracking-tight">Data Curation for<br>Vision Language Reasoning</div>
+            <div class="logo flex items-center space-x-4">
+                <img src="static/images/dcvlr-logo.png" alt="DCVLR Logo" class="h-16 w-auto object-contain">
+                <div class="text-2xl font-bold text-primary font-sans tracking-tight">Data Curation for<br>Vision Language Reasoning</div>
+            </div>
             
             <!-- Mobile menu button -->
             <button class="lg:hidden text-primary" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
@@ -166,7 +169,7 @@
                             <img src="static/images/lambda-labs-logo.svg" alt="Lambda Labs" class="h-12 object-contain">
                         </a>
                         <a href="https://oumi.ai" target="_blank" rel="noopener" class="opacity-90 hover:opacity-100 transition-opacity">
-                            <img src="static/images/oumi_logo_dark.png" alt="Oumi.ai" class="h-12 object-contain">
+                            <img src="static/images/oumi_logo_dark.png" alt="Oumi.ai" class="h-16 object-contain">
                         </a>
                     </div>
                 </div>
@@ -176,22 +179,35 @@
 
     <section class="competition-overview bg-white py-16" id="overview">
         <div class="container mx-auto px-6">
-            <div class="section-title text-center mb-12">
-                <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Overview</h2>
-                <p class="max-w-2xl mx-auto text-lg text-text-secondary">Reasoning models have become one of the most exciting areas of AI research. But most existing models are trained on data that is not publicly available, making it difficult to reproduce results and build on them. Furthermore, the modality of most frontier reasoning models remains language-only. But with your help, that is about to change! DCVLR, to be hosted at <a href="https://neurips.cc/" target="_blank" rel="noopener" class="text-accent hover:underline">NeurIPS 2025</a>, is the first open-data, open-models, open-source competition for data curation in vision-language reasoning. DCVLR is the first data-centric competition to be -- <br><br>🌟OPEN-DATA🌟: The winning datasets from the competition will be made publicly available.<br><br>🌟OPEN-MODELS🌟: Unlike previous competitions, we are also evaluating the utility of reasoning data for frontier open-source models such as AI2's Molmo.<br><br>🌟OPEN-SOURCE🌟: All of the code in the competition will be publicly released to enable future research.</p> 
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="detail-card bg-white border border-border rounded-lg p-8 transition-all duration-300 relative overflow-hidden card-hover shadow-sm hover:shadow-lg hover:border-accent">
-                    <h3 class="text-primary mb-4 text-xl font-semibold">🌟 Open Science</h3>
-                    <p class="text-text-secondary leading-relaxed">DCVLR is an open science competition; open data, open models, open source. Winning methods, datasets, and teams will be published and promoted to advance the field. We also aim to make the competition more accessible to students and hobbyists; teams submit the dataset, we train and evaluate the model, saving them the cost of compute. Student-lead teams can also apply for free compute from Lambda Labs, reducing barriers to entry and making cutting-edge research accessible to everyone, everywhere.</p>
-                </div>
-                <div class="detail-card bg-white border border-border rounded-lg p-8 transition-all duration-300 relative overflow-hidden card-hover shadow-sm hover:shadow-lg hover:border-accent">
-                    <h3 class="text-primary mb-4 text-xl font-semibold">🎯 Challenge</h3>
-                    <p class="text-text-secondary leading-relaxed">Participants can leverage any source datasets to curate high-quality instruction-tuning datasets (1K or 10K examples). Participants are encouraged to explore diverse curation strategies, from synthetic data generation to subset selection. Submissions will be evaluated by fine-tuning an undisclosed, open-weights or open-source vision-language model (QwenVL 2.5, Molmo-O, InternVLM3 or similar) on the curated data and measuring performance across a wide variety of reasoning benchmarks (MathVista, VMCBench, LiveXiv or similar).</p>
-                </div>
-                <div class="detail-card bg-white border border-border rounded-lg p-8 transition-all duration-300 relative overflow-hidden card-hover shadow-sm hover:shadow-lg hover:border-accent">
-                    <h3 class="text-primary mb-4 text-xl font-semibold">🔬 Research Impact</h3>
-                    <p class="text-text-secondary leading-relaxed">What properties of training data drive reasoning capabilities in vision-language models? By isolating data curation as the primary experimental variable, participants will generate novel insights into the relationship between data characteristics and model performance—contributing to the emerging science of data-centric AI.</p>
+            <div class="section-title text-center mb-16">
+                <h2 class="text-4xl font-semibold mb-6 text-primary relative inline-block">Overview</h2>
+                <p class="max-w-3xl mx-auto text-lg text-text-secondary leading-relaxed mb-8">
+                    Reasoning models have become one of the most exciting areas of AI research. But most existing models are trained on data that is not publicly available, making it difficult to reproduce results and build on them. Furthermore, the modality of most frontier reasoning models remains language-only. 
+                </p>
+                <p class="max-w-3xl mx-auto text-lg text-text-secondary leading-relaxed mb-10">
+                    But with your help, that is about to change! DCVLR, to be hosted at <a href="https://neurips.cc/" target="_blank" rel="noopener" class="text-accent hover:underline">NeurIPS 2025</a>, is the first open-data, open-models, open-source competition for data curation in vision-language reasoning.
+                </p>
+                
+                <p class="max-w-3xl mx-auto text-lg text-text-secondary leading-relaxed mb-10">
+                    Your challenge? Curate 1K or 10K high-quality instruction-tuning examples using any strategy—synthetic generation, smart filtering, or novel approaches. We handle the training and evaluation.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+                    <div class="bg-lighter-bg border border-border rounded-lg p-6 text-center">
+                        <div class="text-3xl mb-3">🌟</div>
+                        <h3 class="text-primary font-semibold text-lg mb-2">OPEN-DATA</h3>
+                        <p class="text-text-secondary text-sm">The winning datasets from the competition will be made publicly available.</p>
+                    </div>
+                    <div class="bg-lighter-bg border border-border rounded-lg p-6 text-center">
+                        <div class="text-3xl mb-3">🤖</div>
+                        <h3 class="text-primary font-semibold text-lg mb-2">OPEN-MODELS</h3>
+                        <p class="text-text-secondary text-sm">Unlike previous competitions, we evaluate utility for frontier open-source models such as AI2's Molmo.</p>
+                    </div>
+                    <div class="bg-lighter-bg border border-border rounded-lg p-6 text-center">
+                        <div class="text-3xl mb-3">💻</div>
+                        <h3 class="text-primary font-semibold text-lg mb-2">OPEN-SOURCE</h3>
+                        <p class="text-text-secondary text-sm">All of the code in the competition will be publicly released to enable future research.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -338,8 +354,12 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <div class="prize-tier gold border border-yellow-400 rounded p-8 text-center transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg">
                     <div class="prize-icon text-6xl mb-4 transition-all duration-300">🥇</div>
-                    <h3 class="text-xl font-semibold mb-2">First Place (awarded to the best benchmarking team with a reproducible method)</h3>
+                    <h3 class="text-xl font-semibold mb-4">First Place</h3>
                     <div class="prize-amount text-3xl font-semibold text-primary my-4">$1,500 USD</div>
+                    <div class="award-criteria bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
+                        <p class="text-sm text-yellow-800 font-medium mb-2">Awarded to:</p>
+                        <p class="text-sm text-yellow-700">The best benchmarking team with a reproducible method</p>
+                    </div>
                     <ul class="prize-benefits list-none text-left mt-6 space-y-2">
                         <li>Podium presentation at NeurIPS 2025</li>
                         <li>Co-authorship on competition paper</li>
@@ -348,8 +368,12 @@
                 </div>
                 <div class="prize-tier silver border border-gray-300 rounded p-8 text-center transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg">
                     <div class="prize-icon text-6xl mb-4 transition-all duration-300">🥈</div>
-                    <h3 class="text-xl font-semibold mb-2">IDC (Innovation in Data Curation) Prize (awarded to the team with strong benchmark performance and an innovative method)</h3>
+                    <h3 class="text-xl font-semibold mb-4">IDC (Innovation in Data Curation) Prize</h3>
                     <div class="prize-amount text-3xl font-semibold text-primary my-4">$1,000 USD</div>
+                    <div class="award-criteria bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4">
+                        <p class="text-sm text-gray-800 font-medium mb-2">Awarded to:</p>
+                        <p class="text-sm text-gray-700">The team with strong benchmark performance and an innovative method</p>
+                    </div>
                     <ul class="prize-benefits list-none text-left mt-6 space-y-2">
                         <li>Podium presentation at NeurIPS 2025</li>
                         <li>Co-authorship on competition paper</li>
@@ -358,8 +382,12 @@
                 </div>
                 <div class="prize-tier bronze border border-orange-400 rounded p-8 text-center transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg">
                     <div class="prize-icon text-6xl mb-4 transition-all duration-300">🥉</div>
-                    <h3 class="text-xl font-semibold mb-2">Honorable Mention (awarded to the second-best benchmarking team with a reproducible method)</h3>
+                    <h3 class="text-xl font-semibold mb-4">Honorable Mention</h3>
                     <div class="prize-amount text-3xl font-semibold text-primary my-4">$250 USD</div>
+                    <div class="award-criteria bg-orange-50 border border-orange-200 rounded-lg p-4 mb-4">
+                        <p class="text-sm text-orange-800 font-medium mb-2">Awarded to:</p>
+                        <p class="text-sm text-orange-700">The second-best benchmarking team with a reproducible method</p>
+                    </div>
                     <ul class="prize-benefits list-none text-left mt-6 space-y-2">
                         <li>Podium presentation at NeurIPS 2025</li>
                         <li>Co-authorship on competition paper</li>
@@ -394,11 +422,12 @@
 # install oumi
 uv pip install "oumi[gpu]"
 
-# train with Molmo-7B-O
-oumi train -c molmo-o --dataset dataset.jsonl
+# checkout examples
+git clone https://github.com/oumi-ai/oumi.git
+ls configs/projects/dcvlr/starter-kit/
 
-# train with Qwen2.5-VL-7B-Instruct
-oumi train -c qwen2.5-vl-7b-instruct --dataset dataset.jsonl
+# train with your own config
+oumi train -c $MY_CONFIG
 </pre>
             </div>
         </div>
