@@ -52,7 +52,9 @@
                         'text-secondary': '#6c757d',
                         'text-muted': '#95a5a6',
                         'border': '#dee2e6',
-                        'lighter-bg': '#f8f9fa'
+                        'lighter-bg': '#f8f9fa',
+                        'card-bg': '#ffffff',
+                        'light-bg': '#ffffff'
                     },
                     fontFamily: {
                         'serif': ['Georgia', 'Times New Roman', 'serif'],
@@ -132,7 +134,7 @@
 
     <!-- Main Content (hidden by default) -->
     <div id="main-content" class="main-content min-h-screen" style="display: none;">
-    <header class="bg-white border-b border-border sticky top-0 z-40 py-6">
+    <header class="bg-light-bg border-b border-border sticky top-0 z-40 py-6">
         <div class="container mx-auto px-6 flex justify-between items-center">
                             <div class="logo text-2xl font-bold text-primary font-sans tracking-tight">Data Curation for<br>Vision Language Reasoning</div>
             
@@ -229,16 +231,16 @@
                 <div class="eligibility-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
                     <h3 class="text-primary mb-6 text-xl font-semibold">📋 Competition Rules</h3>
                     <ul class="list-none space-y-2">
-                        <li>Can use any datasets for training data curation</li>
-                        <li>Maximum 3 final submissions per team</li>
-                        <li>Data curation code must be open-sourced after competition</li>
+                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">Can use any datasets for training data curation</li>
+                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">Maximum 3 final submissions per team</li>
+                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">Data curation code must be open-sourced after competition</li>
                     </ul>
                 </div>
-                <div class="eligibility-card">
-                    <h3>🚫 Restrictions</h3>
-                    <ul>
-                        <li>One account per participant/team</li>
-                        <li>Must follow ethical data usage guidelines</li>
+                <div class="eligibility-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
+                    <h3 class="text-primary mb-6 text-xl font-semibold">🚫 Restrictions</h3>
+                    <ul class="list-none space-y-2">
+                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">One account per participant/team</li>
+                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">Must follow ethical data usage guidelines</li>
                     </ul>
                 </div>
             </div>
