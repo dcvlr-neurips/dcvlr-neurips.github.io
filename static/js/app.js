@@ -260,6 +260,14 @@ function setupLeaderboardTabs() {
     updateLeaderboard('1k');
 }
 
+// Toggle mobile menu
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) {
+        mobileMenu.classList.toggle('hidden');
+    }
+}
+
 // Initialize password protection
 document.addEventListener('DOMContentLoaded', function() {
     if (checkAuthentication()) {
