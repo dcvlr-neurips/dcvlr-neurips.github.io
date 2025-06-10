@@ -98,16 +98,7 @@
           "@type": "Organization",
           "name": "Oumi.ai"
         }
-      ],
-      "offers": {
-        "@type": "Offer",
-        "name": "Competition Registration",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://dcvlr-neurips.github.io/dcvlr-neurips/register",
-        "validFrom": "2025-07-01"
-      }
+      ]
     }
     </script>
     <link rel="stylesheet" href="static/css/styles.css">
@@ -115,25 +106,8 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRCL2NG8LH"></script>
 </head>
 <body>
-    <!-- Password Protection Overlay -->
-    <div id="password-overlay" class="password-overlay fixed inset-0 flex items-center justify-center z-50">
-        <div class="password-container bg-white p-12 rounded shadow-lg max-w-md w-11/12 text-center">
-            <div class="password-header mb-6">
-                <h2 class="text-2xl font-semibold text-primary mb-2">DCVLR Competition Access</h2>
-                <p class="text-text-secondary">Please enter the password to access the competition page</p>
-            </div>
-            <form id="password-form" class="password-form">
-                <input type="password" id="password-input" placeholder="Enter password" required class="form-control mb-3 w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-accent">
-                <button type="submit" class="btn btn-primary w-full">Access Competition</button>
-                <div id="password-error" class="password-error text-red-600 text-sm mt-2" style="display: none;">
-                    Incorrect password. Please try again.
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Main Content (hidden by default) -->
-    <div id="main-content" class="main-content min-h-screen" style="display: none;">
+    <!-- Main Content -->
+    <div id="main-content" class="main-content min-h-screen">
     <header class="bg-light-bg border-b border-border sticky top-0 z-40 py-6">
         <div class="container mx-auto px-6 flex justify-between items-center">
                             <div class="logo text-2xl font-bold text-primary font-sans tracking-tight">Data Curation for<br>Vision Language Reasoning</div>
