@@ -422,11 +422,12 @@
 # install oumi
 uv pip install "oumi[gpu]"
 
-# train with Molmo-7B-O
-oumi train -c molmo-o --dataset dataset.jsonl
+# checkout examples
+git clone https://github.com/oumi-ai/oumi.git
+ls configs/projects/dcvlr/starter-kit/
 
-# train with Qwen2.5-VL-7B-Instruct
-oumi train -c qwen2.5-vl-7b-instruct --dataset dataset.jsonl
+# train with your own config
+oumi train -c $MY_CONFIG
 </pre>
             </div>
         </div>
