@@ -124,13 +124,8 @@ function setupTeamMemberClicks() {
 
 // Setup leaderboard track switching
 function setupLeaderboardTabs() {
-    console.log('Setting up leaderboard tabs...');
-    
     const tabButtons = document.querySelectorAll('.tab-button');
     const leaderboardTable = document.querySelector('.leaderboard-table tbody');
-    
-    console.log('Found tab buttons:', tabButtons.length);
-    console.log('Found leaderboard table:', !!leaderboardTable);
     
     if (tabButtons.length === 0 || !leaderboardTable) {
         console.log('Elements not found, skipping leaderboard setup');
@@ -156,7 +151,6 @@ function setupLeaderboardTabs() {
     };
     
     function updateLeaderboard(track) {
-        console.log('Updating leaderboard for track:', track);
         const data = leaderboardData[track];
         if (!data || !leaderboardTable) return;
         
@@ -205,10 +199,8 @@ function setupLeaderboardTabs() {
     
     // Add click listeners to tab buttons
     tabButtons.forEach(button => {
-        console.log('Adding click listener to button:', button.getAttribute('data-track'));
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('Button clicked:', this.getAttribute('data-track'));
             
             const track = this.getAttribute('data-track');
             
@@ -226,7 +218,6 @@ function setupLeaderboardTabs() {
     // Initialize with 1k track by default
     updateButtonStyles('1k');
     updateLeaderboard('1k');
-    console.log('Leaderboard setup complete');
 }
 
 // Toggle mobile menu
