@@ -185,6 +185,23 @@ html {
     transform: translateY(-2px);
 }
 
+.btn-secondary {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    border-radius: 25px;
+    padding: 0.875rem 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: white !important;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268 !important;
+    border-color: #5a6268 !important;
+    transform: translateY(-2px);
+    color: white !important;
+}
+
 /* Fix text colors */
 .text-primary {
     color: #2c3e50 !important;
