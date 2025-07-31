@@ -134,12 +134,6 @@ function setupLeaderboardTabs() {
     
     // Baseline data from DCVLR organizers
     const leaderboardData = {
-        '1k': [
-            { rank: 1, team: 'Base model (Qwen2.5-VL-7B)', score: '60.0%', submissions: 'Baseline', lastUpdate: '-' },
-            { rank: 2, team: 'Base model (Molmo-7B-D-0924)', score: '56.0%', submissions: 'Baseline', lastUpdate: '-' },
-            { rank: 3, team: 'Base model (Molmo-7B-O-0924)', score: '35.0%', submissions: 'Baseline', lastUpdate: '-' },
-            { rank: 4, team: 'LLMS-R1', score: 'TBD', submissions: 'Baseline', lastUpdate: '-' },
-        ],
         '10k': [
             { rank: 1, team: 'Base model (Qwen2.5-VL-72B)', score: '72.6%', submissions: 'Baseline', lastUpdate: '-' },
             { rank: 2, team: 'Base model (Molmo-7B-D-0924)', score: '56.0%', submissions: 'Baseline', lastUpdate: '-' },
@@ -213,9 +207,9 @@ function setupLeaderboardTabs() {
         });
     });
     
-    // Initialize with 1k track by default
-    updateButtonStyles('1k');
-    updateLeaderboard('1k');
+    // Initialize with 10k track by default
+    updateButtonStyles('10k');
+    updateLeaderboard('10k');
 }
 
 // Toggle mobile menu
