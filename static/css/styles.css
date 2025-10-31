@@ -1,5 +1,18 @@
 /* Custom styles that complement Bootstrap and Tailwind */
 
+/* Screen reader only utility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
@@ -145,11 +158,6 @@ html {
     border-color: #cd7f32 !important;
 }
 
-/* Password overlay gradient */
-.password-overlay {
-    background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
-}
-
 /* Hero gradient */
 .hero-gradient {
     background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
@@ -267,6 +275,24 @@ html {
 .sponsor-logo-link:hover .sponsor-logo {
     filter: grayscale(0%);
     transform: scale(1.05);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 640px) {
+    .hero-actions .flex {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hide archive badge on mobile to save space */
+    header .logo span {
+        display: none;
+    }
 }
 
 /* Active tab styling */

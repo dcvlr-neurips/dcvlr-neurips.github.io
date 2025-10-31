@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DCVLR: Data Curation for Vision Language Reasoning - NeurIPS 2025 Competition</title>
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Join the DCVLR NeurIPS 2025 Competition focused on advancing visual reasoning capabilities in vision-language models through high-quality data curation.">
-    <meta name="keywords" content="DCVLR, NeurIPS 2025, vision-language models, data curation, visual reasoning, machine learning competition, AI competition, computer vision, natural language processing">
+    <meta name="description"
+        content="Join the DCVLR NeurIPS 2025 Competition focused on advancing visual reasoning capabilities in vision-language models through high-quality data curation.">
+    <meta name="keywords"
+        content="DCVLR, NeurIPS 2025, vision-language models, data curation, visual reasoning, machine learning competition, AI competition, computer vision, natural language processing">
     <meta name="author" content="DCVLR Competition Organizing Team">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://dcvlr-neurips.github.io/">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dcvlr-neurips.github.io/">
     <meta property="og:title" content="DCVLR: Data Curation for Vision Language Reasoning - NeurIPS 2025 Competition">
-    <meta property="og:description" content="Join the DCVLR NeurIPS 2025 Competition. Advance visual reasoning in VLMs through data curation.">
+    <meta property="og:description"
+        content="Join the DCVLR NeurIPS 2025 Competition. Advance visual reasoning in VLMs through data curation.">
     <meta property="og:image" content="https://dcvlr-neurips.github.io/static/images/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://dcvlr-neurips.github.io/">
     <meta property="twitter:title" content="DCVLR: NeurIPS 2025 Competition">
-    <meta property="twitter:description" content="Join the DCVLR NeurIPS 2025 Competition. Advance visual reasoning in VLMs through data curation.">
+    <meta property="twitter:description"
+        content="Join the DCVLR NeurIPS 2025 Competition. Advance visual reasoning in VLMs through data curation.">
     <meta property="twitter:image" content="https://dcvlr-neurips.github.io/static/images/og-image.png">
     <meta property="twitter:site" content="@DCVLR_NeurIPS">
-    
+
     <!-- Additional Meta Tags -->
     <meta name="theme-color" content="#2563eb">
     <meta name="application-name" content="DCVLR Competition">
     <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-    
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -64,7 +69,7 @@
             }
         }
     </script>
-    
+
     <!-- Structured Data for Event -->
     <script type="application/ld+json">
     {
@@ -102,452 +107,643 @@
     }
     </script>
     <link rel="stylesheet" href="static/css/styles.css">
-    
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRCL2NG8LH"></script>
 </head>
+
 <body>
     <!-- Main Content -->
     <div id="main-content" class="main-content min-h-screen">
-    <header class="bg-light-bg border-b border-border sticky top-0 z-40 py-6">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="logo flex items-center space-x-4">
-                <img src="static/images/dcvlr-logo.png" alt="DCVLR Logo" class="h-16 w-auto object-contain">
-                <div class="text-2xl font-bold text-primary font-sans tracking-tight">Data Curation for<br>Vision Language Reasoning</div>
-            </div>
-            
-            <!-- Mobile menu button -->
-            <button class="lg:hidden text-primary" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-            
-            <nav class="hidden lg:block">
-                <ul class="flex items-center space-x-10 list-none mb-0">
-                    <li><a href="#overview" class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">Overview</a></li>
-                    <li><a href="#leaderboard" class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">Leaderboard</a></li>
-                    <li><a href="#resources" class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">Resources</a></li>
-                    <li><a href="#prizes" class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">Prizes</a></li>
-                    <li><a href="#team" class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">Team</a></li>
-                    <li><a href="#faq" class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">FAQ</a></li>
-                    <li><a href="#contact" class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">Contact</a></li>
-                    <li><a href="https://github.com/oumi-ai/oumi/blob/main/configs/projects/dcvlr/README.md" target="_blank" rel="noopener" class="github-link text-text-secondary hover:text-primary transition-colors" aria-label="GitHub Repository">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a></li>
-                    <li><a href="https://discord.com/channels/1286348126797430814/1387160032398938262" target="_blank" rel="noopener" class="discord-link text-text-secondary hover:text-primary transition-colors" aria-label="Discord Community">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
-                            <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.019 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
-                        </svg>
-                    </a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <!-- Mobile Navigation Menu -->
-    <nav id="mobile-menu" class="lg:hidden hidden bg-white border-b border-border shadow-lg">
-        <ul class="flex flex-col p-4 space-y-2">
-            <li><a href="#overview" class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Overview</a></li>
-            <li><a href="#leaderboard" class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Leaderboard</a></li>
-            <li><a href="#resources" class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Resources</a></li>
-            <li><a href="#prizes" class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Prizes</a></li>
-            <li><a href="#team" class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Team</a></li>
-            <li><a href="#faq" class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">FAQ</a></li>
-            <li><a href="#contact" class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Contact</a></li>
-            <li><a href="https://github.com/oumi-ai/oumi/blob/main/configs/projects/dcvlr/README.md" target="_blank" rel="noopener" class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">GitHub</a></li>
-            <li><a href="https://oumi.ai/discord" target="_blank" rel="noopener" class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Discord</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero hero-gradient py-24 text-center border-b border-border">
-        <div class="container mx-auto px-6">
-            <h1 class="text-5xl font-bold mb-6 leading-tight text-primary">DCVLR: Data Curation for Vision Language Reasoning</h1>
-            <p class="text-xl max-w-2xl mx-auto mb-8 text-text-secondary font-serif">A <a href="https://neurips.cc/" target="_blank" rel="noopener" class="text-accent hover:underline">NeurIPS 2025</a> Competition advancing the science of data curation for vision-language reasoning.</p>
-            <div class="bg-green-50 border-2 border-green-500 rounded-lg p-6 max-w-2xl mx-auto mb-8">
-                <p class="text-2xl font-semibold text-green-700 mb-2">Prize Competition Completed!</p>
-                <p class="text-lg text-green-600">View the winners below. New submissions still welcome but not eligible for prizes.</p>
-            </div>
-            <div class="hero-actions">
-                <div class="mt-8">
-                    <p class="text-lg text-text-secondary mb-4 font-medium">Sponsored by:</p>
-                    <div class="flex justify-center items-center gap-10">
-                        <a href="https://lambda.ai" target="_blank" rel="noopener" class="opacity-90 hover:opacity-100 transition-opacity">
-                            <img src="static/images/lambda-labs-logo.svg" alt="Lambda Labs" class="h-12 object-contain">
-                        </a>
-                        <a href="https://oumi.ai" target="_blank" rel="noopener" class="opacity-90 hover:opacity-100 transition-opacity">
-                            <img src="static/images/oumi_logo_dark.png" alt="Oumi.ai" class="h-16 object-contain">
-                        </a>
+        <header class="bg-light-bg border-b border-border sticky top-0 z-40 py-6">
+            <div class="container mx-auto px-6 flex justify-between items-center">
+                <div class="logo flex items-center space-x-4">
+                    <img src="static/images/dcvlr-logo.png" alt="DCVLR Logo" class="h-16 w-auto object-contain">
+                    <div class="flex flex-col">
+                        <div class="text-2xl font-bold text-primary font-sans tracking-tight">Data Curation
+                            for<br>Vision Language Reasoning</div>
+                        <span
+                            class="text-xs text-text-muted mt-1 font-medium bg-lighter-bg px-2 py-0.5 rounded-full inline-block w-fit">Past
+                            Competition - Archive</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="leaderboard-preview section-gradient py-16" id="leaderboard">
-        <div class="container mx-auto px-6">
-            <div class="section-title text-center mb-12">
-                <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Final Leaderboard</h2>
-                <p class="max-w-2xl mx-auto text-lg text-text-secondary">Prize Competition Results (June-October 2025)</p>
-            </div>
-            <div class="leaderboard-container max-w-5xl mx-auto">
-                <div class="leaderboard-table bg-white rounded-lg overflow-hidden shadow-sm border border-border">
-                    <table class="w-full border-collapse">
-                        <thead class="bg-primary text-white">
-                            <tr>
-                                <th class="p-4 text-left font-semibold text-sm tracking-wide">Rank</th>
-                                <th class="p-4 text-left font-semibold text-sm tracking-wide">Team</th>
-                                <th class="p-4 text-left font-semibold text-sm tracking-wide">Best Submission</th>
-                                <th class="p-4 text-center font-semibold text-sm tracking-wide">Accuracy</th>
-                                <th class="p-4 text-center font-semibold text-sm tracking-wide">Δ vs Baseline</th>
-                                <th class="p-4 text-center font-semibold text-sm tracking-wide">Beats Baseline</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="top-3 bg-yellow-50">
-                                <td class="p-4 text-center font-bold text-lg">🥇</td>
-                                <td class="p-4 font-semibold">University of Hawaii at Manoa - team 3</td>
-                                <td class="p-4 text-sm"><a href="https://huggingface.co/datasets/yosubshin/walton-hard-cosyn-traces" target="_blank" rel="noopener" class="text-accent hover:underline">yosubshin/walton-hard-cosyn-traces</a></td>
-                                <td class="p-4 text-center font-semibold">0.5667</td>
-                                <td class="p-4 text-center font-semibold text-green-600">+0.0355</td>
-                                <td class="p-4 text-center text-green-600">✓</td>
-                            </tr>
-                            <tr class="border-t border-border">
-                                <td class="p-4 text-center font-bold">2</td>
-                                <td class="p-4">zhuyun@pjlab.org.cn</td>
-                                <td class="p-4 text-sm"><a href="https://huggingface.co/datasets/Dream000/high_quality_data_10k_multisource" target="_blank" rel="noopener" class="text-accent hover:underline">Dream000/high_quality_data_10k_multisource</a></td>
-                                <td class="p-4 text-center">0.5232</td>
-                                <td class="p-4 text-center text-red-600">-0.0080</td>
-                                <td class="p-4 text-center text-red-600">✗</td>
-                            </tr>
-                            <tr class="border-t border-border">
-                                <td class="p-4 text-center font-bold">3</td>
-                                <td class="p-4">AthenaRC</td>
-                                <td class="p-4 text-sm"><a href="https://huggingface.co/datasets/ilsp/dcvlr" target="_blank" rel="noopener" class="text-accent hover:underline">ilsp/dcvlr</a></td>
-                                <td class="p-4 text-center">0.5225</td>
-                                <td class="p-4 text-center text-red-600">-0.0086</td>
-                                <td class="p-4 text-center text-red-600">✗</td>
-                            </tr>
-                            <tr class="border-t border-border">
-                                <td class="p-4 text-center">4</td>
-                                <td class="p-4">Blackwell</td>
-                                <td class="p-4 text-sm"><a href="https://huggingface.co/datasets/ArkaMukherjee/reasoning-10k-v2" target="_blank" rel="noopener" class="text-accent hover:underline">ArkaMukherjee/reasoning-10k-v2</a></td>
-                                <td class="p-4 text-center">0.5027</td>
-                                <td class="p-4 text-center text-red-600">-0.0284</td>
-                                <td class="p-4 text-center text-red-600">✗</td>
-                            </tr>
-                            <tr class="border-t border-border">
-                                <td class="p-4 text-center">5</td>
-                                <td class="p-4">AFIE</td>
-                                <td class="p-4 text-sm"><a href="https://huggingface.co/datasets/Moutozf01/dcvlr_dataset_1005_bytes_refine_shuffled_11000/tree/main" target="_blank" rel="noopener" class="text-accent hover:underline">Moutozf01/dcvlr_dataset_1005_bytes_refine_shuffled_11000</a></td>
-                                <td class="p-4 text-center">0.4972</td>
-                                <td class="p-4 text-center text-red-600">-0.0340</td>
-                                <td class="p-4 text-center text-red-600">✗</td>
-                            </tr>
-                            <tr class="border-t border-border">
-                                <td class="p-4 text-center">6</td>
-                                <td class="p-4">CoreData</td>
-                                <td class="p-4 text-sm"><a href="https://huggingface.co/datasets/xinyuz9920/filted_data" target="_blank" rel="noopener" class="text-accent hover:underline">xinyuz9920/filted_data</a></td>
-                                <td class="p-4 text-center">0.4813</td>
-                                <td class="p-4 text-center text-red-600">-0.0498</td>
-                                <td class="p-4 text-center text-red-600">✗</td>
-                            </tr>
-                            <tr class="border-t border-border">
-                                <td class="p-4 text-center">7</td>
-                                <td class="p-4">MICV</td>
-                                <td class="p-4 text-sm"><a href="https://huggingface.co/datasets/Chuanbiao/CoT_1" target="_blank" rel="noopener" class="text-accent hover:underline">Chuanbiao/CoT_1</a></td>
-                                <td class="p-4 text-center">0.4325</td>
-                                <td class="p-4 text-center text-red-600">-0.0987</td>
-                                <td class="p-4 text-center text-red-600">✗</td>
-                            </tr>
-                            <tr class="border-t border-border">
-                                <td class="p-4 text-center">8</td>
-                                <td class="p-4">KDDI Research</td>
-                                <td class="p-4 text-sm"><a href="https://huggingface.co/datasets/k423kaggle/submission" target="_blank" rel="noopener" class="text-accent hover:underline">k423kaggle/submission</a></td>
-                                <td class="p-4 text-center">0.2219</td>
-                                <td class="p-4 text-center text-red-600">-0.3092</td>
-                                <td class="p-4 text-center text-red-600">✗</td>
-                            </tr>
-                            <tr class="border-t-2 border-primary bg-blue-50">
-                                <td class="p-4 text-center font-bold">-</td>
-                                <td class="p-4 font-bold">BASELINE</td>
-                                <td class="p-4 text-sm font-semibold">Qwen2.5-VL-7B-Instruct</td>
-                                <td class="p-4 text-center font-bold">0.5312</td>
-                                <td class="p-4 text-center font-bold">0.0000</td>
-                                <td class="p-4 text-center">-</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="leaderboard-note mt-8 text-center p-6 bg-white rounded-lg border border-border">
-                    <p class="text-text-secondary mb-2"><strong>Congratulations to University of Hawaii at Manoa - team 3</strong> for winning first place ($3,000 prize)!</p>
-                    <p class="text-text-secondary text-sm mt-4"><strong>New submissions welcome!</strong> Your dataset will be evaluated and added to this leaderboard. Note: Future submissions are not eligible for prize awards, which were exclusive to the June-October 2025 competition period.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <!-- Mobile menu button -->
+                <button class="lg:hidden text-primary" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu"
+                    aria-expanded="false" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
 
-    <section class="competition-overview bg-white py-16" id="overview">
-        <div class="container mx-auto px-6">
-            <div class="section-title text-center mb-16">
-                <h2 class="text-4xl font-semibold mb-6 text-primary relative inline-block">Overview</h2>
-                <p class="max-w-3xl mx-auto text-lg text-text-secondary leading-relaxed mb-8">
-                    Reasoning models have become one of the most exciting areas of AI research. But most existing models are trained on data that is not publicly available, making it difficult to reproduce results and build on them. Furthermore, the modality of most frontier reasoning models remains language-only.
-                </p>
-                <p class="max-w-3xl mx-auto text-lg text-text-secondary leading-relaxed mb-10">
-                    DCVLR, hosted at <a href="https://neurips.cc/" target="_blank" rel="noopener" class="text-accent hover:underline">NeurIPS 2025</a>, is the first open-data, open-models, open-source competition for data curation in vision-language reasoning. The initial prize competition ran from June to October 2025, and we continue to accept submissions to advance the science of data curation.
-                </p>
-
-                <p class="max-w-3xl mx-auto text-lg text-text-secondary leading-relaxed mb-10">
-                    The challenge: Curate up to 10K high-quality instruction-tuning examples using any strategy—synthetic generation, smart filtering, or novel approaches. We handle the training and evaluation, and add your results to the leaderboard.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-                    <div class="bg-lighter-bg border border-border rounded-lg p-6 text-center">
-                        <div class="text-3xl mb-3">🌟</div>
-                        <h3 class="text-primary font-semibold text-lg mb-2">OPEN-DATA</h3>
-                        <p class="text-text-secondary text-sm">The winning datasets from the competition will be made publicly available.</p>
-                    </div>
-                    <div class="bg-lighter-bg border border-border rounded-lg p-6 text-center">
-                        <div class="text-3xl mb-3">🤖</div>
-                        <h3 class="text-primary font-semibold text-lg mb-2">OPEN-MODELS</h3>
-                        <p class="text-text-secondary text-sm">Unlike previous competitions, we evaluate utility for frontier open-source models such as AI2's Molmo.</p>
-                    </div>
-                    <div class="bg-lighter-bg border border-border rounded-lg p-6 text-center">
-                        <div class="text-3xl mb-3">💻</div>
-                        <h3 class="text-primary font-semibold text-lg mb-2">OPEN-SOURCE</h3>
-                        <p class="text-text-secondary text-sm">All of the code in the competition will be publicly released to enable future research.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="eligibility section-gradient py-16" id="eligibility">
-        <div class="container mx-auto px-6">
-            <div class="section-title text-center mb-12">
-                <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Eligibility & Requirements</h2>
-                <p class="max-w-2xl mx-auto text-lg text-text-secondary mb-6">Who can participate and what you need to know</p>
-                <div class="bg-blue-50 border-2 border-blue-500 rounded-lg p-6 max-w-3xl mx-auto">
-                    <p class="text-lg font-semibold text-blue-800 mb-2">📢 Prize Competition Has Ended</p>
-                    <p class="text-blue-700">The prize competition period concluded in October 2025. New submissions are still welcome and will be evaluated and added to the leaderboard, but are not eligible for prize awards.</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="eligibility-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
-                    <h3 class="text-primary mb-6 text-xl font-semibold">🌍 Who Can Participate</h3>
-                    <ul class="list-none space-y-2">
-                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">Up to 500 teams of size 1-20 can compete</li>
-                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">Anyone can join a team; students, researchers, and industry professionals are particularly welcome</li>
-                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">No model training experience required; just curate and submit a dataset!</li>
-                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">Participants from all backgrounds encouraged; it's free to enter and free to compete.</li>
+                <nav class="hidden lg:block">
+                    <ul class="flex items-center space-x-10 list-none mb-0">
+                        <li><a href="#overview"
+                                class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">Overview</a>
+                        </li>
+                        <li><a href="#leaderboard"
+                                class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">Leaderboard</a>
+                        </li>
+                        <li><a href="#resources"
+                                class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">Resources</a>
+                        </li>
+                        <li><a href="#prizes"
+                                class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">Prizes</a>
+                        </li>
+                        <li><a href="#team"
+                                class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">Team</a>
+                        </li>
+                        <li><a href="#faq"
+                                class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">FAQ</a>
+                        </li>
+                        <li><a href="#contact"
+                                class="text-text-secondary hover:text-primary transition-colors font-sans text-sm font-normal no-underline">Contact</a>
+                        </li>
+                        <li><a href="https://github.com/oumi-ai/oumi/blob/main/configs/projects/dcvlr/README.md"
+                                target="_blank" rel="noopener"
+                                class="github-link text-text-secondary hover:text-primary transition-colors"
+                                aria-label="GitHub Repository">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a></li>
+                        <li><a href="https://oumi.ai/discord" target="_blank" rel="noopener"
+                                class="discord-link text-text-secondary hover:text-primary transition-colors"
+                                aria-label="Discord Community">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
+                                    <path
+                                        d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.019 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z" />
+                                </svg>
+                            </a></li>
                     </ul>
-                </div>
-                <div class="eligibility-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
-                    <h3 class="text-primary mb-6 text-xl font-semibold">📋 Competition Rules</h3>
-                    <ul class="list-none space-y-2">
-                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">BYOD (Bring your own data) - use any dataset for training data curation</li>
-                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">Teams must submit a write-up documenting their reproducible, scalable curation strategy</li>
-                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">Teams must open-source any code used for data curation and submit a link to the GitHub repo</li>
-                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">Detailed rules will be provided during the team signup period</li>
-                    </ul>
-                </div>
-                <div class="eligibility-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
-                    <h3 class="text-primary mb-6 text-xl font-semibold">🚫 Restrictions</h3>
-                    <ul class="list-none space-y-2">
-                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">Each individual can join only one team</li>
-                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">(Free) OpenReview account signup required</li>
-                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">Each team can submit a maximum of three datasets to the leaderboard</li>
-                        <li class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">Teams must submit datasets for content moderation and filtering (hateful and toxic content, decontamination with test sets, etc.) to compete</li>
-                    </ul>
-                </div>
+                </nav>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <section class="timeline bg-white py-16" id="timeline">
-        <div class="container mx-auto px-6">
-            <div class="section-title text-center mb-12">
-                <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Competition Timeline</h2>
-                <p class="max-w-2xl mx-auto text-lg text-text-secondary">Key milestones from the prize competition period</p>
-            </div>
-            <div class="timeline-container max-w-4xl mx-auto">
-                <div class="timeline-item flex mb-10 items-start pb-10 border-b border-border">
-                    <div class="timeline-date w-44 font-semibold text-green-600 text-sm flex-shrink-0 font-sans">✓ June 18, 2025</div>
-                    <div class="timeline-content flex-1 pl-12">
-                        <h3 class="text-primary mb-2 font-semibold text-lg">Released Competition Materials</h3>
-                        <p class="text-text-secondary leading-relaxed mb-0">Competition website and starter kit (data, code, baselines) made available.</p>
-                    </div>
-                </div>
-                <div class="timeline-item flex mb-10 items-start pb-10 border-b border-border">
-                    <div class="timeline-date w-44 font-semibold text-green-600 text-sm flex-shrink-0 font-sans">✓ July 15, 2025</div>
-                    <div class="timeline-content flex-1 pl-12">
-                        <h3 class="text-primary mb-2 font-semibold text-lg">Team Signup Opened</h3>
-                        <p class="text-text-secondary leading-relaxed mb-0">Teams began registering for the competition and forming their groups.</p>
-                    </div>
-                </div>
-                <div class="timeline-item flex mb-10 items-start pb-10 border-b border-border">
-                    <div class="timeline-date w-44 font-semibold text-green-600 text-sm flex-shrink-0 font-sans">✓ August 1, 2025</div>
-                    <div class="timeline-content flex-1 pl-12">
-                        <h3 class="text-primary mb-2 font-semibold text-lg">Submission Portal Opened</h3>
-                        <p class="text-text-secondary leading-relaxed mb-0">Participants began submitting their curated datasets for evaluation.</p>
-                    </div>
-                </div>
-                <div class="timeline-item flex mb-10 items-start pb-10 border-b border-border">
-                    <div class="timeline-date w-44 font-semibold text-green-600 text-sm flex-shrink-0 font-sans">✓ October 1, 2025</div>
-                    <div class="timeline-content flex-1 pl-12">
-                        <h3 class="text-primary mb-2 font-semibold text-lg">Prize Submission Deadline</h3>
-                        <p class="text-text-secondary leading-relaxed mb-0">Final deadline for submissions eligible for prize awards.</p>
-                    </div>
-                </div>
-                <div class="timeline-item flex mb-10 items-start pb-10 border-b border-border">
-                    <div class="timeline-date w-44 font-semibold text-green-600 text-sm flex-shrink-0 font-sans">✓ November 1, 2025</div>
-                    <div class="timeline-content flex-1 pl-12">
-                        <h3 class="text-primary mb-2 font-semibold text-lg">Results Announced</h3>
-                        <p class="text-text-secondary leading-relaxed mb-0">Final leaderboard released with prize winners.</p>
-                    </div>
-                </div>
-                <div class="timeline-item flex mb-10 items-start pb-10 border-b border-border">
-                    <div class="timeline-date w-44 font-semibold text-accent text-sm flex-shrink-0 font-sans">December 2025</div>
-                    <div class="timeline-content flex-1 pl-12">
-                        <h3 class="text-primary mb-2 font-semibold text-lg"><a href="https://neurips.cc/" target="_blank" rel="noopener" class="text-inherit hover:text-accent">NeurIPS</a> 2025</h3>
-                        <p class="text-text-secondary leading-relaxed mb-0">Presentation of results and awards at the <a href="https://neurips.cc/" target="_blank" rel="noopener" class="text-accent hover:underline">NeurIPS</a> conference.</p>
-                    </div>
-                </div>
-                <div class="timeline-item flex mb-10 items-start pb-10 last:border-b-0">
-                    <div class="timeline-date w-44 font-semibold text-accent text-sm flex-shrink-0 font-sans">Ongoing</div>
-                    <div class="timeline-content flex-1 pl-12">
-                        <h3 class="text-primary mb-2 font-semibold text-lg">Submissions Open</h3>
-                        <p class="text-text-secondary leading-relaxed mb-0">New submissions continue to be accepted and added to the leaderboard (not eligible for prizes).</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Mobile Navigation Menu -->
+        <nav id="mobile-menu" class="lg:hidden hidden bg-white border-b border-border shadow-lg">
+            <ul class="flex flex-col p-4 space-y-2">
+                <li><a href="#overview"
+                        class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Overview</a>
+                </li>
+                <li><a href="#leaderboard"
+                        class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Leaderboard</a>
+                </li>
+                <li><a href="#resources"
+                        class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Resources</a>
+                </li>
+                <li><a href="#prizes"
+                        class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Prizes</a>
+                </li>
+                <li><a href="#team"
+                        class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Team</a>
+                </li>
+                <li><a href="#faq"
+                        class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">FAQ</a>
+                </li>
+                <li><a href="#contact"
+                        class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Contact</a>
+                </li>
+                <li><a href="https://github.com/oumi-ai/oumi/blob/main/configs/projects/dcvlr/README.md" target="_blank"
+                        rel="noopener"
+                        class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">GitHub</a>
+                </li>
+                <li><a href="https://oumi.ai/discord" target="_blank" rel="noopener"
+                        class="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors">Discord</a>
+                </li>
+            </ul>
+        </nav>
 
-    <section class="resources section-gradient py-16" id="resources">
-        <div class="container mx-auto px-6">
-            <div class="section-title text-center mb-12">
-                <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Competition Resources</h2>
-                <p class="max-w-2xl mx-auto text-lg text-text-secondary">The only thing you need in order to participate in DCVLR is (1) a reasoning dataset generated using (2) a reproducible curation strategy. That said, we provide all the resources you need to conduct your own experiments on your own compute. We expect the most successful teams will vet the quality of their datasets with experiments on small models before submitting to the leaderboard.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="resource-card bg-white border border-border rounded-lg p-8 text-center transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
-                    <div class="resource-icon text-5xl mb-4 block text-accent transition-all duration-300">📊</div>
-                    <h3 class="text-primary mb-4 font-semibold text-lg">Starter Kit</h3>
-                    <p class="text-text-secondary mb-6 leading-relaxed text-sm">Comprehensive starter kit with example datasets, training scripts, and best practices to help participants get started.</p>
-                    <a href="https://github.com/oumi-ai/oumi/tree/main/configs/projects/dcvlr" target="_blank" rel="noopener" onclick="trackResourceAccess('starter_kit', 'dataset')" class="text-accent hover:text-primary hover:underline font-medium font-sans">Access Starter Kit</a>
-                </div>
-                <div class="resource-card bg-white border border-border rounded-lg p-8 text-center transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
-                    <div class="resource-icon text-5xl mb-4 block text-accent transition-all duration-300">💻</div>
-                    <h3 class="text-primary mb-4 font-semibold text-lg">Training Scripts</h3>
-                    <p class="text-text-secondary mb-6 leading-relaxed text-sm">Starting scripts for fine-tuning multiple vision-language models on your curated datasets with Oumi.</p>
-                    <a href="https://github.com/oumi-ai/oumi/tree/main/configs/projects/dcvlr" target="_blank" rel="noopener" onclick="trackResourceAccess('training_scripts', 'code')" class="text-accent hover:text-primary hover:underline font-medium font-sans">View Scripts</a>
-                </div>
-                <div class="resource-card bg-white border border-border rounded-lg p-8 text-center transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
-                    <div class="resource-icon text-5xl mb-4 block text-accent transition-all duration-300">🧪</div>
-                    <h3 class="text-primary mb-4 font-semibold text-lg">Evaluation Code</h3>
-                    <p class="text-text-secondary mb-6 leading-relaxed text-sm">Scripts to evaluate model outputs on diverse benchmark development sets for local testing using VLMEvalKit.</p>
-                    <a href="https://github.com/oumi-ai/VLMEvalKit" target="_blank" rel="noopener" onclick="trackResourceAccess('evaluation_code', 'code')" class="text-accent hover:text-primary hover:underline font-medium font-sans">Get Code</a>
-                </div>
-                <div class="resource-card bg-white border border-border rounded-lg p-8 text-center transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
-                    <div class="resource-icon text-5xl mb-4 block text-accent transition-all duration-300">📝</div>
-                    <h3 class="text-primary mb-4 font-semibold text-lg">Baseline Submissions</h3>
-                    <p class="text-text-secondary mb-6 leading-relaxed text-sm">Reference implementations and baseline approaches for data curation and model trainin.</p>
-                    <a href="https://github.com/oumi-ai/oumi/blob/main/configs/projects/dcvlr/README.md" target="_blank" rel="noopener" onclick="trackResourceAccess('baseline_submissions', 'code')" class="text-accent hover:text-primary hover:underline font-medium font-sans">View Baselines</a>
-                </div>
-                <div class="resource-card bg-white border border-border rounded-lg p-8 text-center transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
-                    <div class="resource-icon text-5xl mb-4 block text-accent transition-all duration-300">☁️</div>
-                    <h3 class="text-primary mb-4 font-semibold text-lg">Compute Resources</h3>
-                    <p class="text-text-secondary mb-6 leading-relaxed text-sm">GPU credits from our compute sponsor Lambda Labs for early student participants.</p>
-                    <a href="https://oumi-ai.typeform.com/to/OGPuRt6U" target="_blank" rel="noopener" onclick="trackResourceAccess('gpu_credits', 'compute')" class="text-accent hover:text-primary hover:underline font-medium font-sans">Apply for Credits</a>
-                </div>
-                <div class="resource-card bg-white border border-border rounded-lg p-8 text-center transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
-                    <div class="resource-icon text-5xl mb-4 block text-accent transition-all duration-300">📚</div>
-                    <h3 class="text-primary mb-4 font-semibold text-lg">Documentation</h3>
-                    <p class="text-text-secondary mb-6 leading-relaxed text-sm">Complete guides and tutorials to help you get started.</p>
-                    <a href="https://oumi.ai/docs/" target="_blank" rel="noopener" onclick="trackResourceAccess('documentation', 'docs')" class="text-accent hover:text-primary hover:underline font-medium font-sans">View Documentation</a>
+        <section class="hero hero-gradient py-24 text-center border-b border-border">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl font-bold mb-6 leading-tight text-primary">DCVLR: Data Curation for Vision Language
+                    Reasoning</h1>
+                <p class="text-xl max-w-2xl mx-auto mb-8 text-text-secondary font-serif">A <a href="https://neurips.cc/"
+                        target="_blank" rel="noopener" class="text-accent hover:underline">NeurIPS 2025<span
+                            class="sr-only"> (opens in new tab)</span></a> Competition advancing the science of data
+                    curation for vision-language reasoning.</p>
+                <!-- <div class="bg-green-50 border-2 border-green-500 rounded-lg p-6 max-w-2xl mx-auto mb-8">
+                    <p class="text-2xl font-semibold text-green-700 mb-2">Prize Competition Completed!</p>
+                    <p class="text-lg text-green-600">View the winners below. New submissions still welcome but not
+                        eligible for prizes.</p>
+                </div> -->
+                <div class="hero-actions flex flex-col items-center gap-6">
+                    <div class="flex gap-4">
+                        <a href="#resources"
+                            class="btn btn-primary bg-accent hover:bg-primary text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:transform hover:-translate-y-1 shadow-md hover:shadow-lg no-underline"
+                            onclick="trackButtonClick('get_started', 'hero_cta')">Get Started</a>
+                        <a href="#leaderboard"
+                            class="btn btn-secondary bg-white hover:bg-lighter-bg text-primary font-semibold py-3 px-8 rounded-full border-2 border-accent transition-all duration-300 hover:transform hover:-translate-y-1 shadow-md hover:shadow-lg no-underline"
+                            onclick="trackButtonClick('view_leaderboard', 'hero_cta')">View Leaderboard</a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-lg text-text-secondary mb-4 font-medium">Sponsored by:</p>
+                        <div class="flex justify-center items-center gap-10">
+                            <a href="https://lambda.ai" target="_blank" rel="noopener"
+                                class="opacity-90 hover:opacity-100 transition-opacity">
+                                <img src="static/images/lambda-labs-logo.svg" alt="Lambda Labs"
+                                    class="h-12 object-contain">
+                            </a>
+                            <a href="https://oumi.ai" target="_blank" rel="noopener"
+                                class="opacity-90 hover:opacity-100 transition-opacity">
+                                <img src="static/images/oumi_logo_dark.png" alt="Oumi.ai" class="h-16 object-contain">
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="prizes bg-white py-16" id="prizes">
-        <div class="container mx-auto px-6">
-            <div class="section-title text-center mb-12">
-                <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Prize Winners</h2>
-                <p class="max-w-2xl mx-auto text-lg text-text-secondary mb-4">Prize Competition Period: June-October 2025</p>
-                <p class="max-w-2xl mx-auto text-sm text-text-secondary italic">Future submissions welcome but not eligible for prizes</p>
+        <section class="leaderboard-preview section-gradient py-16" id="leaderboard">
+            <div class="container mx-auto px-6">
+                <div class="section-title text-center mb-12">
+                    <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Final Leaderboard</h2>
+                    <p class="max-w-2xl mx-auto text-lg text-text-secondary">DCVLR 1st Edition - NeurIPS 2025
+                        Competition Results</p>
+                </div>
+                <div class="leaderboard-container max-w-5xl mx-auto">
+                    <div class="leaderboard-table bg-white rounded-lg overflow-hidden shadow-sm border border-border">
+                        <table class="w-full border-collapse">
+                            <thead class="bg-primary text-white">
+                                <tr>
+                                    <th class="p-4 text-left font-semibold text-sm tracking-wide">Rank</th>
+                                    <th class="p-4 text-left font-semibold text-sm tracking-wide">Team</th>
+                                    <th class="p-4 text-left font-semibold text-sm tracking-wide">Best Submission</th>
+                                    <th class="p-4 text-center font-semibold text-sm tracking-wide">Accuracy</th>
+                                    <th class="p-4 text-center font-semibold text-sm tracking-wide">Δ vs Baseline</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="top-3 bg-yellow-50">
+                                    <td class="p-4 text-center font-bold text-lg rank">1</td>
+                                    <td class="p-4 font-semibold">University of Hawaii at Manoa - team 3</td>
+                                    <td class="p-4 text-sm"><a
+                                            href="https://huggingface.co/datasets/yosubshin/walton-hard-cosyn-traces"
+                                            target="_blank" rel="noopener"
+                                            class="text-accent hover:underline">yosubshin/walton-hard-cosyn-traces</a>
+                                    </td>
+                                    <td class="p-4 text-center font-semibold">46.12%</td>
+                                    <td class="p-4 text-center font-semibold text-green-600">+7.28%</td>
+                                </tr>
+                                <tr class="top-3 bg-yellow-50 border-t border-border">
+                                    <td class="p-4 text-center font-bold text-lg rank">2</td>
+                                    <td class="p-4 font-semibold">AFIE</td>
+                                    <td class="p-4 text-sm"><a
+                                            href="https://huggingface.co/datasets/Moutozf01/dcvlr_dataset_1005_bytes_refine_shuffled_11000/tree/main"
+                                            target="_blank" rel="noopener"
+                                            class="text-accent hover:underline">Moutozf01/dcvlr_dataset_1005_bytes_refine_shuffled_11000</a>
+                                    </td>
+                                    <td class="p-4 text-center font-semibold">42.13%</td>
+                                    <td class="p-4 text-center font-semibold text-green-600">+3.29%</td>
+                                </tr>
+                                <tr class="top-3 bg-yellow-50 border-t border-border">
+                                    <td class="p-4 text-center font-bold text-lg rank">3</td>
+                                    <td class="p-4 font-semibold">AthenaRC</td>
+                                    <td class="p-4 text-sm"><a href="https://huggingface.co/datasets/ilsp/dcvlr"
+                                            target="_blank" rel="noopener"
+                                            class="text-accent hover:underline">ilsp/dcvlr</a></td>
+                                    <td class="p-4 text-center font-semibold">41.81%</td>
+                                    <td class="p-4 text-center font-semibold text-green-600">+2.98%</td>
+                                </tr>
+                                <tr class="border-t border-border">
+                                    <td class="p-4 text-center font-bold rank">4</td>
+                                    <td class="p-4">zhuyun@pjlab.org.cn</td>
+                                    <td class="p-4 text-sm"><a
+                                            href="https://huggingface.co/datasets/Dream000/high_quality_data_10k_multisource"
+                                            target="_blank" rel="noopener"
+                                            class="text-accent hover:underline">Dream000/high_quality_data_10k_multisource</a>
+                                    </td>
+                                    <td class="p-4 text-center">38.84%</td>
+                                    <td class="p-4 text-center text-green-600">+0.01%</td>
+                                </tr>
+                                <tr class="border-t border-border">
+                                    <td class="p-4 text-center">5</td>
+                                    <td class="p-4">CoreData</td>
+                                    <td class="p-4 text-sm"><a
+                                            href="https://huggingface.co/datasets/xinyuz9920/filted_data"
+                                            target="_blank" rel="noopener"
+                                            class="text-accent hover:underline">xinyuz9920/filted_data</a></td>
+                                    <td class="p-4 text-center">37.39%</td>
+                                    <td class="p-4 text-center text-red-600">-1.44%</td>
+                                </tr>
+                                <tr class="border-t border-border">
+                                    <td class="p-4 text-center">6</td>
+                                    <td class="p-4">Blackwell</td>
+                                    <td class="p-4 text-sm"><a
+                                            href="https://huggingface.co/datasets/ArkaMukherjee/reasoning-10k-v2"
+                                            target="_blank" rel="noopener"
+                                            class="text-accent hover:underline">ArkaMukherjee/reasoning-10k-v2</a></td>
+                                    <td class="p-4 text-center">37.11%</td>
+                                    <td class="p-4 text-center text-red-600">-1.72%</td>
+                                </tr>
+                                <tr class="border-t border-border">
+                                    <td class="p-4 text-center">7</td>
+                                    <td class="p-4">MICV</td>
+                                    <td class="p-4 text-sm"><a href="https://huggingface.co/datasets/Chuanbiao/CoT_1"
+                                            target="_blank" rel="noopener"
+                                            class="text-accent hover:underline">Chuanbiao/CoT_1</a></td>
+                                    <td class="p-4 text-center">34.83%</td>
+                                    <td class="p-4 text-center text-red-600">-4.00%</td>
+                                </tr>
+                                <tr class="border-t border-border">
+                                    <td class="p-4 text-center">8</td>
+                                    <td class="p-4">KDDI Research</td>
+                                    <td class="p-4 text-sm"><a
+                                            href="https://huggingface.co/datasets/k423kaggle/submission" target="_blank"
+                                            rel="noopener" class="text-accent hover:underline">k423kaggle/submission</a>
+                                    </td>
+                                    <td class="p-4 text-center">20.52%</td>
+                                    <td class="p-4 text-center text-red-600">-18.31%</td>
+                                </tr>
+                                <tr class="border-t-2 border-primary bg-blue-50">
+                                    <td class="p-4 text-center font-bold">-</td>
+                                    <td class="p-4 font-bold">BASELINE</td>
+                                    <td class="p-4 text-sm font-semibold">Qwen2.5-VL-7B-Instruct</td>
+                                    <td class="p-4 text-center font-bold">38.83%</td>
+                                    <td class="p-4 text-center font-bold">0.00%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="leaderboard-note mt-8 text-center p-6 bg-white rounded-lg border border-border">
+                        <p class="text-text-secondary mb-2"><strong>Congratulations to University of Hawaii at Manoa -
+                                team 3</strong> for winning first place !</p>
+                    </div>
+                </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="prize-tier gold border border-yellow-400 rounded p-8 text-center transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg bg-yellow-50">
-                    <div class="prize-icon text-6xl mb-4 transition-all duration-300">🥇</div>
-                    <h3 class="text-xl font-semibold mb-4">First Place Winner</h3>
-                    <div class="prize-amount text-3xl font-semibold text-primary my-4">$3,000 USD</div>
-                    <div class="award-criteria bg-white border border-yellow-200 rounded-lg p-4 mb-4">
-                        <p class="text-sm text-yellow-900 font-bold mb-2">🏆 University of Hawaii at Manoa - team 3</p>
-                        <p class="text-sm text-yellow-700">Best benchmarking performance with reproducible method</p>
-                    </div>
-                    <ul class="prize-benefits list-none text-left mt-6 space-y-2 text-sm">
-                        <li>✓ Podium presentation at NeurIPS 2025</li>
-                        <li>✓ Co-authorship on competition paper</li>
-                        <li>✓ Featured team spotlight</li>
-                    </ul>
-                </div>
-                <div class="prize-tier silver border border-gray-300 rounded p-8 text-center transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg">
-                    <div class="prize-icon text-6xl mb-4 transition-all duration-300">🥈</div>
-                    <h3 class="text-xl font-semibold mb-4">IDC Prize</h3>
-                    <div class="prize-amount text-3xl font-semibold text-primary my-4">$1,000 USD</div>
-                    <div class="award-criteria bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4">
-                        <p class="text-sm text-gray-800 font-medium mb-2">Innovation in Data Curation</p>
-                        <p class="text-sm text-gray-700">Strong performance with innovative method</p>
-                    </div>
-                    <ul class="prize-benefits list-none text-left mt-6 space-y-2 text-sm">
-                        <li>Podium presentation at NeurIPS 2025</li>
-                        <li>Co-authorship on competition paper</li>
-                        <li>Featured team spotlight</li>
-                    </ul>
-                </div>
-                <div class="prize-tier bronze border border-orange-400 rounded p-8 text-center transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg">
-                    <div class="prize-icon text-6xl mb-4 transition-all duration-300">🥉</div>
-                    <h3 class="text-xl font-semibold mb-4">Honorable Mention</h3>
-                    <div class="prize-amount text-3xl font-semibold text-primary my-4">$250 USD</div>
-                    <div class="award-criteria bg-orange-50 border border-orange-200 rounded-lg p-4 mb-4">
-                        <p class="text-sm text-orange-800 font-medium mb-2">Second-Best Performance</p>
-                        <p class="text-sm text-orange-700">Excellent benchmarking with reproducible method</p>
-                    </div>
-                    <ul class="prize-benefits list-none text-left mt-6 space-y-2 text-sm">
-                        <li>Podium presentation at NeurIPS 2025</li>
-                        <li>Co-authorship on competition paper</li>
-                        <li>Featured team spotlight</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="additional-prizes bg-white border border-border rounded p-8 mt-8">
-                <h3 class="text-center mb-8 text-primary text-2xl font-semibold">Additional Recognition</h3>
-                <div class="recognition-grid grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="recognition-item text-center">
-                        <h4 class="text-primary mb-2 text-base font-semibold">Top 10 Teams</h4>
-                        <p class="text-text-secondary text-sm">Certificate of Excellence and invitation to virtual presentation session</p>
-                    </div>
-                    <div class="recognition-item text-center">
-                        <h4 class="text-primary mb-2 text-base font-semibold">Student Teams</h4>
-                        <p class="text-text-secondary text-sm">Special recognition for best all-student team submission</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="quick-start section-gradient py-16" id="quick-start">
-        <div class="container mx-auto px-6">
-            <div class="section-title text-center mb-12">
-                <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">🚀 Quick Start</h2>
-                <p class="max-w-2xl mx-auto text-lg text-text-secondary">Get started with training in minutes</p>
+        <section class="competition-overview bg-white py-16" id="overview">
+            <div class="container mx-auto px-6">
+                <div class="section-title text-center mb-16">
+                    <h2 class="text-4xl font-semibold mb-6 text-primary relative inline-block">Overview</h2>
+                    <p class="max-w-3xl mx-auto text-lg text-text-secondary leading-relaxed mb-8">
+                        Reasoning models have become one of the most exciting areas of AI research. But most existing
+                        models are trained on data that is not publicly available, making it difficult to reproduce
+                        results and build on them. Furthermore, the modality of most frontier reasoning models remains
+                        language-only.
+                    </p>
+                    <p class="max-w-3xl mx-auto text-lg text-text-secondary leading-relaxed mb-10">
+                        DCVLR, hosted at <a href="https://neurips.cc/" target="_blank" rel="noopener"
+                            class="text-accent hover:underline">NeurIPS 2025</a>, is the first open-data, open-models,
+                        open-source competition for data curation in vision-language reasoning. The initial prize
+                        competition ran from June to October 2025, and we continue to accept submissions to advance the
+                        science of data curation.
+                    </p>
+
+                    <p class="max-w-3xl mx-auto text-lg text-text-secondary leading-relaxed mb-10">
+                        The challenge: Curate up to 10K high-quality instruction-tuning examples using any
+                        strategy—synthetic generation, smart filtering, or novel approaches. We handle the training and
+                        evaluation, and add your results to the leaderboard.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+                        <div class="bg-lighter-bg border border-border rounded-lg p-6 text-center">
+                            <div class="text-3xl mb-3">🌟</div>
+                            <h3 class="text-primary font-semibold text-lg mb-2">OPEN-DATA</h3>
+                            <p class="text-text-secondary text-sm">The winning datasets from the competition will be
+                                made publicly available.</p>
+                        </div>
+                        <div class="bg-lighter-bg border border-border rounded-lg p-6 text-center">
+                            <div class="text-3xl mb-3">🤖</div>
+                            <h3 class="text-primary font-semibold text-lg mb-2">OPEN-MODELS</h3>
+                            <p class="text-text-secondary text-sm">Unlike previous competitions, we evaluate utility for
+                                frontier open-source models such as AI2's Molmo.</p>
+                        </div>
+                        <div class="bg-lighter-bg border border-border rounded-lg p-6 text-center">
+                            <div class="text-3xl mb-3">💻</div>
+                            <h3 class="text-primary font-semibold text-lg mb-2">OPEN-SOURCE</h3>
+                            <p class="text-text-secondary text-sm">All of the code in the competition will be publicly
+                                released to enable future research.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="quickstart-content max-w-3xl mx-auto">
-                <pre class="code-block p-5 rounded-lg overflow-x-auto text-sm leading-relaxed mt-4 border border-border shadow-sm">
+        </section>
+
+        <section class="eligibility section-gradient py-16" id="eligibility">
+            <div class="container mx-auto px-6">
+                <div class="section-title text-center mb-12">
+                    <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Eligibility &
+                        Requirements</h2>
+                    <p class="max-w-2xl mx-auto text-lg text-text-secondary mb-6">Who can participate and what you need
+                        to know</p>
+                    <div class="bg-blue-50 border-2 border-blue-500 rounded-lg p-6 max-w-3xl mx-auto">
+                        <p class="text-lg font-semibold text-blue-800 mb-2">📢 1st Edition Competition Has Ended</p>
+                        <p class="text-blue-700">The 1st competition period concluded in October 2025. New submissions
+                            are still welcome and will be evaluated and added to a new rolling leaderboard.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div
+                        class="eligibility-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
+                        <h3 class="text-primary mb-6 text-xl font-semibold">🌍 Who Can Participate</h3>
+                        <ul class="list-none space-y-2">
+                            <li
+                                class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                Up to 500 teams of size 1-20 can compete</li>
+                            <li
+                                class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                Anyone can join a team; students, researchers, and industry professionals are
+                                particularly welcome</li>
+                            <li
+                                class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                No model training experience required; just curate and submit a dataset!</li>
+                            <li
+                                class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                Participants from all backgrounds encouraged; it's free to enter and free to compete.
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="eligibility-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
+                        <h3 class="text-primary mb-6 text-xl font-semibold">📋 Competition Rules</h3>
+                        <ul class="list-none space-y-2">
+                            <li
+                                class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                BYOD (Bring your own data) - use any dataset for training data curation</li>
+                            <li
+                                class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                Teams must submit a write-up documenting their reproducible, scalable curation strategy
+                            </li>
+                            <li
+                                class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                Teams must open-source any code used for data curation and submit a link to the GitHub
+                                repo</li>
+                            <li
+                                class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                Detailed rules will be provided during the team signup period</li>
+                        </ul>
+                    </div>
+                    <div
+                        class="eligibility-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
+                        <h3 class="text-primary mb-6 text-xl font-semibold">🚫 Restrictions</h3>
+                        <ul class="list-none space-y-2">
+                            <li
+                                class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                Each individual can join only one team</li>
+                            <li
+                                class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                (Free) OpenReview account signup required</li>
+                            <li
+                                class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                Each team can submit a maximum of three datasets to the leaderboard</li>
+                            <li
+                                class="text-text-secondary relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                Teams must submit datasets for content moderation and filtering (hateful and toxic
+                                content, decontamination with test sets, etc.) to compete</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline bg-white py-16" id="timeline">
+            <div class="container mx-auto px-6">
+                <div class="section-title text-center mb-12">
+                    <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Competition Timeline</h2>
+                    <p class="max-w-2xl mx-auto text-lg text-text-secondary">Key milestones from the prize competition
+                        period</p>
+                </div>
+                <div class="timeline-container max-w-4xl mx-auto">
+                    <div class="timeline-item flex mb-10 items-start pb-10 border-b border-border">
+                        <div class="timeline-date w-44 font-semibold text-green-600 text-sm flex-shrink-0 font-sans">✓
+                            June 18, 2025</div>
+                        <div class="timeline-content flex-1 pl-12">
+                            <h3 class="text-primary mb-2 font-semibold text-lg">Released Competition Materials</h3>
+                            <p class="text-text-secondary leading-relaxed mb-0">Competition website and starter kit
+                                (data, code, baselines) made available.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item flex mb-10 items-start pb-10 border-b border-border">
+                        <div class="timeline-date w-44 font-semibold text-green-600 text-sm flex-shrink-0 font-sans">✓
+                            July 15, 2025</div>
+                        <div class="timeline-content flex-1 pl-12">
+                            <h3 class="text-primary mb-2 font-semibold text-lg">Team Signup Opened</h3>
+                            <p class="text-text-secondary leading-relaxed mb-0">Teams began registering for the
+                                competition and forming their groups.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item flex mb-10 items-start pb-10 border-b border-border">
+                        <div class="timeline-date w-44 font-semibold text-green-600 text-sm flex-shrink-0 font-sans">✓
+                            August 1, 2025</div>
+                        <div class="timeline-content flex-1 pl-12">
+                            <h3 class="text-primary mb-2 font-semibold text-lg">Submission Portal Opened</h3>
+                            <p class="text-text-secondary leading-relaxed mb-0">Participants began submitting their
+                                curated datasets for evaluation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item flex mb-10 items-start pb-10 border-b border-border">
+                        <div class="timeline-date w-44 font-semibold text-green-600 text-sm flex-shrink-0 font-sans">✓
+                            October 1, 2025</div>
+                        <div class="timeline-content flex-1 pl-12">
+                            <h3 class="text-primary mb-2 font-semibold text-lg">Prize Submission Deadline</h3>
+                            <p class="text-text-secondary leading-relaxed mb-0">Final deadline for submissions eligible
+                                for prize awards.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item flex mb-10 items-start pb-10 border-b border-border">
+                        <div class="timeline-date w-44 font-semibold text-green-600 text-sm flex-shrink-0 font-sans">✓
+                            November 1, 2025</div>
+                        <div class="timeline-content flex-1 pl-12">
+                            <h3 class="text-primary mb-2 font-semibold text-lg">Results Announced</h3>
+                            <p class="text-text-secondary leading-relaxed mb-0">Final leaderboard released with prize
+                                winners.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item flex mb-10 items-start pb-10 border-b border-border">
+                        <div class="timeline-date w-44 font-semibold text-accent text-sm flex-shrink-0 font-sans">
+                            December 2025</div>
+                        <div class="timeline-content flex-1 pl-12">
+                            <h3 class="text-primary mb-2 font-semibold text-lg"><a href="https://neurips.cc/"
+                                    target="_blank" rel="noopener" class="text-inherit hover:text-accent">NeurIPS</a>
+                                2025</h3>
+                            <p class="text-text-secondary leading-relaxed mb-0">Presentation of results and awards at
+                                the <a href="https://neurips.cc/" target="_blank" rel="noopener"
+                                    class="text-accent hover:underline">NeurIPS</a> conference.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item flex mb-10 items-start pb-10 last:border-b-0">
+                        <div class="timeline-date w-44 font-semibold text-accent text-sm flex-shrink-0 font-sans">
+                            Ongoing</div>
+                        <div class="timeline-content flex-1 pl-12">
+                            <h3 class="text-primary mb-2 font-semibold text-lg">Submissions Open</h3>
+                            <p class="text-text-secondary leading-relaxed mb-0">New submissions continue to be accepted
+                                and added to a new leaderboard.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources section-gradient py-16" id="resources">
+            <div class="container mx-auto px-6">
+                <div class="section-title text-center mb-12">
+                    <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Competition Resources
+                    </h2>
+                    <p class="max-w-2xl mx-auto text-lg text-text-secondary">The only thing you need in order to
+                        participate in DCVLR is (1) a reasoning dataset generated using (2) a reproducible curation
+                        strategy. That said, we provide all the resources you need to conduct your own experiments on
+                        your own compute. We expect the most successful teams will vet the quality of their datasets
+                        with experiments on small models before submitting to the leaderboard.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="resource-card bg-white border border-border rounded-lg p-8 text-center transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
+                        <div class="resource-icon text-5xl mb-4 block text-accent transition-all duration-300">📊</div>
+                        <h3 class="text-primary mb-4 font-semibold text-lg">Starter Kit</h3>
+                        <p class="text-text-secondary mb-6 leading-relaxed text-sm">Comprehensive starter kit with
+                            example datasets, training scripts, and best practices to help participants get started.</p>
+                        <a href="https://github.com/oumi-ai/oumi/tree/main/configs/projects/dcvlr" target="_blank"
+                            rel="noopener" onclick="trackResourceAccess('starter_kit', 'dataset')"
+                            class="text-accent hover:text-primary hover:underline font-medium font-sans">Access Starter
+                            Kit</a>
+                    </div>
+                    <div
+                        class="resource-card bg-white border border-border rounded-lg p-8 text-center transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
+                        <div class="resource-icon text-5xl mb-4 block text-accent transition-all duration-300">💻</div>
+                        <h3 class="text-primary mb-4 font-semibold text-lg">Training Scripts</h3>
+                        <p class="text-text-secondary mb-6 leading-relaxed text-sm">Starting scripts for fine-tuning
+                            multiple vision-language models on your curated datasets with Oumi.</p>
+                        <a href="https://github.com/oumi-ai/oumi/tree/main/configs/projects/dcvlr" target="_blank"
+                            rel="noopener" onclick="trackResourceAccess('training_scripts', 'code')"
+                            class="text-accent hover:text-primary hover:underline font-medium font-sans">View
+                            Scripts</a>
+                    </div>
+                    <div
+                        class="resource-card bg-white border border-border rounded-lg p-8 text-center transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
+                        <div class="resource-icon text-5xl mb-4 block text-accent transition-all duration-300">🧪</div>
+                        <h3 class="text-primary mb-4 font-semibold text-lg">Evaluation Code</h3>
+                        <p class="text-text-secondary mb-6 leading-relaxed text-sm">Scripts to evaluate model outputs on
+                            diverse benchmark development sets for local testing using VLMEvalKit.</p>
+                        <a href="https://github.com/oumi-ai/VLMEvalKit" target="_blank" rel="noopener"
+                            onclick="trackResourceAccess('evaluation_code', 'code')"
+                            class="text-accent hover:text-primary hover:underline font-medium font-sans">Get Code</a>
+                    </div>
+                    <div
+                        class="resource-card bg-white border border-border rounded-lg p-8 text-center transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
+                        <div class="resource-icon text-5xl mb-4 block text-accent transition-all duration-300">📝</div>
+                        <h3 class="text-primary mb-4 font-semibold text-lg">Baseline Submissions</h3>
+                        <p class="text-text-secondary mb-6 leading-relaxed text-sm">Reference implementations and
+                            baseline approaches for data curation and model training.</p>
+                        <a href="https://github.com/oumi-ai/oumi/blob/main/configs/projects/dcvlr/README.md"
+                            target="_blank" rel="noopener" onclick="trackResourceAccess('baseline_submissions', 'code')"
+                            class="text-accent hover:text-primary hover:underline font-medium font-sans">View
+                            Baselines</a>
+                    </div>
+                    <div
+                        class="resource-card bg-white border border-border rounded-lg p-8 text-center transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
+                        <div class="resource-icon text-5xl mb-4 block text-accent transition-all duration-300">☁️</div>
+                        <h3 class="text-primary mb-4 font-semibold text-lg">Compute Resources</h3>
+                        <p class="text-text-secondary mb-6 leading-relaxed text-sm">GPU credits from our compute sponsor
+                            Lambda Labs for early student participants.</p>
+                        <a href="https://oumi-ai.typeform.com/to/OGPuRt6U" target="_blank" rel="noopener"
+                            onclick="trackResourceAccess('gpu_credits', 'compute')"
+                            class="text-accent hover:text-primary hover:underline font-medium font-sans">Apply for
+                            Credits</a>
+                    </div>
+                    <div
+                        class="resource-card bg-white border border-border rounded-lg p-8 text-center transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent">
+                        <div class="resource-icon text-5xl mb-4 block text-accent transition-all duration-300">📚</div>
+                        <h3 class="text-primary mb-4 font-semibold text-lg">Documentation</h3>
+                        <p class="text-text-secondary mb-6 leading-relaxed text-sm">Complete guides and tutorials to
+                            help you get started.</p>
+                        <a href="https://oumi.ai/docs/" target="_blank" rel="noopener"
+                            onclick="trackResourceAccess('documentation', 'docs')"
+                            class="text-accent hover:text-primary hover:underline font-medium font-sans">View
+                            Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="prizes bg-white py-16" id="prizes">
+            <div class="container mx-auto px-6">
+                <div class="section-title text-center mb-12">
+                    <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Prize Winners</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div
+                        class="prize-tier gold border border-yellow-400 rounded p-8 text-center transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg bg-yellow-50">
+                        <div class="prize-icon text-6xl mb-4 transition-all duration-300">🥇</div>
+                        <h3 class="text-xl font-semibold mb-4">First Place Winner</h3>
+                        <div class="prize-amount text-3xl font-semibold text-primary my-4">$3,000 USD</div>
+                        <div class="award-criteria bg-white border border-yellow-200 rounded-lg p-4 mb-4">
+                            <p class="text-sm text-yellow-900 font-bold mb-2">🏆 University of Hawaii at Manoa - team 3
+                            </p>
+                            <p class="text-sm text-yellow-700">Best benchmarking performance with reproducible method
+                            </p>
+                        </div>
+                        <ul class="prize-benefits list-none text-left mt-6 space-y-2 text-sm">
+                            <li>✓ Podium presentation at NeurIPS 2025</li>
+                            <li>✓ Co-authorship on competition paper</li>
+                            <li>✓ Featured team spotlight</li>
+                        </ul>
+                    </div>
+                    <div
+                        class="prize-tier silver border border-gray-300 rounded p-8 text-center transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg">
+                        <div class="prize-icon text-6xl mb-4 transition-all duration-300">🥈</div>
+                        <h3 class="text-xl font-semibold mb-4">IDC Prize</h3>
+                        <div class="prize-amount text-3xl font-semibold text-primary my-4">$1,000 USD</div>
+                        <div class="award-criteria bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4">
+                            <p class="text-sm text-gray-800 font-medium mb-2">Innovation in Data Curation</p>
+                            <p class="text-sm text-gray-700">Strong performance with innovative method</p>
+                        </div>
+                        <ul class="prize-benefits list-none text-left mt-6 space-y-2 text-sm">
+                            <li>Podium presentation at NeurIPS 2025</li>
+                            <li>Co-authorship on competition paper</li>
+                            <li>Featured team spotlight</li>
+                        </ul>
+                    </div>
+                    <div
+                        class="prize-tier bronze border border-orange-400 rounded p-8 text-center transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg">
+                        <div class="prize-icon text-6xl mb-4 transition-all duration-300">🥉</div>
+                        <h3 class="text-xl font-semibold mb-4">Honorable Mention</h3>
+                        <div class="prize-amount text-3xl font-semibold text-primary my-4">$250 USD</div>
+                        <div class="award-criteria bg-orange-50 border border-orange-200 rounded-lg p-4 mb-4">
+                            <p class="text-sm text-orange-800 font-medium mb-2">Second-Best Performance</p>
+                            <p class="text-sm text-orange-700">Excellent benchmarking with reproducible method</p>
+                        </div>
+                        <ul class="prize-benefits list-none text-left mt-6 space-y-2 text-sm">
+                            <li>Podium presentation at NeurIPS 2025</li>
+                            <li>Co-authorship on competition paper</li>
+                            <li>Featured team spotlight</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="additional-prizes bg-white border border-border rounded p-8 mt-8">
+                    <h3 class="text-center mb-8 text-primary text-2xl font-semibold">Additional Recognition</h3>
+                    <div class="recognition-grid grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="recognition-item text-center">
+                            <h4 class="text-primary mb-2 text-base font-semibold">Top 10 Teams</h4>
+                            <p class="text-text-secondary text-sm">Certificate of Excellence and invitation to virtual
+                                presentation session</p>
+                        </div>
+                        <div class="recognition-item text-center">
+                            <h4 class="text-primary mb-2 text-base font-semibold">Student Teams</h4>
+                            <p class="text-text-secondary text-sm">Special recognition for best all-student team
+                                submission</p>
+                        </div>
+                        <div class="recognition-item text-center">
+                            <h4 class="text-primary mb-2 text-base font-semibold">All Participants</h4>
+                            <p class="text-text-secondary text-sm">Co-authorship opportunities on competition overview
+                                paper</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-start section-gradient py-16" id="quick-start">
+            <div class="container mx-auto px-6">
+                <div class="section-title text-center mb-12">
+                    <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">🚀 Quick Start</h2>
+                    <p class="max-w-2xl mx-auto text-lg text-text-secondary">Get started with training in minutes</p>
+                </div>
+                <div class="quickstart-content max-w-3xl mx-auto">
+                    <pre
+                        class="code-block p-5 rounded-lg overflow-x-auto text-sm leading-relaxed mt-4 border border-border shadow-sm">
 # install oumi
 uv pip install "oumi[gpu]"
 
@@ -558,73 +754,124 @@ ls configs/projects/dcvlr/starter-kit/
 # train with your own config
 oumi train -c $MY_CONFIG
 </pre>
-            </div>
-        </div>
-    </section>
-
-    <section class="technical-specs bg-white py-16" id="technical-specs">
-        <div class="container mx-auto px-6">
-            <div class="section-title text-center mb-12">
-                <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Technical Specifications</h2>
-                <p class="max-w-2xl mx-auto text-lg text-text-secondary">Detailed requirements and specifications for the competition</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="spec-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent-secondary">
-                    <h3 class="text-primary mb-6 text-xl font-semibold">🤖 Model Architecture</h3>
-                    <div class="spec-details">
-                        <h4 class="text-primary mb-4 text-base font-semibold">Evaluation Model: Undisclosed 8B-class model</h4>
-                        <ul class="list-none space-y-2">
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Final evaluation uses an undisclosed model</li>
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Participants get scripts for multiple models</li>
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Good curation strategies should generalize</li>
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Multi-modal transformer architectures</li>
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Various parameter sizes available for development</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="spec-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent-secondary">
-                    <h3 class="text-primary mb-6 text-xl font-semibold">📊 Dataset Specifications</h3>
-                    <div class="spec-details">
-                        <h4 class="text-primary mb-4 text-base font-semibold">Dataset Flexibility</h4>
-                        <ul class="list-none space-y-2">
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Use any datasets for curation</li>
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Starter kit provides examples and guidance</li>
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Support for various image formats and resolutions</li>
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Flexible text formats and lengths</li>
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Focus on instruction-tuning quality over quantity</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="spec-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent-secondary">
-                    <h3 class="text-primary mb-6 text-xl font-semibold">💻 Hardware Requirements</h3>
-                    <div class="spec-details">
-                        <h4 class="text-primary mb-4 text-base font-semibold">Minimum Specifications</h4>
-                        <ul class="list-none space-y-2">
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">GPU: 1x NVIDIA A100-40GB or equivalent (4x A100-80GB GPUs recommended)</li>
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Students can apply for <a href="https://oumi-ai.typeform.com/to/OGPuRt6U" target="_blank" rel="noopener" class="text-accent hover:underline">GPU credits</a> from <a href="https://lambda.ai" target="_blank" rel="noopener" class="text-accent hover:underline">Lambda Labs</a></li>
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">RAM: 64GB system memory</li>
-                            <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Storage: 500GB available space</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="submission-format section-gradient py-16" id="submission-format">
-        <div class="container mx-auto px-6">
-            <div class="section-title text-center mb-12">
-                <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Submission Format</h2>
-                <p class="max-w-2xl mx-auto text-lg text-text-secondary">How to structure and submit your curated datasets</p>
+        <section class="technical-specs bg-white py-16" id="technical-specs">
+            <div class="container mx-auto px-6">
+                <div class="section-title text-center mb-12">
+                    <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Technical Specifications
+                    </h2>
+                    <p class="max-w-2xl mx-auto text-lg text-text-secondary">Detailed requirements and specifications
+                        for the competition</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div
+                        class="spec-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent-secondary">
+                        <h3 class="text-primary mb-6 text-xl font-semibold">🤖 Model Architecture</h3>
+                        <div class="spec-details">
+                            <h4 class="text-primary mb-4 text-base font-semibold">Evaluation Model: Undisclosed 8B-class
+                                model</h4>
+                            <ul class="list-none space-y-2">
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Final evaluation uses an undisclosed model</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Participants get scripts for multiple models</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Good curation strategies should generalize</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Multi-modal transformer architectures</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Various parameter sizes available for development</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div
+                        class="spec-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent-secondary">
+                        <h3 class="text-primary mb-6 text-xl font-semibold">📊 Dataset Specifications</h3>
+                        <div class="spec-details">
+                            <h4 class="text-primary mb-4 text-base font-semibold">Dataset Flexibility</h4>
+                            <ul class="list-none space-y-2">
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Use any datasets for curation</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Starter kit provides examples and guidance</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Support for various image formats and resolutions</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Flexible text formats and lengths</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Focus on instruction-tuning quality over quantity</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div
+                        class="spec-card bg-white border border-border rounded-lg p-8 transition-all duration-300 card-hover shadow-sm hover:shadow-lg hover:border-accent-secondary">
+                        <h3 class="text-primary mb-6 text-xl font-semibold">💻 Hardware Requirements</h3>
+                        <div class="spec-details">
+                            <h4 class="text-primary mb-4 text-base font-semibold">Minimum Specifications</h4>
+                            <ul class="list-none space-y-2">
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    GPU: 1x NVIDIA A100-40GB or equivalent (4x A100-80GB GPUs recommended)</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Students can apply for <a href="https://oumi-ai.typeform.com/to/OGPuRt6U"
+                                        target="_blank" rel="noopener" class="text-accent hover:underline">GPU
+                                        credits</a> from <a href="https://lambda.ai" target="_blank" rel="noopener"
+                                        class="text-accent hover:underline">Lambda Labs</a></li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    RAM: 64GB system memory</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Storage: 500GB available space</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="submission-container grid gap-8 mb-8">
-                <div class="submission-step flex gap-8 items-start bg-white p-8 border border-border rounded">
-                    <div class="step-number w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-lg flex-shrink-0">1</div>
-                    <div class="flex-1">
-                    <h3 class="text-primary mb-4 text-lg font-semibold">Dataset Structure</h3>
-                    <p class="text-text-secondary mb-4">Your submission must include:</p>
-                    <pre class="code-block p-5 rounded-lg overflow-x-auto text-sm leading-relaxed mt-4 border border-border shadow-sm">
+        </section>
+
+        <section class="submission-format section-gradient py-16" id="submission-format">
+            <div class="container mx-auto px-6">
+                <div class="section-title text-center mb-12">
+                    <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Submission Format</h2>
+                    <p class="max-w-2xl mx-auto text-lg text-text-secondary mb-4">How to structure and submit your
+                        curated datasets</p>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 max-w-2xl mx-auto text-left">
+                        <p class="text-sm text-blue-800"><strong>How to Submit:</strong> Upload your dataset to <a
+                                href="https://huggingface.co/" target="_blank" rel="noopener"
+                                class="text-accent hover:underline">Hugging Face</a> and contact the organizing team at
+                            <a href="mailto:dcvlr_neurips@googlegroups.com"
+                                class="text-accent hover:underline">dcvlr_neurips@googlegroups.com</a> with your dataset
+                            link and technical report. New submissions will be evaluated and added to the leaderboard
+                            (not eligible for prizes).
+                        </p>
+                    </div>
+                </div>
+                <div class="submission-container grid gap-8 mb-8">
+                    <div class="submission-step flex gap-8 items-start bg-white p-8 border border-border rounded">
+                        <div
+                            class="step-number w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-lg flex-shrink-0">
+                            1</div>
+                        <div class="flex-1">
+                            <h3 class="text-primary mb-4 text-lg font-semibold">Dataset Structure</h3>
+                            <p class="text-text-secondary mb-4">Your submission must include:</p>
+                            <pre
+                                class="code-block p-5 rounded-lg overflow-x-auto text-sm leading-relaxed mt-4 border border-border shadow-sm">
 submission/
 ├── data/*.parquet
 ├── technical_report.pdf    # up to 4 page report
@@ -648,244 +895,426 @@ submission/
 ]
         </pre>
 
-            </div>
-        </div>
-            <div class="submission-step flex gap-8 items-start bg-white p-8 border border-border rounded">
-                <div class="step-number w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-lg flex-shrink-0">3</div>
-                <div class="flex-1">
-                <h3 class="text-primary mb-4 text-lg font-semibold">Technical Report</h3>
-                <p class="text-text-secondary mb-4">Your report must include:</p>
-                <ul class="list-none space-y-2 mt-4">
-                    <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Data curation methodology</li>
-                    <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Selection criteria and rationale</li>
-                    <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Conversation generation approach</li>
-                    <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Computational resources used</li>
-                    <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">Ablation studies (optional)</li>
-                    <li class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">References and acknowledgments</li>
-                </ul>
-            </div>
-        </div>
-        </div>
-    </section>
-
-
-    <section class="teams bg-white py-16" id="team">
-        <div class="container mx-auto px-6">
-            <div class="section-title text-center mb-12">
-                <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Organizing Team</h2>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                    <img src="static/images/benjamin_feuer.webp" alt="Professional headshot of Benjamin Feuer, Lead Organizer of the DCVLR competition from New York University (NYU)." aria-label="Benjamin Feuer's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                    <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://penfever.github.io" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Benjamin Feuer</a></h3>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Lead Organizer</p>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">NYU</p>
-                </div>
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                    <img src="static/images/rohun.jpg" alt="Professional headshot of Rohun Tripathi, Lead Organizer of the DCVLR competition from the Allen Institute for AI." aria-label="Rohun Tripathi's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                    <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://rohun-tripathi.github.io/" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Rohun Tripathi</a></h3>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Lead Organizer</p>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Allen Institute for AI</p>
-                </div>
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                    <img src="static/images/oussama.webp" alt="Professional headshot of Oussama Elachqar, Lead Organizer of the DCVLR competition from Oumi." aria-label="Oussama Elachqar's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                    <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://www.linkedin.com/in/oussamaelachqar/" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Oussama Elachqar</a></h3>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Lead Organizer</p>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Oumi</p>
-                </div>
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                    <img src="static/images/yuhui.jpeg" alt="Professional headshot of Yuhui Zhang, Lead Organizer of the DCVLR competition from Stanford University." aria-label="Yuhui Zhang's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                    <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://cs.stanford.edu/~yuhuiz/" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Yuhui Zhang</a></h3>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Lead Organizer</p>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Stanford University</p>
-                </div>
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                    <img src="static/images/nimrod.jpeg" alt="Professional headshot of Nimrod Shabtay, Organizer of the DCVLR competition from IBM Research." aria-label="Nimrod Shabtay's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                    <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://www.linkedin.com/in/nimrod-shabtay/" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Nimrod Shabtay</a></h3>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Tel Aviv University & IBM Research</p>
-                </div>
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                    <img src="static/images/neha.png" alt="Professional headshot of Neha Hulkund, Lead Organizer of the DCVLR competition from Massachusetts Institute of Technology (MIT)." aria-label="Neha Hulkund's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                    <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://hulkund.github.io" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Neha Hulkund</a></h3>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Lead Organizer</p>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">MIT</p>
-                </div>
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                    <img src="static/images/stefan_webb.webp" alt="Professional headshot of Stefan Webb, Organizer of the DCVLR competition from Oumi." aria-label="Stefan Webb's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                    <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://www.linkedin.com/in/stefan-webb/" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Stefan Webb</a></h3>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Oumi</p>
-                </div>
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                    <img src="static/images/thao.jpg" alt="Professional headshot of Thao Nguyen, Organizer of the DCVLR competition from the University of Washington." aria-label="Thao Nguyen's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                    <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://thaonguyen19.github.io/" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Thao Nguyen</a></h3>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">University of Washington</p>
-                </div>
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                     <img src="static/images/vishaal.jpeg" alt="Professional headshot of Vishaal Udandarao, Organizer of the DCVLR competition from The University of Tuebingen." aria-label="Vishaal Udandarao's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                     <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://vishaal27.github.io" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Vishaal Udandarao</a></h3>
-                     <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
-                     <p class="text-sm text-text-secondary mb-1 font-sans">University of Tübingen</p>
-                 </div>
-                                 <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                     <img src="static/images/xiaohan.jpg" alt="Professional headshot of Xiaohan Wang, Organizer of the DCVLR competition from Stanford University." aria-label="Xiaohan Wang's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                     <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://wxh1996.github.io" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Xiaohan Wang</a></h3>
-                     <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
-                     <p class="text-sm text-text-secondary mb-1 font-sans">Stanford University</p>
-                 </div>
-                 <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                    <img src="static/images/ludwig.jpg" alt="Professional headshot of Ludwig Schmidt, Organizer of the DCVLR competition from Stanford University." aria-label="Ludwig Schmidt's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                    <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://people.csail.mit.edu/ludwigs/" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Ludwig Schmidt</a></h3>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Stanford University</p>
-                </div>
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                    <img src="static/images/saining_xie.webp" alt="Professional headshot of Saining Xie, Organizer of the DCVLR competition from NYU." aria-label="Saining Xie's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                    <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://www.sainingxie.com" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Saining Xie</a></h3>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">NYU</p>
-                </div>
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                    <img src="static/images/serena.jpg" alt="Professional headshot of Serena Yeung-Levy, Organizer of the DCVLR competition from Stanford University." aria-label="Serena Yeung-Levy's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                    <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://ai.stanford.edu/~syyeung/" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Serena Yeung-Levy</a></h3>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Stanford University</p>
-                </div>
-
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                    <img src="static/images/paul_pu_liang.webp" alt="Professional headshot of Paul Liang, Organizer of the DCVLR competition from MIT." aria-label="Paul Liang's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                    <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://pliang279.github.io" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Paul Liang</a></h3>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
-                    <p class="text-sm text-text-secondary mb-1 font-sans">MIT</p>
-                </div>
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                     <img src="static/images/sara-beery.jpg" alt="Professional headshot of Sara Beery, Organizer of the DCVLR competition from MIT." aria-label="Sara Beery's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                     <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://beerys.github.io/" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Sara Beery</a></h3>
-                     <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
-                     <p class="text-sm text-text-secondary mb-1 font-sans">MIT</p>
-                 </div>
-                <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                     <img src="static/images/georgia_gkioxari.webp" alt="Professional headshot of Georgia Gkioxari, Organizer of the DCVLR competition from Caltech." aria-label="Georgia Gkioxari's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                     <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://gkioxari.github.io" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Georgia Gkioxari</a></h3>
-                     <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
-                     <p class="text-sm text-text-secondary mb-1 font-sans">Caltech</p>
-                 </div>
-                 <div class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
-                     <img src="static/images/manos.webp" alt="Professional headshot of Emmanouil Koukoumidis, Organizer of the DCVLR competition from Oumi." aria-label="Emmanouil Koukoumidis's profile picture" class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
-                     <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://www.linkedin.com/in/koukoumidis" target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Emmanouil (Manos) Koukoumidis</a></h3>
-                     <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
-                     <p class="text-sm text-text-secondary mb-1 font-sans">Oumi</p>
-                 </div>
-             </div>
-        </div>
-    </section>
-
-    <section class="faq section-gradient py-16" id="faq">
-        <div class="container mx-auto px-6">
-            <div class="section-title text-center mb-12">
-                <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Frequently Asked Questions</h2>
-                <p class="max-w-2xl mx-auto text-lg text-text-secondary">Common questions about the DCVLR competition</p>
-            </div>
-            <div class="faq-container max-w-3xl mx-auto">
-                <div class="faq-item mb-6 border-b border-border pb-6">
-                    <h3 class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">What is the goal of this competition?</h3>
-                    <div class="faq-answer" style="display: none;">
-                        <p class="text-text-secondary leading-relaxed mb-0">The goal is to advance the visual reasoning capabilities of vision-language models through instruction-tuning dataset curation. By isolating data as the primary variable, we aim to understand what data properties catalyze reasoning capabilities in neural systems.</p>
+                        </div>
+                    </div>
+                    <div class="submission-step flex gap-8 items-start bg-white p-8 border border-border rounded">
+                        <div
+                            class="step-number w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-lg flex-shrink-0">
+                            3</div>
+                        <div class="flex-1">
+                            <h3 class="text-primary mb-4 text-lg font-semibold">Technical Report</h3>
+                            <p class="text-text-secondary mb-4">Your report must include:</p>
+                            <ul class="list-none space-y-2 mt-4">
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Data curation methodology</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Selection criteria and rationale</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Conversation generation approach</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Computational resources used</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    Ablation studies (optional)</li>
+                                <li
+                                    class="text-text-secondary relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:text-secondary">
+                                    References and acknowledgments</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="faq-item mb-6 border-b border-border pb-6">
-                    <h3 class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">Who can participate?</h3>
-                    <div class="faq-answer" style="display: none;">
-                        <p class="text-text-secondary leading-relaxed mb-0">The competition is open to everyone, from students and academic researchers to industry professionals. We especially encourage participation from diverse backgrounds and institutions.</p>
-                    </div>
+        </section>
+
+
+        <section class="teams bg-white py-16" id="team">
+            <div class="container mx-auto px-6">
+                <div class="section-title text-center mb-12">
+                    <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Organizing Team</h2>
                 </div>
-                <div class="faq-item mb-6 border-b border-border pb-6">
-                    <h3 class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">What computational resources do I need?</h3>
-                    <div class="faq-answer" style="display: none;">
-                        <p class="text-text-secondary leading-relaxed mb-0">Fine-tuning and evaluation can be done on a single GPU. We provide GPU credits from Lambda Labs for a limited number of participants to ensure accessibility.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/benjamin_feuer.webp"
+                            alt="Professional headshot of Benjamin Feuer, Lead Organizer of the DCVLR competition from New York University (NYU)."
+                            aria-label="Benjamin Feuer's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://penfever.github.io"
+                                target="_blank" rel="noopener"
+                                class="text-inherit no-underline hover:no-underline">Benjamin Feuer</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Lead Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">NYU</p>
                     </div>
-                </div>
-                <div class="faq-item mb-6 border-b border-border pb-6">
-                    <h3 class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">How will submissions be evaluated?</h3>
-                    <div class="faq-answer" style="display: none;">
-                        <p class="text-text-secondary leading-relaxed mb-0">Submissions will be evaluated by fine-tuning an undisclosed vision-language model on the curated data and measuring performance across a wide variety of benchmarks. This approach tests whether good data curation strategies generalize across different models and evaluation settings.</p>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/rohun.jpg"
+                            alt="Professional headshot of Rohun Tripathi, Lead Organizer of the DCVLR competition from the Allen Institute for AI."
+                            aria-label="Rohun Tripathi's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a
+                                href="https://rohun-tripathi.github.io/" target="_blank" rel="noopener"
+                                class="text-inherit no-underline hover:no-underline">Rohun Tripathi</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Lead Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Allen Institute for AI</p>
                     </div>
-                </div>
-                <div class="faq-item mb-6 border-b border-border pb-6">
-                    <h3 class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">Can I use external data or models?</h3>
-                    <div class="faq-answer" style="display: none;">
-                        <p class="text-text-secondary leading-relaxed mb-0">You can use any datasets you want for data curation. We provide a comprehensive starter kit to help you get started, and you may use external tools (e.g., LLMs) to synthesize instruction-tuning examples. The key constraint is no manual annotation.</p>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/oussama.webp"
+                            alt="Professional headshot of Oussama Elachqar, Lead Organizer of the DCVLR competition from Oumi."
+                            aria-label="Oussama Elachqar's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a
+                                href="https://www.linkedin.com/in/oussamaelachqar/" target="_blank" rel="noopener"
+                                class="text-inherit no-underline hover:no-underline">Oussama Elachqar</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Lead Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Oumi</p>
                     </div>
-                </div>
-                <div class="faq-item mb-6 border-b border-border pb-6">
-                    <h3 class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">Are there any prizes?</h3>
-                    <div class="faq-answer" style="display: none;">
-                        <p class="text-text-secondary leading-relaxed mb-0">Yes! Total prize pool of $6,000 USD. First place: $1,500, Second place: $500, Third place: $250. Winners also receive podium presentations at <a href="https://neurips.cc/" target="_blank" rel="noopener" class="text-accent hover:underline">NeurIPS</a>, invitation to co-author a joint system paper, and additional GPU credits. Top 10 teams receive recognition certificates.</p>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/yuhui.jpeg"
+                            alt="Professional headshot of Yuhui Zhang, Lead Organizer of the DCVLR competition from Stanford University."
+                            aria-label="Yuhui Zhang's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://cs.stanford.edu/~yuhuiz/"
+                                target="_blank" rel="noopener"
+                                class="text-inherit no-underline hover:no-underline">Yuhui Zhang</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Lead Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Stanford University</p>
                     </div>
-                </div>
-                <div class="faq-item mb-6 border-b border-border pb-6 last:border-b-0">
-                    <h3 class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">How many submissions can I make?</h3>
-                    <div class="faq-answer" style="display: none;">
-                        <p class="text-text-secondary leading-relaxed mb-0">Each team may submit up to 3 final versions. The highest-scoring submission will be used for ranking.</p>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/nimrod.jpeg"
+                            alt="Professional headshot of Nimrod Shabtay, Organizer of the DCVLR competition from IBM Research."
+                            aria-label="Nimrod Shabtay's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a
+                                href="https://www.linkedin.com/in/nimrod-shabtay/" target="_blank" rel="noopener"
+                                class="text-inherit no-underline hover:no-underline">Nimrod Shabtay</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Tel Aviv University & IBM Research</p>
+                    </div>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/neha.png"
+                            alt="Professional headshot of Neha Hulkund, Lead Organizer of the DCVLR competition from Massachusetts Institute of Technology (MIT)."
+                            aria-label="Neha Hulkund's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://hulkund.github.io"
+                                target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Neha
+                                Hulkund</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Lead Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">MIT</p>
+                    </div>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/stefan_webb.webp"
+                            alt="Professional headshot of Stefan Webb, Organizer of the DCVLR competition from Oumi."
+                            aria-label="Stefan Webb's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a
+                                href="https://www.linkedin.com/in/stefan-webb/" target="_blank" rel="noopener"
+                                class="text-inherit no-underline hover:no-underline">Stefan Webb</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Oumi</p>
+                    </div>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/thao.jpg"
+                            alt="Professional headshot of Thao Nguyen, Organizer of the DCVLR competition from the University of Washington."
+                            aria-label="Thao Nguyen's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://thaonguyen19.github.io/"
+                                target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Thao
+                                Nguyen</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">University of Washington</p>
+                    </div>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/vishaal.jpeg"
+                            alt="Professional headshot of Vishaal Udandarao, Organizer of the DCVLR competition from The University of Tuebingen."
+                            aria-label="Vishaal Udandarao's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://vishaal27.github.io"
+                                target="_blank" rel="noopener"
+                                class="text-inherit no-underline hover:no-underline">Vishaal Udandarao</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">University of Tübingen</p>
+                    </div>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/xiaohan.jpg"
+                            alt="Professional headshot of Xiaohan Wang, Organizer of the DCVLR competition from Stanford University."
+                            aria-label="Xiaohan Wang's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://wxh1996.github.io"
+                                target="_blank" rel="noopener"
+                                class="text-inherit no-underline hover:no-underline">Xiaohan Wang</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Stanford University</p>
+                    </div>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/ludwig.jpg"
+                            alt="Professional headshot of Ludwig Schmidt, Organizer of the DCVLR competition from Stanford University."
+                            aria-label="Ludwig Schmidt's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a
+                                href="https://people.csail.mit.edu/ludwigs/" target="_blank" rel="noopener"
+                                class="text-inherit no-underline hover:no-underline">Ludwig Schmidt</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Stanford University</p>
+                    </div>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/saining_xie.webp"
+                            alt="Professional headshot of Saining Xie, Organizer of the DCVLR competition from NYU."
+                            aria-label="Saining Xie's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://www.sainingxie.com"
+                                target="_blank" rel="noopener"
+                                class="text-inherit no-underline hover:no-underline">Saining Xie</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">NYU</p>
+                    </div>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/serena.jpg"
+                            alt="Professional headshot of Serena Yeung-Levy, Organizer of the DCVLR competition from Stanford University."
+                            aria-label="Serena Yeung-Levy's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a
+                                href="https://ai.stanford.edu/~syyeung/" target="_blank" rel="noopener"
+                                class="text-inherit no-underline hover:no-underline">Serena Yeung-Levy</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Stanford University</p>
+                    </div>
+
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/paul_pu_liang.webp"
+                            alt="Professional headshot of Paul Liang, Organizer of the DCVLR competition from MIT."
+                            aria-label="Paul Liang's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://pliang279.github.io"
+                                target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Paul
+                                Liang</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">MIT</p>
+                    </div>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/sara-beery.jpg"
+                            alt="Professional headshot of Sara Beery, Organizer of the DCVLR competition from MIT."
+                            aria-label="Sara Beery's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://beerys.github.io/"
+                                target="_blank" rel="noopener" class="text-inherit no-underline hover:no-underline">Sara
+                                Beery</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">MIT</p>
+                    </div>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/georgia_gkioxari.webp"
+                            alt="Professional headshot of Georgia Gkioxari, Organizer of the DCVLR competition from Caltech."
+                            aria-label="Georgia Gkioxari's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a href="https://gkioxari.github.io"
+                                target="_blank" rel="noopener"
+                                class="text-inherit no-underline hover:no-underline">Georgia Gkioxari</a></h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Caltech</p>
+                    </div>
+                    <div
+                        class="team-member text-center p-6 transition-all duration-300 rounded-lg hover:transform hover:-translate-y-1 cursor-pointer">
+                        <img src="static/images/manos.webp"
+                            alt="Professional headshot of Emmanouil Koukoumidis, Organizer of the DCVLR competition from Oumi."
+                            aria-label="Emmanouil Koukoumidis's profile picture"
+                            class="w-36 h-36 rounded-full object-cover mb-4 mx-auto border-4 border-transparent">
+                        <h3 class="text-primary mb-1 font-semibold text-base"><a
+                                href="https://www.linkedin.com/in/koukoumidis" target="_blank" rel="noopener"
+                                class="text-inherit no-underline hover:no-underline">Emmanouil (Manos) Koukoumidis</a>
+                        </h3>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Organizer</p>
+                        <p class="text-sm text-text-secondary mb-1 font-sans">Oumi</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-
-
-    <section class="contact section-gradient py-16 text-center border-t border-border" id="contact">
-        <div class="container mx-auto px-6">
-            <div class="section-title mb-8">
-                <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Contact Us</h2>
-                <p class="max-w-2xl mx-auto text-lg text-text-secondary">Have questions? Get in touch with the DCVLR team</p>
+        <section class="faq section-gradient py-16" id="faq">
+            <div class="container mx-auto px-6">
+                <div class="section-title text-center mb-12">
+                    <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Frequently Asked
+                        Questions</h2>
+                    <p class="max-w-2xl mx-auto text-lg text-text-secondary">Common questions about the DCVLR
+                        competition</p>
+                </div>
+                <div class="faq-container max-w-3xl mx-auto">
+                    <div class="faq-item mb-6 border-b border-border pb-6">
+                        <h3
+                            class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">
+                            What is the goal of this competition?</h3>
+                        <div class="faq-answer" style="display: none;">
+                            <p class="text-text-secondary leading-relaxed mb-0">The goal is to advance the visual
+                                reasoning capabilities of vision-language models through instruction-tuning dataset
+                                curation. By isolating data as the primary variable, we aim to understand what data
+                                properties catalyze reasoning capabilities in neural systems.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item mb-6 border-b border-border pb-6">
+                        <h3
+                            class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">
+                            Who can participate?</h3>
+                        <div class="faq-answer" style="display: none;">
+                            <p class="text-text-secondary leading-relaxed mb-0">The competition is open to everyone,
+                                from students and academic researchers to industry professionals. We especially
+                                encourage participation from diverse backgrounds and institutions.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item mb-6 border-b border-border pb-6">
+                        <h3
+                            class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">
+                            What computational resources do I need?</h3>
+                        <div class="faq-answer" style="display: none;">
+                            <p class="text-text-secondary leading-relaxed mb-0">Fine-tuning and evaluation can be done
+                                on a single GPU. We provide GPU credits from Lambda Labs for a limited number of
+                                participants to ensure accessibility.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item mb-6 border-b border-border pb-6">
+                        <h3
+                            class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">
+                            How will submissions be evaluated?</h3>
+                        <div class="faq-answer" style="display: none;">
+                            <p class="text-text-secondary leading-relaxed mb-0">Submissions will be evaluated by
+                                fine-tuning an undisclosed vision-language model on the curated data and measuring
+                                performance across a wide variety of benchmarks. This approach tests whether good data
+                                curation strategies generalize across different models and evaluation settings.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item mb-6 border-b border-border pb-6">
+                        <h3
+                            class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">
+                            Can I use external data or models?</h3>
+                        <div class="faq-answer" style="display: none;">
+                            <p class="text-text-secondary leading-relaxed mb-0">You can use any datasets you want for
+                                data curation. We provide a comprehensive starter kit to help you get started, and you
+                                may use external tools (e.g., LLMs) to synthesize instruction-tuning examples. The key
+                                constraint is no manual annotation.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item mb-6 border-b border-border pb-6">
+                        <h3
+                            class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">
+                            Are there any prizes?</h3>
+                        <div class="faq-answer" style="display: none;">
+                            <p class="text-text-secondary leading-relaxed mb-0">Yes! The prize competition (June-October
+                                2025) awarded $4,250 USD total. First place: $3,000, Innovation in Data Curation (IDC)
+                                Prize: $1,000, Honorable Mention: $250. Winners also received podium presentations at <a
+                                    href="https://neurips.cc/" target="_blank" rel="noopener"
+                                    class="text-accent hover:underline">NeurIPS</a> 2025, invitation to co-author a
+                                joint system paper, and additional recognition. Top 10 teams received certificates of
+                                excellence.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item mb-6 border-b border-border pb-6 last:border-b-0">
+                        <h3
+                            class="text-primary cursor-pointer font-semibold text-lg mb-2 transition-all duration-200 hover:text-accent hover:pl-2">
+                            How many submissions can I make?</h3>
+                        <div class="faq-answer" style="display: none;">
+                            <p class="text-text-secondary leading-relaxed mb-0">Each team may submit up to 3 final
+                                versions. The highest-scoring submission will be used for ranking.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="contact-icons flex justify-center items-center gap-8 my-8">
-                <a href="mailto:dcvlr_neurips@googlegroups.com" class="contact-icon w-16 h-16 rounded-full flex items-center justify-center bg-white text-text-secondary transition-all duration-300 border-2 border-border no-underline hover:bg-accent hover:text-white hover:border-accent shadow-sm" aria-label="Email us">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
-                </a>
-                <a href="https://github.com/oumi-ai/oumi/blob/main/configs/projects/dcvlr/README.md" target="_blank" rel="noopener" class="contact-icon w-16 h-16 rounded-full flex items-center justify-center bg-white text-text-secondary transition-all duration-300 border-2 border-border no-underline hover:bg-accent hover:text-white hover:border-accent shadow-sm" aria-label="GitHub Repository">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <a href="https://twitter.com/DCVLR_NeurIPS" target="_blank" rel="noopener" class="contact-icon w-16 h-16 rounded-full flex items-center justify-center bg-white text-text-secondary transition-all duration-300 border-2 border-border no-underline hover:bg-accent hover:text-white hover:border-accent shadow-sm" aria-label="Twitter">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="bg-white border-t border-border text-center py-8">
-        <div class="container mx-auto px-6">
-            <div class="social-share mb-8">
-                <p class="text-text-secondary text-sm mb-3">Share this competition:</p>
-                <div class="share-buttons flex gap-4 justify-center items-center">
-                    <a href="https://twitter.com/intent/tweet?text=Join%20the%20DCVLR%20NeurIPS%202025%20Competition!%20Advance%20visual%20reasoning%20in%20VLMs%20through%20data%20curation.&url=https://dcvlr-neurips.github.io/" target="_blank" rel="noopener" class="share-button w-10 h-10 rounded flex items-center justify-center bg-lighter-bg text-text-secondary transition-all duration-200 border border-border hover:bg-accent hover:text-white hover:border-accent hover:-translate-y-0.5" aria-label="Share on Twitter" onclick="trackSocialShare('twitter')">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+
+
+        <section class="contact section-gradient py-16 text-center border-t border-border" id="contact">
+            <div class="container mx-auto px-6">
+                <div class="section-title mb-8">
+                    <h2 class="text-4xl font-semibold mb-4 text-primary relative inline-block">Contact Us</h2>
+                    <p class="max-w-2xl mx-auto text-lg text-text-secondary">Have questions? Get in touch with the DCVLR
+                        team</p>
+                </div>
+                <div class="contact-icons flex justify-center items-center gap-8 my-8">
+                    <a href="mailto:dcvlr_neurips@googlegroups.com"
+                        class="contact-icon w-16 h-16 rounded-full flex items-center justify-center bg-white text-text-secondary transition-all duration-300 border-2 border-border no-underline hover:bg-accent hover:text-white hover:border-accent shadow-sm"
+                        aria-label="Email us">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
                     </a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://dcvlr-neurips.github.io/" target="_blank" rel="noopener" class="share-button w-10 h-10 rounded flex items-center justify-center bg-lighter-bg text-text-secondary transition-all duration-200 border border-border hover:bg-accent hover:text-white hover:border-accent hover:-translate-y-0.5" aria-label="Share on LinkedIn" onclick="trackSocialShare('linkedin')">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <a href="https://github.com/oumi-ai/oumi/blob/main/configs/projects/dcvlr/README.md" target="_blank"
+                        rel="noopener"
+                        class="contact-icon w-16 h-16 rounded-full flex items-center justify-center bg-white text-text-secondary transition-all duration-300 border-2 border-border no-underline hover:bg-accent hover:text-white hover:border-accent shadow-sm"
+                        aria-label="GitHub Repository">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
                     </a>
-                    <a href="mailto:?subject=DCVLR%20NeurIPS%202025%20Competition&body=Check%20out%20this%20exciting%20competition%20on%20data%20curation%20for%20vision-language%20reasoning:%20https://dcvlr-neurips.github.io/" class="share-button w-10 h-10 rounded flex items-center justify-center bg-lighter-bg text-text-secondary transition-all duration-200 border border-border hover:bg-accent hover:text-white hover:border-accent hover:-translate-y-0.5" aria-label="Share via Email" onclick="trackSocialShare('email')">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <a href="https://twitter.com/DCVLR_NeurIPS" target="_blank" rel="noopener"
+                        class="contact-icon w-16 h-16 rounded-full flex items-center justify-center bg-white text-text-secondary transition-all duration-300 border-2 border-border no-underline hover:bg-accent hover:text-white hover:border-accent shadow-sm"
+                        aria-label="Twitter">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
                     </a>
                 </div>
             </div>
-        </div>
-    </footer>
+        </section>
 
-    <script src="static/js/app.js"></script>
+        <footer class="bg-white border-t border-border text-center py-8">
+            <div class="container mx-auto px-6">
+                <div class="social-share mb-8">
+                    <p class="text-text-secondary text-sm mb-3">Share this competition:</p>
+                    <div class="share-buttons flex gap-4 justify-center items-center">
+                        <a href="https://twitter.com/intent/tweet?text=Join%20the%20DCVLR%20NeurIPS%202025%20Competition!%20Advance%20visual%20reasoning%20in%20VLMs%20through%20data%20curation.&url=https://dcvlr-neurips.github.io/"
+                            target="_blank" rel="noopener"
+                            class="share-button w-10 h-10 rounded flex items-center justify-center bg-lighter-bg text-text-secondary transition-all duration-200 border border-border hover:bg-accent hover:text-white hover:border-accent hover:-translate-y-0.5"
+                            aria-label="Share on Twitter" onclick="trackSocialShare('twitter')">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://dcvlr-neurips.github.io/"
+                            target="_blank" rel="noopener"
+                            class="share-button w-10 h-10 rounded flex items-center justify-center bg-lighter-bg text-text-secondary transition-all duration-200 border border-border hover:bg-accent hover:text-white hover:border-accent hover:-translate-y-0.5"
+                            aria-label="Share on LinkedIn" onclick="trackSocialShare('linkedin')">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:?subject=DCVLR%20NeurIPS%202025%20Competition&body=Check%20out%20this%20exciting%20competition%20on%20data%20curation%20for%20vision-language%20reasoning:%20https://dcvlr-neurips.github.io/"
+                            class="share-button w-10 h-10 rounded flex items-center justify-center bg-lighter-bg text-text-secondary transition-all duration-200 border border-border hover:bg-accent hover:text-white hover:border-accent hover:-translate-y-0.5"
+                            aria-label="Share via Email" onclick="trackSocialShare('email')">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="static/js/app.js"></script>
     </div>
-    
+
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
