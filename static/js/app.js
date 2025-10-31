@@ -122,101 +122,17 @@ function setupTeamMemberClicks() {
     });
 }
 
-// Setup leaderboard track switching
-function setupLeaderboardTabs() {
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const leaderboardTable = document.querySelector('.leaderboard-table tbody');
-    
-    if (tabButtons.length === 0 || !leaderboardTable) {
-        console.log('Elements not found, skipping leaderboard setup');
-        return;
-    }
-    
-    // Baseline data from DCVLR organizers
-    const leaderboardData = {
-        '10k': [
-            { rank: 1, team: 'Base model (Qwen2.5-VL-72B)', score: '72.6%', submissions: 'Baseline', lastUpdate: '-' },
-            { rank: 2, team: 'Base model (Molmo-7B-D-0924)', score: '56.0%', submissions: 'Baseline', lastUpdate: '-' },
-            { rank: 3, team: 'Base model (Molmo-7B-O-0924)', score: '35.0%', submissions: 'Baseline', lastUpdate: '-' },
-            { rank: 4, team: 'LLMS-R1', score: 'TBD', submissions: 'Baseline', lastUpdate: '-' },
-        ]
-    };
-    
-    function updateLeaderboard(track) {
-        const data = leaderboardData[track];
-        if (!data || !leaderboardTable) return;
-        
-        leaderboardTable.innerHTML = '';
-        
-        data.forEach(entry => {
-            const row = document.createElement('tr');
-            if (entry.rank <= 3) {
-                row.classList.add('top-3');
-            }
-            
-            row.innerHTML = `
-                <td class="rank">${entry.rank}</td>
-                <td class="team-name">${entry.team}</td>
-                <td class="score">${entry.score}</td>
-                <td>${entry.submissions}</td>
-                <td>${entry.lastUpdate}</td>
-            `;
-            
-            leaderboardTable.appendChild(row);
-        });
-        
-        // Track leaderboard view
-        trackEvent('leaderboard_view', {
-            label: `${track}_track`,
-            section: 'leaderboard',
-            track: track,
-            value: 1
-        });
-    }
-    
-    function updateButtonStyles(activeTrack) {
-        tabButtons.forEach(btn => {
-            const track = btn.getAttribute('data-track');
-            if (track === activeTrack) {
-                // Active button styling
-                btn.classList.remove('text-text-secondary', 'bg-white');
-                btn.classList.add('bg-accent', 'text-white', 'border-accent');
-            } else {
-                // Inactive button styling
-                btn.classList.remove('bg-accent', 'text-white', 'border-accent');
-                btn.classList.add('text-text-secondary', 'bg-white');
-            }
-        });
-    }
-    
-    // Add click listeners to tab buttons
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const track = this.getAttribute('data-track');
-            
-            // Update button styles
-            updateButtonStyles(track);
-            
-            // Update leaderboard content
-            updateLeaderboard(track);
-            
-            // Track tab switch
-            trackButtonClick(`leaderboard_${track}_tab`, 'leaderboard');
-        });
-    });
-    
-    // Initialize with 10k track by default
-    updateButtonStyles('10k');
-    updateLeaderboard('10k');
-}
+// Leaderboard functionality removed - using static HTML leaderboard instead
 
 // Toggle mobile menu
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
+    const menuButton = document.getElementById('mobile-menu-button');
     if (mobileMenu) {
-        mobileMenu.classList.toggle('hidden');
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        if (menuButton) {
+            menuButton.setAttribute('aria-expanded', !isHidden);
+        }
     }
 }
 
@@ -252,7 +168,6 @@ function setupFAQ() {
 document.addEventListener('DOMContentLoaded', function() {
     // Setup all functionality
     setupFAQ();
-    setupLeaderboardTabs();
     setupSectionTracking();
     setupTeamMemberClicks();
 
